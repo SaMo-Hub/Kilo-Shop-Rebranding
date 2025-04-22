@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Kilo shop</title>
+    <!-- Inclusion de Matter.js depuis un CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  </head>
+  <body>
+    <div class="list-pastille">
+      <button id="red" class="pastille">
+        <div class="rond-rouge"></div>
+        <p>Pastille Rouge</p>
+      </button>
+      <button id="blue" class="pastille">
+        <div class="rond-bleu"></div>
+        <p>Pastille Bleu</p>
+      </button>
+    </div>
+    <div>
+        <div id="nombre">Dans la balance il y a : 0</div>
+        <div id="poid">Il y a : 0 kg</div>
+        <div id="prix">Prix de la balance : 0€</div>
+    </div>
+    <div class="flex">
+
+        <div>
+            <h4>Red:</h4>
+            <div id="nombreRed">Dans la balance il y a : 0</div>
+            <div id="poidRed">Il y a : 0 kg</div>
+            <div id="prixRed">Prix de la balance : 0€</div>
+        </div>
+        <div>
+            <h4>Bleu :</h4>
+            <div id="nombreBlue">Dans la balance il y a : 0</div>
+            <div id="poidBlue">Il y a : 0 kg</div>
+            <div id="prixBlue">Prix de la balance : 0€</div>
+        </div>
+    </div>
+    <div class="flex">
+
+        <div id="balanceContainer">
+            <div id="needle"></div>
+            <div id="scaleNumbers">
+              <!-- Les chiffres seront ajoutés dynamiquement ou manuellement -->
+            </div>
+          </div>
+          
+
+            <label for="balanceSlider">Poids sur la balance</label>
+            <input type="range" id="balanceSlider" min="0" max="100" value="0" disabled>
+            <output id="sliderOutput">0 kg / 1000 kg</output>
+        </div>
+    </div>
+    <canvas id="world"></canvas>
+    
+    <script src="https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js"></script>
+    <script defer src="script.js"></script>
+  </body>
+</html>
