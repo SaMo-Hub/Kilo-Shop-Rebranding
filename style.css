@@ -1,13 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  display: block;
+  
+}
+
+body{
+  position: relative;
+  inset: 0;
+}
+
 .list-pastille{
     display: flex;
+    position: relative;
     gap: 12px;
-    position: fixed;
-    z-index: 10;
+    z-index: 50;
+    flex-wrap: wrap;
 }
-.pastille{
+.button-pastille{
     display: flex;
     align-items: center;
     gap: 8px;
+    background-color: rgba(255, 255, 255, 0.274);
+    border: 0;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+.button-pastille.selected{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    border: 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #008BFF;
+
 }
 
 .rond-rouge{
@@ -21,6 +53,19 @@
     height: 16px;
     width: 16px;
     background-color: blue;
+}
+.rond-orange {
+  background-color: orange;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.rond-vert {
+  background-color: green;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
 }
 
 .flex{
@@ -40,10 +85,10 @@
   
   #needle {
     position: absolute;
-    bottom: 50%;
+    bottom: 45%;
     left: 50%;
-    width: 4px;
-    height: 120px;
+    width: 10px;
+    height: 220px;
     background: #e74c3c;
     transform-origin: bottom center;
     transform: rotate(-45deg);
@@ -69,3 +114,157 @@
     transform: translate(-50%, -50%);
   }
   
+
+  .balance{
+    background-color:#008BFF ;
+  }
+
+
+
+
+
+.haut{
+  width: fit-content;
+}
+
+.bas{
+  width: fit-content;
+  position: relative;
+  top: -90px;
+  z-index: 5;
+}
+
+
+.balanceimg{
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  left: 20px;
+  bottom: 0;  flex-direction: column;
+  align-items: center;
+  width: 50%;
+
+}
+
+.balanceText{
+  z-index: 8;
+  position: absolute;
+  display: flex;
+  left: 50%;
+  transform: translate(-50%, 0%);
+bottom: 0;
+width: 80vw;
+height: 100px;
+padding: 10px;
+align-items: flex-start;
+gap: 10px;
+background-color: #ED6E18;
+line-height: 20px;
+}
+canvas{
+  position: absolute;
+  bottom: 15px;
+  display: block;
+  z-index: 6;
+}
+
+.relative{
+  position: relative;  
+  margin-top: 90px;
+  height: 600px;
+}
+
+.euro{
+  display: flex;
+  padding: 12px 10px;
+  align-items: flex-end;
+  flex: 1 0 0;
+  align-self: stretch;
+  background: white;
+  color: #ED6E18;
+}
+.kg{
+  display: flex;
+  padding: 12px 10px;
+  align-items: flex-end;
+  flex: 1 0 0;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.24);
+    color: white;
+    gap: px;
+}
+
+
+
+.balanceMetric{
+  font-size: 14px;
+}
+.balanceNumber{
+
+font-family: "FK Raster Grotesk Trial";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -1.2px;
+text-transform: uppercase;
+}
+
+
+@media screen and (max-width: 745px) {
+  body {
+    background-color: lightblue;
+  }
+  .haut{
+    width: 80vw;
+   
+  }
+  .bas{
+    width: 200px;
+  }
+  .balanceimg{
+    display: none;
+  }
+  .relative{
+    height: 350px;
+
+  }
+}
+
+.changeHat{
+  display: flex;
+  justify-content: space-between;
+}
+
+.changeHat button {
+  height: fit-content;
+  background-color: bisque;
+}
+
+.tenue{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.tshirt{
+  margin-top: -180px;
+  position: relative;
+}
+
+.prevButton{
+      display: flex;
+      flex-direction: column;
+      gap: 140px;
+      justify-content: space-between;
+}
+
+.validating {
+  animation: pulse 1s;
+}
+
+@keyframes pulse {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(130, 188, 67, 0.3); }
+  100% { background-color: transparent; }
+}
