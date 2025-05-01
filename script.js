@@ -174,7 +174,7 @@ let balance = Matter.Bodies.rectangle(width / 1.5, 465, 90, 25, {
 });
 function updateCanvasSize() {
   const width = container.offsetWidth;
-  console.log(width);
+  console.log("width");
   
   canvas.width = width * window.devicePixelRatio;
   // canvas.height = height * window.devicePixelRatio;
