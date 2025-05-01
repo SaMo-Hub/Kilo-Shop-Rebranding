@@ -13,8 +13,17 @@ const hautBalance = "./img/hautbalance.svg";
 const basBalance = "./img/basBalance.svg";
 
 let btnSelect = "red";
-let width = window.innerWidth;
-let height = window.innerHeight;
+const canvas = document.getElementById("world");
+const container = document.querySelector(".relative");
+const width = container.offsetWidth;
+const height = container.offsetHeight;
+
+// Set REAL pixel size for canvas (important pour la netteté)
+canvas.width = width * window.devicePixelRatio;
+
+// Scale canvas display
+canvas.style.width = width + "px";
+
 
 const pastilleButtons = document.querySelectorAll(".button-pastille");
 
@@ -134,17 +143,16 @@ const listCloth = {
 // Initialisation de Matter
 const engine = Engine.create();
 const world = engine.world;
-
-const render = Render.create({
-  element: document.body,
+const render = Matter.Render.create({
+  canvas: canvas,
   engine: engine,
-  canvas: document.getElementById("world"),
   options: {
-    width: width,
+    width: canvas.width,
     height: 600,
-    wireframes: false,
-    background: "#008BF",
-  },
+    pixelRatio: window.devicePixelRatio,
+    background: "transparent",
+    wireframes: false
+  }
 });
 
 Render.run(render);
@@ -164,45 +172,34 @@ let balance = Matter.Bodies.rectangle(width / 1.5, 465, 90, 25, {
   isStatic: true,
   render: { fillStyle: "#FBBB28" },
 });
+function updateCanvasSize() {
+  const width = container.offsetWidth;
+  console.log(width);
+  
+  canvas.width = width * window.devicePixelRatio;
+  // canvas.height = height * window.devicePixelRatio;
+  canvas.style.width = width + "px";
+
+  render.canvas.width = canvas.width;
+  // render.options.width = canvas.width;
+}
+
+// 🎮 Drag souris
+const mouse = Mouse.create(render.canvas);
+const mouseConstraint = MouseConstraint.create(engine, {
+  mouse: mouse,
+  constraint: {
+    stiffness: 0.2,
+    render: { visible: false },
+  },
+});
+World.add(world, mouseConstraint);
+
+render.mouse = mouse;
+engine.gravity.y = 1;
 
 World.add(world, [sacBase, balanceGround, balance]);
 
-function repositionBalanceElements() {
-  const centerX = width / 2;
-  const defaultX = width / 1.5;
-
-  const isSmallScreen = width <= 730;
-  const newX = isSmallScreen ? centerX : defaultX;
-  World.remove(world, sacBase);
-
-  sacBase = Matter.Bodies.rectangle(centerX, 490, width * 0.8, 26, {
-    isStatic: true,
-    render: { visible: true },
-  });
-
-  
-  Matter.Body.setPosition(balanceGround, { x: newX, y: 440 });
-  Matter.Body.setPosition(balance, { x: newX, y: 465 });
-  Matter.Body.setPosition(balanceSensor, { x: newX, y: 388 });
-  World.add(world, [sacBase, balanceGround]);
-}
-
-window.addEventListener("resize", () => {
-  width = window.innerWidth - 15;
-  height = window.innerHeight;
-
-  render.canvas.width = width;
-  render.canvas.height = 600;
-  render.options.width = width;
-  render.options.height = 600;
-
-  // Repositionner sacBase au centre après redimensionnement
-  Matter.Body.setPosition(sacBase, { x: width / 2, y: 490 });
-  Matter.Body.setPosition(balanceGround, { x: width / 1.5, y: 440 });
-  Matter.Body.setPosition(balance, { x: width / 1.5, y: 465 });
-  Matter.Body.setPosition(balanceSensor, { x: width / 1.5, y: 388 });
-  repositionBalanceElements();
-});
 
 // Capteur de balance
 const balanceSensor = Matter.Bodies.rectangle(width / 1.5, 388, 300, 80, {
@@ -211,8 +208,30 @@ const balanceSensor = Matter.Bodies.rectangle(width / 1.5, 388, 300, 80, {
   render: { visible: true, fillStyle: "#0000001c" },
 });
 World.add(world, balanceSensor);
-repositionBalanceElements();
+function repositionElements() {
+  const width = container.offsetWidth;
+  const isSmall = width <= 730;
+  const centerX = width / 2;
+  const balanceX = isSmall ? centerX : width / 1.5;
 
+  Matter.Body.setPosition(sacBase, { x: centerX, y: 490 });
+  Matter.Body.setVertices(sacBase, Matter.Vertices.fromPath(`0 0 ${width * 0.8} 0 ${width * 0.8} 26 0 26`));
+
+  Matter.Body.setPosition(balanceGround, { x: balanceX, y: 440 });
+  Matter.Body.setPosition(balance, { x: balanceX, y: 465 });
+  Matter.Body.setPosition(balanceSensor, { x: balanceX, y: 388 });
+}
+
+// Lier les deux ensemble
+function handleResize() {
+  updateCanvasSize();
+  repositionElements();
+}
+
+window.addEventListener("resize", handleResize);
+
+// Appel initial
+// handleResize();
 // 🔁 Fonction pour transformer un path SVG en vertices
 function parsePathToVertices(path, sampleLength = 2) {
   const svgNS = "http://www.w3.org/2000/svg";
@@ -235,7 +254,6 @@ function parsePathToVertices(path, sampleLength = 2) {
 // Path simplifié du t-shirt (sans les courbes complexes)
 
 function createImage(x, y, imagePath, kg, pastille, options = {}) {
-  console.log(pastille);
   
   const { scale = 0.25, pathData } = options;
   return fetch(imagePath)
@@ -424,7 +442,6 @@ render.canvas.addEventListener("mouseup", async (event) => {
     const blueItems = Object.values(listCloth)
       .flat()
       .filter((item) => item.pastille === "blue");
-    console.log(blueItems);
     
     const item = blueItems[Math.floor(Math.random() * blueItems.length)];
     await createImage(x, y, item.img, item.kg, "blue");
@@ -433,7 +450,6 @@ render.canvas.addEventListener("mouseup", async (event) => {
     const blueItems = Object.values(listCloth)
       .flat()
       .filter((item) => item.pastille === "orange");
-    console.log(blueItems);
     
     const item = blueItems[Math.floor(Math.random() * blueItems.length)];
     await createImage(x, y, item.img, item.kg, "orange");
@@ -467,19 +483,6 @@ document
 
 const sectionBalance = document.querySelector(".balance");
 
-// 🎮 Drag souris
-const mouse = Mouse.create(render.canvas);
-const mouseConstraint = MouseConstraint.create(engine, {
-  mouse: mouse,
-  constraint: {
-    stiffness: 0.2,
-    render: { visible: false },
-  },
-});
-World.add(world, mouseConstraint);
-
-render.mouse = mouse;
-engine.gravity.y = 1;
 
 
 

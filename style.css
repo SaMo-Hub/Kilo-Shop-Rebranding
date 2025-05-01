@@ -140,7 +140,8 @@ body{
   pointer-events: none;
   display: flex;
   left: 20px;
-  bottom: 0;  flex-direction: column;
+  bottom: 33px;
+    flex-direction: column;
   align-items: center;
   width: 50%;
 
@@ -225,10 +226,7 @@ text-transform: uppercase;
   .balanceimg{
     display: none;
   }
-  .relative{
-    height: 350px;
-
-  }
+ 
 }
 
 .changeHat{
@@ -268,3 +266,22 @@ text-transform: uppercase;
   50% { background-color: rgba(130, 188, 67, 0.3); }
   100% { background-color: transparent; }
 }
+
+.balance-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+canvas#world {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
