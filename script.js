@@ -15,14 +15,16 @@ const basBalance = "./img/basBalance.svg";
 let btnSelect = "red";
 const canvas = document.getElementById("world");
 const container = document.querySelector(".relative");
-const width = container.offsetWidth;
+
+const balanceText = document.querySelector(".balanceText");
+
+
+let width = container.offsetWidth;
 const height = container.offsetHeight;
 
 // Set REAL pixel size for canvas (important pour la netteté)
-canvas.width = width * window.devicePixelRatio;
 
 // Scale canvas display
-canvas.style.width = width + "px";
 
 
 const pastilleButtons = document.querySelectorAll(".button-pastille");
@@ -147,9 +149,8 @@ const render = Matter.Render.create({
   canvas: canvas,
   engine: engine,
   options: {
-    width: canvas.width,
+    width: width,
     height: 600,
-    pixelRatio: window.devicePixelRatio,
     background: "transparent",
     wireframes: false
   }
@@ -160,9 +161,9 @@ Runner.run(Runner.create(), engine);
 
 // Sol et structure
 // const ground = Matter.Bodies.rectangle(0, 590, 4000, 30, { isStatic: true });
-let sacBase = Matter.Bodies.rectangle(width / 2, 490, width * 0.8, 26, {
+let sacBase = Matter.Bodies.rectangle(width / 2, 490, balanceText.getBoundingClientRect().width, 26, {
   isStatic: true,
-  render: { visible: true },
+  render: { visible: false },
 });
 let balanceGround = Matter.Bodies.rectangle(width / 1.5, 440, 300, 25, {
   isStatic: true,
@@ -173,14 +174,15 @@ let balance = Matter.Bodies.rectangle(width / 1.5, 465, 90, 25, {
   render: { fillStyle: "#FBBB28" },
 });
 function updateCanvasSize() {
-  const width = container.offsetWidth;
-  console.log("width");
-  
-  canvas.width = width * window.devicePixelRatio;
-  // canvas.height = height * window.devicePixelRatio;
-  canvas.style.width = width + "px";
 
-  render.canvas.width = canvas.width;
+  const width = container.offsetWidth;
+  console.log(width);
+  
+  // canvas.width = width * window.devicePixelRatio;
+  // // canvas.height = height * window.devicePixelRatio;
+  canvas.width = width;
+
+  // render.canvas.width = canvas.width;
   // render.options.width = canvas.width;
 }
 
@@ -213,9 +215,13 @@ function repositionElements() {
   const isSmall = width <= 730;
   const centerX = width / 2;
   const balanceX = isSmall ? centerX : width / 1.5;
+  const rect = balanceText.getBoundingClientRect();
+
+
 
   Matter.Body.setPosition(sacBase, { x: centerX, y: 490 });
-  Matter.Body.setVertices(sacBase, Matter.Vertices.fromPath(`0 0 ${width * 0.8} 0 ${width * 0.8} 26 0 26`));
+ 
+  Matter.Body.setVertices(sacBase, Matter.Vertices.fromPath(`0 0 ${rect.width} 0 ${rect.width} 20 0 20`));
 
   Matter.Body.setPosition(balanceGround, { x: balanceX, y: 440 });
   Matter.Body.setPosition(balance, { x: balanceX, y: 465 });
@@ -231,7 +237,7 @@ function handleResize() {
 window.addEventListener("resize", handleResize);
 
 // Appel initial
-// handleResize();
+handleResize();
 // 🔁 Fonction pour transformer un path SVG en vertices
 function parsePathToVertices(path, sampleLength = 2) {
   const svgNS = "http://www.w3.org/2000/svg";
@@ -664,3 +670,20 @@ function supprimerTousLesVetements() {
 // Ajouter l'événement au bouton
 document.getElementById('supprimerVetements').addEventListener('click', supprimerTousLesVetements);
 
+document.querySelector(".blue-exemple").addEventListener("click", async () => {
+  // Supprimer les vêtements existants
+  supprimerTousLesVetements()
+  // Ajouter 3 vêtements bleus
+  const itemCloth = Object.values(listCloth)
+    .flat()
+    .filter((item) => item.pastille === "blue");
+
+  for (let i = 0; i < 3; i++) {
+    const item = itemCloth[Math.floor(Math.random() * itemCloth.length)];
+    const x = 100 + i * 100; // espacement horizontal
+    const y = 100; // hauteur fixe
+    await createImage(500, 0, item.img, item.kg, "blue");
+  }
+
+  updateUI(); // mettre à jour le poids/prix
+});
