@@ -46,42 +46,56 @@ const listCloth = {
       img: "./img/hat/casquette.svg",
       pastille: "red",
       kg: 0.18,
+      width: 20,
+      height: 20,
     },
     {
       name: "casquette",
       img: "./img/hat/casquetterouge.svg",
       pastille: "blue",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "casquette",
       img: "./img/hat/casquettebleu.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "casquette",
       img: "./img/hat/casquettejaune.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "casquette",
       img: "./img/hat/casquetterose.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "casquette",
       img: "./img/hat/casquetteviolet.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "Chapeau",
       img: "./img/hat/casquettevert.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
   ],
   tshirt: [
@@ -90,24 +104,32 @@ const listCloth = {
       img: "./img/upperBody/tshirt.svg",
       pastille: "red",
       kg: 0.15,
+      width: 30,
+      height: 30,
     },
     {
       name: "jaune",
       img: "./img/upperBody/tshirtjaune.svg",
       pastille: "blue",
       kg: 0.15,
+      width: 30,
+      height: 30,
     },
     {
       name: "vert",
       img: "./img/upperBody/tshirtvert.svg",
       pastille: "red",
       kg: 0.15,
+      width: 30,
+      height: 30,
     },
     {
       name: "Veste",
       img: "./img/veste.svg",
       pastille: "red",
       kg: 0.8,
+      width: 30,
+      height: 30,
     },
   ],
   pantalon: [
@@ -116,31 +138,60 @@ const listCloth = {
       img: "./img/lowerBody/pantalonbleu.svg",
       pastille: "red",
       kg: 0.8,
+      width: 30,
+      height: 30,
     },
     {
       name: "jaune",
       img: "./img/lowerBody/pantalonjaune.svg",
       pastille: "blue",
       kg: 0.8,
+      width: 30,
+      height: 30,
     },
     {
       name: "vert",
       img: "./img/lowerBody/pantalonrouge.svg",
       pastille: "vert",
       kg: 0.8,
+      width: 30,
+      height: 30,
     },
     {
       name: "vert",
       img: "./img/lowerBody/pantalonvert.svg",
       pastille: "vert",
       kg: 0.8,
+      width: 30,
+      height: 30,
     },
   ],
-  shoes:[
-    {name:"Chaussere", img:"./img/shoes/chaussure.svg", pastille:"orange", kg:0.560},
-    {name:"Chaussere", img:"./img/shoes/chaussureBleu.svg", pastille:"vert", kg:0.560},
-    {name:"Chaussere", img:"./img/shoes/chaussureRouge.svg", pastille:"rouge", kg:0.560},
-  ]
+  shoes: [
+    {
+      name: "Chaussere",
+      img: "./img/shoes/chaussure.svg",
+      pastille: "orange",
+      kg: 0.56,
+      width: 30,
+      height: 30
+    },
+    {
+      name: "Chaussere",
+      img: "./img/shoes/chaussureBleu.svg",
+      pastille: "vert",
+      kg: 0.56,
+      width: 30,
+      height: 30
+    },
+    {
+      name: "Chaussere",
+      img: "./img/shoes/chaussureRouge.svg",
+      pastille: "rouge",
+      kg: 0.56,
+      width: 30,
+      height: 30
+    },
+  ],
 };
 // Initialisation de Matter
 const engine = Engine.create();
@@ -196,7 +247,7 @@ const mouseConstraint = MouseConstraint.create(engine, {
 World.add(world, mouseConstraint);
 
 render.mouse = mouse;
-engine.gravity.y = 1;
+engine.gravity.y = 0.05;
 
 World.add(world, [sacBase, balanceGround, balance]);
 
