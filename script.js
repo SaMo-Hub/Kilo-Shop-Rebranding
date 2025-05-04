@@ -176,8 +176,6 @@ let balance = Matter.Bodies.rectangle(width / 1.5, 465, 90, 25, {
 function updateCanvasSize() {
 
   const width = container.offsetWidth;
-  console.log(width);
-  
   // canvas.width = width * window.devicePixelRatio;
   // // canvas.height = height * window.devicePixelRatio;
   canvas.width = width;
@@ -202,7 +200,10 @@ engine.gravity.y = 1;
 
 World.add(world, [sacBase, balanceGround, balance]);
 
-
+render.canvas.addEventListener('wheel', function (e) {
+  e.stopPropagation(); // Empêche Matter.js d’intercepter
+  // NE PAS mettre e.preventDefault(); ici
+}, { passive: true }); // passive = on autorise le scroll
 // Capteur de balance
 const balanceSensor = Matter.Bodies.rectangle(width / 1.5, 388, 300, 80, {
   isStatic: true,
@@ -464,7 +465,6 @@ render.canvas.addEventListener("mouseup", async (event) => {
     const blueItems = Object.values(listCloth)
       .flat()
       .filter((item) => item.pastille === "vert");
-    console.log(blueItems);
     
     const item = blueItems[Math.floor(Math.random() * blueItems.length)];
     await createImage(x, y, item.img, item.kg, "vert");
@@ -565,7 +565,6 @@ validerTenue.addEventListener("click", async () => {
 
   try {
     for (const item of selectedCloth) {
-      console.log(item,"dgffg");
       
       await createImage(520, 20, item.img, item.kg, item.pastille);
       await new Promise((resolve) => setTimeout(resolve, 200));
@@ -687,3 +686,39 @@ document.querySelector(".blue-exemple").addEventListener("click", async () => {
 
   updateUI(); // mettre à jour le poids/prix
 });
+
+
+// Ordre de scroll : hat -> tshirt -> pantalon -> shoes
+const clothingOrder = ["hat", "tshirt", "pantalon", "shoes"];
+let scrollStep = 0; // index dans l'ordre
+let isScrolling = false;
+
+// Fonction pour changer l'élément actif
+function scrollNextClothing() {
+  console.log("gfhgfh");
+  
+  const partName = clothingOrder[scrollStep];
+  const part = clothingParts[partName];
+
+  // Simule un clic sur "next"
+  part.nextBtn.click();
+
+  // Prépare l'étape suivante
+  scrollStep = (scrollStep + 1) % clothingOrder.length;
+}
+
+// Blocage du scroll pendant l’animation
+
+// Gestion du scroll dans la section uniquement
+document.querySelector('.section1').addEventListener('wheel', (e) => {
+  // Ne bloque pas le scroll → pas de preventDefault()
+
+  // Option : détecter seulement si l'utilisateur est visible dans la section
+  const section = document.querySelector('.section1');
+  const rect = section.getBoundingClientRect();
+  const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+  if (isInView && e.deltaY > 0) {
+    scrollNextClothing();
+  }
+}, { passive: true }); // Doit être passive:true pour permettre le scroll

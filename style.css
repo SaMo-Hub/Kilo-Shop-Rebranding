@@ -4,8 +4,13 @@
   display: block;
   font-family: Mabry;
   letter-spacing: -0.5px;
-
+  font-weight: normal;
 }
+
+html, body {
+  overflow: auto !important;
+}
+
 @font-face {
   font-family: "Advercase";
   src: url('./font/AdvercaseFont-Demo-Regular.otf');
@@ -17,7 +22,9 @@
   font-style: normal;
 }
 
-
+.tenue{
+ scale: 0.5;
+}
 
 @font-face {
   font-family: "Mabry";
@@ -44,6 +51,7 @@
 body {
   position: relative;
   inset: 0;
+  /* font-weight: normal; */
 }
 
 .list-pastille {
@@ -343,7 +351,7 @@ canvas#world {
   font-family: Advercase;
   font-size: 30px;
   text-transform: uppercase;
-  /* font-weight: 900; */
+  font-weight: normal;
 }
 .pastille-bg {
   background: #fff;
