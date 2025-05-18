@@ -265,10 +265,6 @@ canvas {
   justify-content: space-between;
 }
 
-.changeHat button {
-  height: fit-content;
-  background-color: bisque;
-}
 
 .tenue {
   align-items: center;
@@ -277,10 +273,13 @@ canvas {
 }
 
 .tshirt {
-  margin-top: -180px;
+  margin-top: -524px;
   position: relative;
 }
+.pantalon {
+  margin-top: -5px;
 
+}
 .prevButton {
   display: flex;
   flex-direction: column;
@@ -330,6 +329,10 @@ canvas#world {
   color: #fff;
   font-size: 80px;
   text-transform: uppercase;
+}
+.pastille-explication {
+  display: flex;
+  flex-direction: column;
 }
 .pastille-explication {
   display: flex;
@@ -389,4 +392,12 @@ canvas#world {
   position: sticky;
   top: 0;
   height: 0px;
+}
+
+
+.buttonCloth{
+  display: flex;
+  height: 20px;
+  width: 20px;
+  background: white;
 }

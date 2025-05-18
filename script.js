@@ -101,7 +101,7 @@ const listCloth = {
   tshirt: [
     {
       name: "Tshirt Rouge",
-      img: "./img/upperBody/tshirt.svg",
+      img: "./img/upperBody/tshirt-white.svg",
       pastille: "red",
       kg: 0.15,
       width: 30,
@@ -109,7 +109,7 @@ const listCloth = {
     },
     {
       name: "jaune",
-      img: "./img/upperBody/tshirtjaune.svg",
+      img: "./img/upperBody/tshirt-orange.svg",
       pastille: "blue",
       kg: 0.15,
       width: 30,
@@ -117,7 +117,15 @@ const listCloth = {
     },
     {
       name: "vert",
-      img: "./img/upperBody/tshirtvert.svg",
+      img: "./img/upperBody/tshirt-blue.svg",
+      pastille: "red",
+      kg: 0.15,
+      width: 30,
+      height: 30,
+    },
+    {
+      name: "vert",
+      img: "./img/upperBody/tshirt-red.svg",
       pastille: "red",
       kg: 0.15,
       width: 30,
@@ -134,37 +142,38 @@ const listCloth = {
   ],
   pantalon: [
     {
-      name: "rose",
-      img: "./img/lowerBody/pantalonbleu.svg",
-      pastille: "red",
-      kg: 0.8,
-      width: 30,
-      height: 30,
-    },
-    {
-      name: "jaune",
-      img: "./img/lowerBody/pantalonjaune.svg",
+      name: "jean",
+      img: "./img/lowerBody/jean-blue.svg",
       pastille: "blue",
       kg: 0.8,
       width: 30,
       height: 30,
     },
     {
-      name: "vert",
-      img: "./img/lowerBody/pantalonrouge.svg",
-      pastille: "vert",
+      name: "jean",
+      img: "./img/lowerBody/jean-red.svg",
+      pastille: "red",
       kg: 0.8,
       width: 30,
       height: 30,
     },
     {
-      name: "vert",
-      img: "./img/lowerBody/pantalonvert.svg",
-      pastille: "vert",
+      name: "jean",
+      img: "./img/lowerBody/jean-orange.svg",
+      pastille: "red",
       kg: 0.8,
       width: 30,
       height: 30,
     },
+    {
+      name: "jean",
+      img: "./img/lowerBody/jean-white.svg",
+      pastille: "red",
+      kg: 0.8,
+      width: 30,
+      height: 30,
+    },
+   
   ],
   shoes: [
     {
@@ -545,13 +554,13 @@ const sectionBalance = document.querySelector(".balance");
 
 const selectedCloth = [
   {
-    img: "listCloth.hat[0].img" ,
+    img: listCloth.hat[0].img ,
     pastille: listCloth.hat[0].pastille,
     kg: listCloth.hat[0].kg,
   },
 
   {
-    img: "listCloth.tshirt[0].img",
+    img: listCloth.tshirt[0].img,
     kg: listCloth.tshirt[0].kg,
     pastille: listCloth.tshirt[0].pastille
   },
@@ -761,9 +770,12 @@ function scrollNextClothing() {
 // Blocage du scroll pendant l’animation
 
 // Gestion du scroll dans la section uniquement
+console.log(document.querySelector('.section1'));
+
 document.querySelector('.section1').addEventListener('wheel', (e) => {
   // Ne bloque pas le scroll → pas de preventDefault()
-
+  console.log(",dfs");
+  
   // Option : détecter seulement si l'utilisateur est visible dans la section
   const section = document.querySelector('.section1');
   const rect = section.getBoundingClientRect();
