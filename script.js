@@ -778,26 +778,28 @@ document.querySelector('.section1').addEventListener('wheel', (e) => {
 // });
 
 const pastilleData = [
-  {
-    color: "blue",
-    title: "Bleu",
-    price: "40",
-  },
+ 
   {
     color: "red",
     title: "Rouge",
     price: "20",
+  },
+   {
+    color: "green",
+    title: "Vert",
+    price: "30",
+  },
+   {
+    color: "blue",
+    title: "Bleu",
+    price: "40",
   },
   {
     color: "orange",
     title: "Orange",
     price: "60",
   },
-  {
-    color: "green",
-    title: "Vert",
-    price: "30",
-  },
+ 
 ];
 
 // Sélectionne le container
@@ -821,9 +823,9 @@ pastilleData.forEach(({ color, title, price, hasButton }) => {
   h4.textContent = title;
 
  
-    const button = document.createElement("button");
-    button.classList.add("exemple");
-    button.textContent = "Exemple";
+    // const button = document.createElement("button");
+    // button.classList.add("exemple");
+    // button.textContent = "Exemple";
   
 
   const colorDiv = document.createElement("div");
@@ -835,7 +837,7 @@ pastilleData.forEach(({ color, title, price, hasButton }) => {
 
   // Ajout des éléments dans la structure
   bg.appendChild(h4);
-      bg.appendChild(button);
+      // bg.appendChild(button);
 
   bg.appendChild(colorDiv);
   bg.appendChild(p);
