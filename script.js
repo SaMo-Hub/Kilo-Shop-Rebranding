@@ -29,14 +29,25 @@ const height = container.offsetHeight;
 
 const pastilleButtons = document.querySelectorAll(".button-pastille");
 
-pastilleButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    btnSelect = button.dataset.color;
+const buttons = document.querySelectorAll(".button-pastille");
 
-    pastilleButtons.forEach((btn) => btn.classList.remove("selected"));
+buttons.forEach(button => {
+  const color = button.getAttribute("data-color");
+
+      button.style.color = color;
+
+  button.addEventListener("click", () => {
+    // Tout remettre à blanc
+    buttons.forEach(btn => {
+      btn.classList.remove("selected");
+    });
+
+    // Sélectionner l'élément cliqué
     button.classList.add("selected");
+    button.style.color = color;
   });
 });
+
 
 window.decomp = decomp;
 const listCloth = {
@@ -126,19 +137,12 @@ const listCloth = {
     {
       name: "vert",
       img: "./img/upperBody/tshirt-red.svg",
-      pastille: "red",
+      pastille: "vert",
       kg: 0.15,
       width: 30,
       height: 30,
     },
-    {
-      name: "Veste",
-      img: "./img/veste.svg",
-      pastille: "red",
-      kg: 0.8,
-      width: 30,
-      height: 30,
-    },
+   
   ],
   pantalon: [
     {
@@ -178,7 +182,7 @@ const listCloth = {
   shoes: [
     {
       name: "Chaussere",
-      img: "./img/shoes/chaussure.svg",
+      img: "./img/shoes/shoes-red.svg",
       pastille: "orange",
       kg: 0.56,
       width: 30,
@@ -186,15 +190,23 @@ const listCloth = {
     },
     {
       name: "Chaussere",
-      img: "./img/shoes/chaussureBleu.svg",
-      pastille: "vert",
+      img: "./img/shoes/shoes-blue.svg",
+      pastille: "rouge",
       kg: 0.56,
       width: 30,
       height: 30
     },
     {
       name: "Chaussere",
-      img: "./img/shoes/chaussureRouge.svg",
+      img: "./img/shoes/shoes-green.svg",
+      pastille: "rouge",
+      kg: 0.56,
+      width: 30,
+      height: 30
+    },
+    {
+      name: "Chaussere",
+      img: "./img/shoes/shoes-orange.svg",
       pastille: "rouge",
       kg: 0.56,
       width: 30,
@@ -227,11 +239,11 @@ let sacBase = Matter.Bodies.rectangle(width / 2, 490, balanceText.getBoundingCli
 });
 let balanceGround = Matter.Bodies.rectangle(width / 1.5, 440, 300, 25, {
   isStatic: true,
-  render: { fillStyle: "#82BC43" },
+  render: { fillStyle: "#2F2D62" },
 });
 let balance = Matter.Bodies.rectangle(width / 1.5, 465, 90, 25, {
   isStatic: true,
-  render: { fillStyle: "#FBBB28" },
+  render: { fillStyle: "#8B8AA8" },
 });
 function updateCanvasSize() {
 
@@ -256,7 +268,7 @@ const mouseConstraint = MouseConstraint.create(engine, {
 World.add(world, mouseConstraint);
 
 render.mouse = mouse;
-engine.gravity.y = 0.05;
+engine.gravity.y = 4;
 
 World.add(world, [sacBase, balanceGround, balance]);
 
@@ -525,6 +537,7 @@ render.canvas.addEventListener("mouseup", async (event) => {
     const blueItems = Object.values(listCloth)
       .flat()
       .filter((item) => item.pastille === "vert");
+ 
     
     const item = blueItems[Math.floor(Math.random() * blueItems.length)];
     await createImage(x, y, item.img, item.kg, "vert");
@@ -576,7 +589,7 @@ const selectedCloth = [
   },
 ];
 
-const validerTenue = document.getElementById("validerTenue");
+// const validerTenue = document.getElementById("validerTenue");
 const hatImage = document.getElementById("hatImage");
 const upperBodyImage = document.getElementById("upperBodyImage");
 const lowerBodyImage = document.getElementById("upperBodyImage");
@@ -587,15 +600,15 @@ const upperBodyText = document.getElementById("upperBodyText");
 const lowerBodyText = document.getElementById("lowerBodyText");
 const shoesText = document.getElementById("shoesText");
 
-const nextHat = document.getElementById("nextHat");
-const nextTshirt = document.getElementById("nextTshirt");
-const nextLower = document.getElementById("nextLower");
-const nextShoes = document.getElementById("nextShoes");
+// const nextHat = document.getElementById("nextHat");
+// const nextTshirt = document.getElementById("nextTshirt");
+// const nextLower = document.getElementById("nextLower");
+// const nextShoes = document.getElementById("nextShoes");
 
-const prevHat = document.getElementById("prevHat");
-const prevTshirt = document.getElementById("prevTshirt");
-const prevLower = document.getElementById("prevLower");
-const prevShoes = document.getElementById("prevShoes");
+// const prevHat = document.getElementById("prevHat");
+// const prevTshirt = document.getElementById("prevTshirt");
+// const prevLower = document.getElementById("prevLower");
+// const prevShoes = document.getElementById("prevShoes");
 // Liste des chemins vers les images des chapeaux
 let currentIndex = 0;
 
@@ -603,9 +616,10 @@ let hasValidatedOnScroll = false;
 
 const observer = new IntersectionObserver(
   (entries) => {
+    
     entries.forEach((entry) => {
       if (entry.isIntersecting && !hasValidatedOnScroll) {
-        validerTenue.click();
+        validerTenue()
         hasValidatedOnScroll = true;
         observer.unobserve(entry.target); // Arrête d'observer après déclenchement
       }
@@ -619,27 +633,27 @@ observer.observe(document.querySelector(".balance"));
 // Modifiez votre fonction de validation pour éviter les déclenchements multiples
 let isValidationInProgress = false;
 
-validerTenue.addEventListener("click", async () => {
+async function validerTenue   () {
+    const centerX = width / 2;
+
   if (isValidationInProgress) return;
   isValidationInProgress = true;
 
   try {
     for (const item of selectedCloth) {
       
-      await createImage(520, 20, item.img, item.kg, item.pastille);
+      await createImage(centerX, 20, item.img, item.kg, item.pastille);
       await new Promise((resolve) => setTimeout(resolve, 200));
     }
   } finally {
     isValidationInProgress = false;
   }
-});
+};
 const clothingParts = {
   hat: {
     list: listCloth.hat,
     imageEl: document.getElementById("hatImage"),
     textEl: document.getElementById("hatTexte"),
-    nextBtn: document.getElementById("nextHat"),
-    prevBtn: document.getElementById("prevHat"),
     index: 0,
     selectedIndex: 0,
     clothIndex: 0 // index dans selectedCloth
@@ -658,8 +672,6 @@ const clothingParts = {
     list: listCloth.pantalon,
     imageEl: document.getElementById("lowerBodyImage"),
     textEl: document.getElementById("lowerBodyText"),
-    nextBtn: document.getElementById("nextLower"),
-    prevBtn: document.getElementById("prevLower"),
     index: 0,
     selectedIndex: 0,
     clothIndex: 2
@@ -668,8 +680,6 @@ const clothingParts = {
     list: listCloth.shoes, // à remplir plus tard si besoin
     imageEl: document.getElementById("shoesImage"),
     textEl: document.getElementById("shoesText"),
-    nextBtn: document.getElementById("nextShoes"),
-    prevBtn: document.getElementById("prevShoes"),
     index: 0,
     selectedIndex: 0,
     clothIndex: 3
@@ -684,7 +694,6 @@ function setupClothingNavigation(partName) {
     const item = part.list[part.index];
     if (!item) return;
     part.imageEl.src = item.img;
-    part.textEl.textContent = `pastille : ${item.pastille}`;
     selectedCloth[part.clothIndex] = {
       img: item.img,
       kg: parseFloat(item.kg || 0),
@@ -692,16 +701,7 @@ function setupClothingNavigation(partName) {
     };
   };
 
-  part.nextBtn.addEventListener("click", () => {
     part.index = (part.index + 1) % part.list.length;
-    updateUI();
-  });
-
-  part.prevBtn.addEventListener("click", () => {
-    part.index = (part.index - 1 + part.list.length) % part.list.length;
-    updateUI();
-  });
-
   updateUI(); // Initialisation
 }
 
@@ -729,6 +729,122 @@ function supprimerTousLesVetements() {
 // Ajouter l'événement au bouton
 document.getElementById('supprimerVetements').addEventListener('click', supprimerTousLesVetements);
 
+
+
+// Ordre de scroll : hat -> tshirt -> pantalon -> shoes
+const clothingOrder = ["hat", "tshirt", "pantalon", "shoes"];
+let scrollStep = 0; // index dans l'ordre
+let isScrolling = false;
+
+// Fonction pour changer l'élément actif
+function scrollNextClothing() {
+
+  const partName = clothingOrder[scrollStep];
+  const part = clothingParts[partName];
+
+  // Simule un clic sur "next"
+  Object.keys(clothingParts).forEach(setupClothingNavigation);
+
+  // Prépare l'étape suivante
+  scrollStep = (scrollStep + 1) % clothingOrder.length;
+}
+
+// Blocage du scroll pendant l’animation
+
+// Gestion du scroll dans la section uniquement
+
+document.querySelector('.section1').addEventListener('wheel', (e) => {
+  const section = document.querySelector('.section1');
+  const rect = section.getBoundingClientRect();
+  const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+  if (!isInView || isScrolling || e.deltaY <= 0) return;
+
+  isScrolling = true; // bloquer
+  scrollNextClothing(); // changer de vêtement
+
+  // remettre à false après délai
+  setTimeout(() => {
+    isScrolling = false;
+  }, 300); // cooldown 1 seconde
+}, { passive: true });
+
+
+// const cursor = document.getElementById("custom-cursor");
+
+// document.addEventListener("mousemove", (e) => {
+//   cursor.style.top = `${e.clientY}px`;
+//   cursor.style.left = `${e.clientX}px`;
+// });
+
+const pastilleData = [
+  {
+    color: "blue",
+    title: "Bleu",
+    price: "40",
+  },
+  {
+    color: "red",
+    title: "Rouge",
+    price: "20",
+  },
+  {
+    color: "orange",
+    title: "Orange",
+    price: "60",
+  },
+  {
+    color: "green",
+    title: "Vert",
+    price: "30",
+  },
+];
+
+// Sélectionne le container
+const pastilleExplicationGrid = document.querySelector(".pastille-explication-grid");
+console.log(pastilleExplicationGrid);
+
+
+// Crée les éléments dynamiquement
+pastilleData.forEach(({ color, title, price, hasButton }) => {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("pastille-explication");
+
+  const img = document.createElement("img");
+  img.src = `./img/pastille/pastille-${color}.svg`;
+  img.alt = `pastille-${color}`;
+
+  const bg = document.createElement("div");
+  bg.classList.add("pastille-bg");
+
+  const h4 = document.createElement("h4");
+  h4.textContent = title;
+
+ 
+    const button = document.createElement("button");
+    button.classList.add("exemple");
+    button.textContent = "Exemple";
+  
+
+  const colorDiv = document.createElement("div");
+  colorDiv.classList.add("colorDiv")
+  colorDiv.style.backgroundColor=`var(--pastille-${color})`; // la classe dynamique
+
+  const p = document.createElement("p");
+  p.textContent =`${price}€ par kilo`;
+
+  // Ajout des éléments dans la structure
+  bg.appendChild(h4);
+      bg.appendChild(button);
+
+  bg.appendChild(colorDiv);
+  bg.appendChild(p);
+
+  wrapper.appendChild(img);
+  wrapper.appendChild(bg);
+  pastilleExplicationGrid.appendChild(wrapper);
+});
+
 document.querySelector(".blue-exemple").addEventListener("click", async () => {
   // Supprimer les vêtements existants
   supprimerTousLesVetements()
@@ -746,42 +862,3 @@ document.querySelector(".blue-exemple").addEventListener("click", async () => {
 
   updateUI(); // mettre à jour le poids/prix
 });
-
-
-// Ordre de scroll : hat -> tshirt -> pantalon -> shoes
-const clothingOrder = ["hat", "tshirt", "pantalon", "shoes"];
-let scrollStep = 0; // index dans l'ordre
-let isScrolling = false;
-
-// Fonction pour changer l'élément actif
-function scrollNextClothing() {
-  console.log("gfhgfh");
-  
-  const partName = clothingOrder[scrollStep];
-  const part = clothingParts[partName];
-
-  // Simule un clic sur "next"
-  part.nextBtn.click();
-
-  // Prépare l'étape suivante
-  scrollStep = (scrollStep + 1) % clothingOrder.length;
-}
-
-// Blocage du scroll pendant l’animation
-
-// Gestion du scroll dans la section uniquement
-console.log(document.querySelector('.section1'));
-
-document.querySelector('.section1').addEventListener('wheel', (e) => {
-  // Ne bloque pas le scroll → pas de preventDefault()
-  console.log(",dfs");
-  
-  // Option : détecter seulement si l'utilisateur est visible dans la section
-  const section = document.querySelector('.section1');
-  const rect = section.getBoundingClientRect();
-  const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-  if (isInView && e.deltaY > 0) {
-    scrollNextClothing();
-  }
-}, { passive: true }); // Doit être passive:true pour permettre le scroll

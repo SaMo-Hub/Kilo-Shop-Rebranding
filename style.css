@@ -2,49 +2,88 @@
   margin: 0;
   padding: 0;
   display: block;
-  font-family: Mabry;
-  letter-spacing: -0.5px;
-  font-weight: normal;
 }
 
-html, body {
+:root {
+  --primary-color: #181651;
+  --primary-100: #D1D0DC;
+  --primary-200: #BAB9CB;
+  --primary-300: #A3A2B9;
+  --primary-400: #8B8AA8;
+  --primary-500: #747397;
+  --primary-600: #5D5C85;
+  --primary-700: #464574;
+  --primary-800: #2F2D62;
+  --primary-50: #E8E8EE;
+  --primary-500: #747397;
+
+
+  --secondary-color: #f1e8ca;
+
+  --primary-font: "OBO Starter";
+  --secondary-font: "Mabry";
+  --tiersary-font :'Kilo Shop';
+  --pastille-blue: #0059f7;
+  --pastille-red: #df271c;
+  --pastille-green: #05cc75;
+  --pastille-orange: #f07508;
+}
+/* #custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 30px; /
+  height: 30px;
+}
+
+#custom-cursor img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+} */
+html,
+body {
+  background-color: var(--secondary-color);
+  font-family: var(--secondary-font);
   overflow: auto !important;
 }
 
 @font-face {
-  font-family: "Advercase";
-  src: url('./font/AdvercaseFont-Demo-Regular.otf');
+  font-family: "OBO Starter";
+  src: url("./font/obostartest-regular.otf");
+}
+@font-face {
+  font-family: "Kilo Shop";
+  src: url("./font/KiloShop\ Medium-normal-500-100.ttf");
 }
 @font-face {
   font-family: "Mabry";
-  src: url('./font/MabryPro-Light.ttf') format('truetype');
+  src: url("./font/MabryPro-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
-
-
-
 @font-face {
   font-family: "Mabry";
-  src: url('./font/MabryPro-Medium.ttf') format('truetype');
+  src: url("./font/MabryPro-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
-
 @font-face {
   font-family: "Mabry";
-  src: url('./font/MabryPro-Bold.ttf') format('truetype');
+  src: url("./font/MabryPro-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Mabry";
-  src: url('./font/MabryPro-Black.ttf') format('truetype');
+  src: url("./font/MabryPro-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
-
-
 
 body {
   position: relative;
@@ -52,70 +91,111 @@ body {
   /* font-weight: normal; */
 }
 
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+      color: var(--primary-color);
+
+}
+header p{
+  margin-top: 20px;
+ width: 90%;
+ font-size: 20px;
+}
+header img{
+ width: 60%;
+ height: auto;
+ object-fit: cover;
+}
+
+.section {
+  padding: 140px 60px;
+}
+h2 {
+  font-family: var(--primary-font);
+  font-weight: normal;
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.pesez, .emportez,  h2{
+    color: var(--primary-color);
+
+}
 .list-pastille {
   display: flex;
   position: relative;
   gap: 12px;
   z-index: 50;
   flex-wrap: wrap;
-  margin-left: 40px;
-  padding-top: 40px;
+
 }
 .button-pastille {
+  height: fit-content;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: rgba(255, 255, 255, 0.274);
+  background-color: rgba(255, 255, 255, 0);
   border: 0;
   padding: 10px;
   font-size: 16px;
   color: white;
   font-weight: 500;
   cursor: pointer;
+  border: 2px solid;
+  border-color: currentColor;
+      font-family: var(--secondary-font-font);
+
 }
-.button-pastille.selected {
+.button-pastille:hover {
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: white;
+  background-color: #E8E8EE;
   border: 0;
   padding: 10px;
   font-size: 16px;
-  color: #008bff;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid;
+  border-color: currentColor;
+}
+.button-pastille.selected {
+  
+  border-color: currentColor;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color);
+  border: 0;
+  padding: 10px;
+  font-size: 16px;
+    border: 2px solid;
+  color: currentColor;
 }
 
-.rond-rouge {
+.rond {
   border-radius: 99px;
   height: 16px;
   width: 16px;
-  background-color: red;
 }
-.rond-bleu {
-  border-radius: 99px;
-  height: 16px;
-  width: 16px;
-  background-color: blue;
-}
-.rond-orange {
-  background-color: orange;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-}
-
-.rond-vert {
-  background-color: green;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-}
-
 .flex {
   display: flex;
   width: 100%;
 }
 
+.h2-Choisisez {
+  color: var(--secondary-color);
+}
+.balance{
+    padding-bottom: 90px;
+
+}
 #balanceContainer {
   position: relative;
   width: 300px;
@@ -128,11 +208,11 @@ body {
 
 #needle {
   position: absolute;
-  bottom: 45%;
+  bottom: 44%;
   left: 50%;
-  width: 10px;
+  width: 12px;
   height: 220px;
-  background: #e74c3c;
+  background: #181651;
   transform-origin: bottom center;
   transform: rotate(-45deg);
   transition: transform 0.3s ease;
@@ -158,22 +238,12 @@ body {
 }
 
 .balance {
-  background-color: #008bff;
+  /* background-color: var(--primary-color); */
   position: relative;
-}
-
-.haut {
-  width: fit-content;
-}
-
-.bas {
-  width: fit-content;
-  position: relative;
-  top: -90px;
-  z-index: 5;
 }
 
 .balanceimg {
+
   position: absolute;
   pointer-events: none;
   display: flex;
@@ -196,7 +266,7 @@ body {
   padding: 10px;
   align-items: flex-start;
   gap: 10px;
-  background-color: #ed6e18;
+  background-color: #464574;
   line-height: 20px;
 }
 canvas {
@@ -208,7 +278,7 @@ canvas {
 
 .relative {
   position: relative;
-  margin-top: 90px;
+  margin-top: 90px ;
   height: 600px;
 }
 
@@ -219,7 +289,7 @@ canvas {
   flex: 1 0 0;
   align-self: stretch;
   background: white;
-  color: #ed6e18;
+  color: #464574;
 }
 .kg {
   display: flex;
@@ -236,40 +306,37 @@ canvas {
   font-size: 14px;
 }
 .balanceNumber {
-  font-family: "FK Raster Grotesk Trial";
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -1.2px;
+font-weight: normal;
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 745px) {
-  body {
-    background-color: lightblue;
-  }
-  .haut {
-    width: 80vw;
-  }
-  .bas {
-    width: 200px;
-  }
-  .balanceimg {
-    display: none;
-  }
+
+.haut {
+  width: fit-content;
 }
 
+.bas {
+  width: fit-content;
+  position: relative;
+  top: -90px;
+  z-index: 5;
+}
 .changeHat {
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
-
 
 .tenue {
+  justify-content: center;
+  justify-items: center;
   align-items: center;
   display: flex;
   flex-direction: column;
+
 }
 
 .tshirt {
@@ -278,15 +345,11 @@ canvas {
 }
 .pantalon {
   margin-top: -5px;
-
 }
-.prevButton {
-  display: flex;
-  flex-direction: column;
-  gap: 140px;
-  justify-content: space-between;
+.shoes{
+    margin-top: 6px;
+  position: relative;
 }
-
 .validating {
   animation: pulse 1s;
 }
@@ -319,25 +382,24 @@ canvas#world {
   z-index: 50;
   overflow: hidden;
 }
+
+.section1 {
+  background: var(--primary-color);
+}
+
 .pastille-section {
-  background: #ed6e18;
-  padding: 60px 40px;
+  background: var(--primary-color);
 }
 .pastille-section h2 {
-  font-family: Advercase;
-  font-weight: normal;
-  color: #fff;
-  font-size: 80px;
-  text-transform: uppercase;
+  color: var(--secondary-color);
 }
 .pastille-explication {
   display: flex;
   flex-direction: column;
+    color: var(--primary-color);
+
 }
-.pastille-explication {
-  display: flex;
-  flex-direction: column;
-}
+
 .pastille-explication button {
   background-color: rgb(0, 0, 0);
   border: 0;
@@ -349,13 +411,15 @@ canvas#world {
 .pastille-explication h4 {
   letter-spacing: 0px;
 
-  font-family: Advercase;
-  font-size: 30px;
+  font-family: var(--primary-font);
+  font-size: 2.6vw;
   text-transform: uppercase;
   font-weight: normal;
 }
 .pastille-bg {
-  background: #fff;
+  position: relative;
+  top: -px;
+  background: var(--secondary-color);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -363,7 +427,7 @@ canvas#world {
   gap: 20px;
   padding-bottom: 20px;
 }
-.bleu {
+.colorDiv {
   background: #008bff;
   width: 100%;
   height: 20px;
@@ -376,8 +440,6 @@ canvas#world {
 }
 
 .more-info {
-  
-  
   margin-left: auto;
   background: #fff;
   display: flex;
@@ -394,10 +456,353 @@ canvas#world {
   height: 0px;
 }
 
-
-.buttonCloth{
+.buttonCloth {
+  all: unset;
+  justify-content: center;
+  align-items: center;
   display: flex;
+  height: 40px;
+  width: 40px;
+  background: var(--primary-50);
+  font-size: 24px;
+  border: var(--primary-500) solid 3px;
+}
+.buttonCloth:hover {
+   all: unset;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 40px;
+  width: 40px;
+  background: var(--primary-100);
+  font-size: 24px;
+  border: var(--primary-500) solid 3px;
+}
+
+.prevButton {
+  margin-right: 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  justify-content: space-between;
+  position: relative;
+ 
+}
+.nextButton {
+    margin-left: 10vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  justify-content: space-between;
+  position: relative;
+
+}
+
+.validerTenue{
+  all:unset;
+  color: var(--primary-color);
+  width: fit-content;
+  background: var(--primary-50);
+  padding: 12px;
+    border: 2px var(--primary-50) solid;
+
+}
+.validerTenue:hover{
+  all:unset;
+    width: fit-content;
+
+  color: var(--primary-color);
+  background: var(--primary-100);
+  padding: 12px;
+    border: 2px var(--primary-100) solid;
+
+}
+.supprimerVetements{
+  all:unset;
+  text-transform: uppercase;
+  margin-top: 0px;
+  margin-left: auto;
+  width: fit-content;
+  padding: 12px;
+  font-family: var(--secondary-font);
+  background: var(--primary-color);
+  border: 2px var(--primary-color) solid;
+  color: var(--secondary-color);
+}
+.supprimerVetements:hover{
+  all:unset;
+  text-transform: uppercase;
+
+    width: fit-content;
+  margin-left: auto;
+
+  padding: 12px;
+  font-family: var(--secondary-font);
+  background: var(--primary-800);
+  border: 2px var(--primary-800) solid;
+  color: var(--secondary-color);
+}
+.balance {
+  padding: 24px;
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.supprimerVetementsParent{
+  display: flex;
+}
+.parent{
+  display: flex;
+}
+.clothsButton{
+  text-transform: uppercase;
+  margin-top: 150px;
+  font-family: var(--secondary-font);
+  display: flex ;
+  gap: 12px;
+  position: relative;
+}
+
+.pesez-pastille{
+  gap: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.walk-cycle{
+ margin-top: 120px;
+  height: 350px;
+}
+
+.emportez{
+  position: relative;
+}
+
+.emportezSencor{
+  z-index: -1;
+  background-color: #00000024;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 20em;
+}
+
+.kiloshopLogoTypographique{
+  width: 100%;
+}
+footer{
+  font-weight: lighter;
+  color: var(--secondary-color);
+  background: var(--primary-color);
+}
+.footer-flex{
+  margin-top: 180px;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 40px;
+}
+.navbar{
+  padding: 40px 60px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+ul{
+  justify-items: center;
+  display: flex;
+  gap: 12px;
+  
+}
+
+.logo-flex{
+    align-items: center;
+gap: 12px;
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+.bar {
+  height: 1.5px;
+  width: 16px;
+  background-color: var(--secondary-color); /* Couleur par défaut */
+  position: absolute;
+  left: 0;
+  transition: all 0.5s ease;
+}
+
+.bar1 {
+  top: 8px;
+}
+
+.bar2 {
+  top: 14px;
+}
+
+.menu-open .bar1 {
+  transform: rotate(45deg) translateY(3px);
+
+}
+
+.menu-open .bar2 {
+  transform: rotate(-45deg) translateY(-4px);
+
+}
+
+.overlay{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: var(--primary-font);
+  height: 100vh;
+transform: translateY(-150px);
+}
+.overlay ul{
+ display: flex;
+ flex-direction: column;
+ font-size: 8vw;
+ gap: 0px;
+}
+.overlay li{
+ padding: 40px 40px;
+}
+.overlay li:hover{
+ background-color: var(--primary-700);
+ padding: 40px 40px;
+}
+
+@media screen and (max-width: 955px) {
+  .menu-toggle{
+    display: block;
+  }
+  .navbar ul{
+    display: none;
+  }
+  header{
+  flex-direction: column;
+}
+.navbar{
+  padding: 40px 40px;
+}
+header img{
+  width: 100%;
+}
+
+.pesez-pastille{
+    align-items: start;
+
+  flex-direction: column;
+}
+}
+
+
+@media screen and (max-width: 745px) {
+
+ .prevButton{
+  left: 0%;
+ }
+ .nextButton{
+  right: 0%;
+ }
+  h2 {
+    font-size: 50px;
+  }
+  .section {
+    padding: 50px 40px;
+  }
+  .balanceimg {
+    width: 180px; /* par exemple */
+    opacity: 50%  ;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    top: 0px;
+  }
+
+ 
+}
+
+
+@media screen and (max-width: 739px) {
+ 
+ .pastille-explication h4 {
+    font-size: 4vw;
+  }
+  .buttonCloth {
+ 
   height: 20px;
   width: 20px;
-  background: white;
+  font-size: 12px;
+}
+   .tenue img{
+    width: 350px;
+  }
+
+.tshirt {
+  margin-top: -400px;
+  position: relative;
+}
+.pantalon {
+  margin-top: -5px;
+}
+}
+
+
+@media screen and (max-width: 569px) {
+    .clothsButton{
+  flex-direction: column;
+  align-items: end;
+}
+ .pastille-explication h4 {
+    font-size: 5vw;
+  }
+  .relative{
+    margin-top: 0;
+  }
+   
+    .tenue img{
+    width: 250px;
+  }
+
+.tshirt {
+  margin-top: -284px;
+  position: relative;
+}
+.pantalon {
+  margin-top: -5px;
+}
+}
+
+@media screen and (max-width: 399px) {
+  .balanceimg {
+   
+    transform: translateX(-50%) scale(0.8);
+    top: 0px;
+  }
+ .pastille-explication h4 {
+    font-size: 11vw;
+  }
+
+  .tenue img{
+    width: 200px;
+  }
+
+.tshirt {
+  margin-top: -228px;
+  position: relative;
+}
+.pantalon {
+  margin-top: -5px;
+}
 }

@@ -1,101 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- <title>Kilo shop</title> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Kilo shop</title>
     <!-- Inclusion de Matter.js depuis un CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
   </head>
   <body>
-    <section  class="section1">
-      <div class="changeHat">
-          <div class="prevButton">
-              <button class="buttonCloth" id="prevHat"><</button>
-              <button class="buttonCloth"  id="prevTshirt"><</button>
-              <button class="buttonCloth"  id="prevLower"><</button>
-              <button class="buttonCloth"  id="prevShoes"><</button>
-          </div>
-          <div class=" tenue outfit-selection" >
-            
-              <img id="hatImage" src="./img/hat/casquette.svg" alt="">
-              <img  id="mascot" src="./img//mascotte.svg" alt="">
-              <img id="upperBodyImage" class=" tshirt" src="./img/upperBody/tshirt-white.svg" alt="">
-              <img id="lowerBodyImage" class="pantalon" src="./img/lowerBody/jean-blue.svg" alt="">
-              <img  id="shoesImage" class="" src="./img/shoes/chaussureRouge.svg" alt="fffffffff">
-          </div>
-          <div class="prevButton">
-              <button id="nextHat">></button>
-              <button id="nextTshirt">></button>
-              <button id="nextLower">></button>
-              <button id="nextShoes">></button>
-          </div>
+    <nav>
+      <div class="navbar">
+        <div class="logo-flex">
+          <img src="./iconlogo.svg" alt="" />
+          <ul>
+            <li>Concept</li>
+            <li>Je depose</li>
+            <li>Notre mission</li>
+            <li>Shop</li>
+            <li>Looks</li>
+          </ul>
+        </div>
+        <ul>
+          <li>
+            Langue
+            <img src="" alt="" />
+          </li>
+          <li>
+            Pays
+            <img src="" alt="" />
+          </li>
+          <li>
+            Mon compte
+            <img src="" alt="" />
+          </li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">
+          <div class="bar bar1"></div>
+          <div class="bar bar2"></div>
+        </div>
       </div>
-      <button id="validerTenue">
-        Valider la tenue
-      </button>
-      <button id="supprimerVetements">Supprimer tous les vêtements</button>
-
+      <div class="overlay">
+          <ul>
+            <li>Concept</li>
+            <li>Je depose</li>
+            <li>Notre mission</li>
+            <li>Shop</li>
+            <li>Looks</li>
+          </ul>
+      </div>
+    </nav>
+    <header class="section">
       <div>
-          <p id="hatTexte">
-              pastille : 
-          </p>
-          <p id="upperBodyText">
-              pastille : 
-          </p>
-          <p id="lowerBodyText">
-              pastille : 
-          </p>
-          <p id="shoesText">
-              pastille : 
-          </p>
+        <h2>
+          UN KILO <br />
+          C'EST KOI ?
+        </h2>
+        <p>
+          Un kilo de plume, c’est pareil qu’un kilo de plomb (même si une
+          doudoune en plume, c’est plus pratique qu’une doudoune en plomb).
+          <br /><br />
+          Alors ok, une robe en soie, ça ne pèse pas lourd. Sauf que sa matière
+          première vaut plus que celle d’une robe en coton…
+          <br /><br />
+          Donc, chez Kilo Shop, on a fait simple : à chaque vêtement ou
+          accessoire, son bip de couleur qui correspond à un prix/kg selon les
+          matières.
+          <br /><br />
+          En gros, 1 kilo by Kilo Shop, c’est 3 à 6 pièces uniques dans votre
+          panier.
+        </p>
       </div>
-  </section>
-    <section class=" balance">
-      <div class="cotainer-info">
-        <div class="more-info">
-          <h4>Filtrer</h4>
-          <hr>
-          <h3>Couleur</h3>
-          <div>
-            <button>vert</button>
-            <button>bleu</button>
+      <img src="./headerImg.png" alt="" />
+    </header>
+    <section class="section section1">
+      <h2 class="h2-Choisisez">Choisissez</h2>
+
+      <div class="changeHat">
+        <!-- <div class="prevButton">
+          <button class="buttonCloth" id="prevHat">
+            <p><</p>
+          </button>
+          <button class="buttonCloth" id="prevTshirt"><</button>
+          <button class="buttonCloth" id="prevLower"><</button>
+          <button class="buttonCloth" id="prevShoes"><</button>
+        </div> -->
+        <div class="tenue outfit-selection">
+          <img id="hatImage" src="./img/hat/casquette.svg" alt="" />
+          <img id="mascot" src="./img//mascotte.svg" alt="" />
+          <img
+            id="upperBodyImage"
+            class="tshirt"
+            src="./img/upperBody/tshirt-white.svg"
+            alt=""
+          />
+          <img
+            id="lowerBodyImage"
+            class="pantalon"
+            src="./img/lowerBody/jean-blue.svg"
+            alt=""
+          />
+          <img
+            id="shoesImage"
+            class="shoes"
+            src="./img/shoes/shoes-red.svg"
+            alt="fffffffff"
+          />
+        </div>
+
+        <!-- <div class="nextButton">
+          <button class="buttonCloth" id="nextHat">></button>
+          <button class="buttonCloth" id="nextTshirt">></button>
+          <button class="buttonCloth" id="nextLower">></button>
+          <button class="buttonCloth" id="nextShoes">></button>
+        </div> -->
+      </div>
+      <!-- <div class="parent">
+          
+         <div class="clothsButton">
+           <button class="validerTenue" id="validerTenue">Valider la tenue</button>
           </div>
-          <hr>
-          <h3>Vetement</h3>
-          <div>
-            <button>Jeans</button>
-            <button>Tshirt</button>
+        </div> -->
+
+      <!-- <div>
+        <p id="hatTexte">pastille :</p>
+        <p id="upperBodyText">pastille :</p>
+        <p id="lowerBodyText">pastille :</p>
+        <p id="shoesText">pastille :</p>
+      </div> -->
+    </section>
+    <section class="">
+      <div class="section balance pesez">
+        <div class="pesez-pastille">
+          <h2>Pesez</h2>
+          <!-- <div class="cotainer-info">
+            <div class="more-info">
+              <h4>Filtrer</h4>
+              <hr />
+              <h3>Couleur</h3>
+              <div>
+                <button>vert</button>
+                <button>bleu</button>
+              </div>
+              <hr />
+              <h3>Vetement</h3>
+              <div>
+                <button>Jeans</button>
+                <button>Tshirt</button>
+              </div>
+            </div>
+          </div> -->
+          <div class="list-pastille">
+            <button
+              id="red"
+              class="button-pastille selected"
+              data-color="var(--pastille-red )"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-red)"
+              ></div>
+              <p>Pastille Rouge</p>
+            </button>
+
+            <button
+              id="blue"
+              class="button-pastille"
+              data-color="var(--pastille-blue )"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-blue)"
+              ></div>
+              <p>Pastille Bleu</p>
+            </button>
+
+            <button
+              id="orange"
+              class="button-pastille"
+              data-color="var(--pastille-orange)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-orange)"
+              ></div>
+              <p>Pastille Orange</p>
+            </button>
+
+            <button
+              id="vert"
+              class="button-pastille"
+              data-color="var(--pastille-green)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-green)"
+              ></div>
+              <p>Pastille Verte</p>
+            </button>
           </div>
         </div>
       </div>
-      <div class="list-pastille">
-        <button id="red" class="button-pastille selected" data-color="red">
-          <div class="rond-rouge"></div>
-          <p>Pastille Rouge</p>
-        </button>
-        
-        <button id="blue" class="button-pastille" data-color="blue">
-          <div class="rond-bleu"></div>
-          <p>Pastille Bleu</p>
-        </button>
-        
-        <button id="orange" class="button-pastille" data-color="orange">
-          <div class="rond-orange"></div>
-          <p>Pastille Orange</p>
-        </button>
-        
-        <button id="vert" class="button-pastille" data-color="vert">
-          <div class="rond-vert"></div>
-          <p>Pastille Verte</p>
-        </button>
-        
-      </div>
+      <!-- <div>
       <div>
         Plus d'info...
       </div>
-      <!-- <div class="flex">
+     <div class="flex">
         <div>
           <h4>Red:</h4>
           <div id="nombreRed">Dans la balance il y a : 0</div>
@@ -108,97 +217,100 @@
           <div id="poidBlue">Il y a : 0 kg</div>
           <div id="prixBlue">Prix de la balance : 0€</div>
         </div>
+      </div> 
       </div> -->
-      </div>
-    
-     
-      
-      <div class="relative">
 
-        <canvas id="world">
-          
-        </canvas>
+      <div class="relative">
+        <canvas id="world"> </canvas>
 
         <div class="balanceimg">
-          <img class="haut" src="./img/hautBlance.svg" alt="">
+          <img class="haut" src="./img/hautBlance.svg" alt="" />
           <div id="needle"></div>
-          <img class="bas" src="./img/basBlalance.svg" alt="">
+          <img class="bas" src="./img/basBlalance.svg" alt="" />
         </div>
         <div class="balanceText">
           <div class="euro">
-            <p id="prix" class="balanceNumber">
-              100.00
-            </p>
-            <p class="balanceMetric">
-              €
-            </p>
+            <p id="prix" class="balanceNumber">100.00</p>
+            <p class="balanceMetric">€</p>
           </div>
           <div class="kg">
-            <p id="poid" class="balanceNumber">
-              100.00
-            </p>
-            <p class="balanceMetric">
-              kg
-            </p>
+            <p id="poid" class="balanceNumber">100.00</p>
+            <p class="balanceMetric">kg</p>
           </div>
         </div>
-      
+      </div>
+      <div class="section supprimerVetementsParent">
+        <button class="supprimerVetements" id="supprimerVetements">
+          Supprimer tous les vêtements
+        </button>
       </div>
     </section>
-   <section class="section2 pastille-section">
+    <section class="section2 section pastille-section">
+      <h2>Pastille</h2>
+      <div class="pastille-explication-grid">
+        <!-- <div class="pastille-explication">
+          <img src="./img/pastille/pastille-blue.svg" alt="" />
+          <div class="pastille-bg">
+            <h4>Bleu</h4>
 
-<h2>
-  Pastille
-</h2>
-    <div class="pastille-explication-grid">
-      <div class="pastille-explication">
-        <img src="./pastille.svg" alt="">
-        <div class="pastille-bg">
-          <H4>ORANGE</H4>
-          <p>tshirt, Veste, Jeans</p>
-          
-          <div class="bleu"></div>
-          <p>20€ par kilo</p>
+            <div class="bleu"></div>
+            <p>20€ par kilo</p>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <section class="section emportez">
+      <h2>Emportez</h2>
+      <!-- <div class="emportezSencor">
+
+      </div> -->
+      <div>
+        <img
+          id="mascotte"
+          class="walk-cycle"
+          src="./walk-cycle/frame-1.svg"
+          alt=""
+        />
+      </div>
+    </section>
+    <footer class="section">
+      <img
+        class="kiloshopLogoTypographique"
+        src="./kiloshopLogoTypographique.svg"
+        alt=""
+      />
+
+      <div class="footer-flex">
+        <div>
+          <p>Devenir franchisé</p>
+          <p>Contact & FAQ</p>
+          <p>Recrutement</p>
+          <p>Carte cadeau</p>
+        </div>
+        <div>
+          <p>Mention legale</p>
+          <p>Politique de protection de données</p>
+          <p>Condition générale de vente</p>
+        </div>
+        <div>
+          <p>Facebook</p>
+          <p>Linkedin</p>
+          <p>Instagram</p>
         </div>
       </div>
-      <div class="pastille-explication">
-        <img src="./pastille.svg" alt="">
-        <div class="pastille-bg">
-          <H4>Bleu</H4>
-          <p>tshirt, Veste, Jeans</p>
-         
-          <div class="bleu"></div>
-          <p>20€ par kilo</p>
-        </div>
-      </div>
-      <div class="pastille-explication">
-        <img src="./pastille.svg" alt="">
-        <div class="pastille-bg">
-          <H4>Bleu</H4>
-          <p>tshirt, Veste, Jeans</p>
-          <button class="blue-exemple">
-            Exemple
-          </button>
-          <div class="bleu"></div>
-          <p>20€ par kilo</p>
-        </div>
-      </div>
-      <div class="pastille-explication">
-        <img src="./pastille.svg" alt="">
-        <div class="pastille-bg">
-          <H4>Bleu</H4>
-          <p>tshirt, Veste, Jeans</p>
-          <button class="blue-exemple">
-            Exemple
-          </button>
-          <div class="bleu"></div>
-          <p>20€ par kilo</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+      <p>@Kilo shop 2025 - Tous droits réservés</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+    <script src="walkcycle.js"></script>
+    <script>
+      function toggleMenu() {
+        const toggle = document.querySelector(".menu-toggle");
+        toggle.classList.toggle("menu-open");
+      }
+    </script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js"></script>
     <script type="module" defer src="script.js"></script>
   </body>
