@@ -84,7 +84,9 @@ body {
   font-weight: 900;
   font-style: normal;
 }
-
+.section {
+  padding: 140px 60px;
+}
 body {
   position: relative;
   inset: 0;
@@ -95,8 +97,10 @@ header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+      padding: 50px 40px;
   gap: 40px;
       color: var(--primary-color);
+      padding-bottom: 0px;
 
 }
 header p{
@@ -110,9 +114,7 @@ header img{
  object-fit: cover;
 }
 
-.section {
-  padding: 140px 60px;
-}
+
 h2 {
   font-family: var(--primary-font);
   font-weight: normal;
@@ -663,11 +665,18 @@ gap: 12px;
 }
 
 .overlay{
+  position: absolute;
   background-color: var(--primary-color);
   color: var(--secondary-color);
   font-family: var(--primary-font);
   height: 100vh;
-/* transform: translateY(-150px); */
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.9, 0, 0.1, 0.7) ;
+  z-index: 1000;  
+}
+.overlay.open{
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+ 
 }
 .overlay ul{
  display: flex;
@@ -684,6 +693,10 @@ gap: 12px;
 }
 
 @media screen and (max-width: 955px) {
+  .footer-flex{
+ flex-direction: column;
+  gap: 40px;
+}
   .menu-toggle{
     display: block;
   }
@@ -692,6 +705,8 @@ gap: 12px;
   }
   header{
   flex-direction: column;
+        padding-bottom: 0px;
+
 }
 .navbar{
   padding: 40px 40px;
@@ -717,11 +732,17 @@ header img{
   right: 0%;
  }
   h2 {
-    font-size: 50px;
+    font-size: 8vw;
   }
   .section {
     padding: 50px 40px;
   }
+   header{
+  flex-direction: column;
+    padding: 50px 40px;
+    padding-bottom: 0px;
+
+}
   .balanceimg {
     width: 180px; /* par exemple */
     opacity: 50%  ;

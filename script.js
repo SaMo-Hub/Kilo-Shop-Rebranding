@@ -727,7 +727,7 @@ function supprimerTousLesVetements() {
 }
 
 // Ajouter l'événement au bouton
-document.getElementById('supprimerVetements').addEventListener('click', supprimerTousLesVetements);
+// document.getElementById('supprimerVetements').addEventListener('click', supprimerTousLesVetements);
 
 
 

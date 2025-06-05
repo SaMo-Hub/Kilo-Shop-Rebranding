@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <title>Kilo shop</title> -->
+    <title>Kilo shop</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <!-- Inclusion de Matter.js depuis un CDN -->
   </head>
   <body>
@@ -40,16 +44,16 @@
         </div>
       </div>
       <div class="overlay">
-          <ul>
-            <li>Concept</li>
-            <li>Je depose</li>
-            <li>Notre mission</li>
-            <li>Shop</li>
-            <li>Looks</li>
-          </ul>
+        <ul>
+          <li>Concept</li>
+          <li>Je depose</li>
+          <li>Notre mission</li>
+          <li>Shop</li>
+          <li>Looks</li>
+        </ul>
       </div>
     </nav>
-    <header class="section">
+    <header class="">
       <div>
         <h2>
           UN KILO <br />
@@ -70,7 +74,9 @@
           panier.
         </p>
       </div>
-      <img src="./headerImg.png" alt="" />
+     <div>
+      <img src="./img/mascottequitientunpanneau.svg" alt="">
+     </div>
     </header>
     <section class="section section1">
       <h2 class="h2-Choisisez">Choisissez</h2>
@@ -239,12 +245,12 @@
           </div>
         </div>
       </div>
-      <div class="section supprimerVetementsParent">
+      <!-- <div class="section supprimerVetementsParent">
         <button class="supprimerVetements" id="supprimerVetements">
           Supprimer tous les vêtements
         </button>
       </div>
-    </section>
+    </section> -->
     <section class="section2 section pastille-section">
       <h2>Pastille</h2>
       <div class="pastille-explication-grid">
@@ -303,16 +309,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 
     <script src="walkcycle.js"></script>
-  <script>
-  function toggleMenu() {
-    const toggle = document.querySelector('.menu-toggle');
-    const overlay = document.querySelector('overlay');
-    console.log(overlay,'dfd');
-    
-    toggle.classList.toggle('menu-open');
-    overlay.classList.toggle('open');
-  }
-</script>
+    <script>
+      function toggleMenu() {
+        const toggle = document.querySelector(".menu-toggle");
+        const overlay = document.querySelector(".overlay");
+        console.log(overlay, "dfd");
+
+        toggle.classList.toggle("menu-open");
+        overlay.classList.toggle("open");
+      }
+    </script>
 
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
