@@ -15,26 +15,39 @@ const basBalance = "./img/basBalance.svg";
 let btnSelect = "red";
 const canvas = document.getElementById("world");
 const container = document.querySelector(".relative");
-const width = container.offsetWidth;
+
+const balanceText = document.querySelector(".balanceText");
+
+
+let width = container.offsetWidth;
 const height = container.offsetHeight;
 
 // Set REAL pixel size for canvas (important pour la netteté)
-canvas.width = width * window.devicePixelRatio;
 
 // Scale canvas display
-canvas.style.width = width + "px";
 
 
 const pastilleButtons = document.querySelectorAll(".button-pastille");
 
-pastilleButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    btnSelect = button.dataset.color;
+const buttons = document.querySelectorAll(".button-pastille");
 
-    pastilleButtons.forEach((btn) => btn.classList.remove("selected"));
+buttons.forEach(button => {
+  const color = button.getAttribute("data-color");
+
+      button.style.color = color;
+
+  button.addEventListener("click", () => {
+    // Tout remettre à blanc
+    buttons.forEach(btn => {
+      btn.classList.remove("selected");
+    });
+
+    // Sélectionner l'élément cliqué
     button.classList.add("selected");
+    button.style.color = color;
   });
 });
+
 
 window.decomp = decomp;
 const listCloth = {
@@ -44,101 +57,162 @@ const listCloth = {
       img: "./img/hat/casquette.svg",
       pastille: "red",
       kg: 0.18,
+      width: 20,
+      height: 20,
     },
     {
       name: "casquette",
       img: "./img/hat/casquetterouge.svg",
       pastille: "blue",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "casquette",
       img: "./img/hat/casquettebleu.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "casquette",
       img: "./img/hat/casquettejaune.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "casquette",
       img: "./img/hat/casquetterose.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "casquette",
       img: "./img/hat/casquetteviolet.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
     {
       name: "Chapeau",
       img: "./img/hat/casquettevert.svg",
       pastille: "red",
       kg: 0.18,
+      width: 30,
+      height: 30,
     },
   ],
   tshirt: [
     {
       name: "Tshirt Rouge",
-      img: "./img/upperBody/tshirt.svg",
+      img: "./img/upperBody/tshirt-white.svg",
       pastille: "red",
       kg: 0.15,
+      width: 30,
+      height: 30,
     },
     {
       name: "jaune",
-      img: "./img/upperBody/tshirtjaune.svg",
+      img: "./img/upperBody/tshirt-orange.svg",
       pastille: "blue",
       kg: 0.15,
+      width: 30,
+      height: 30,
     },
     {
       name: "vert",
-      img: "./img/upperBody/tshirtvert.svg",
+      img: "./img/upperBody/tshirt-blue.svg",
       pastille: "red",
       kg: 0.15,
+      width: 30,
+      height: 30,
     },
     {
-      name: "Veste",
-      img: "./img/veste.svg",
-      pastille: "red",
-      kg: 0.8,
+      name: "vert",
+      img: "./img/upperBody/tshirt-red.svg",
+      pastille: "vert",
+      kg: 0.15,
+      width: 30,
+      height: 30,
     },
+   
   ],
   pantalon: [
     {
-      name: "rose",
-      img: "./img/lowerBody/pantalonbleu.svg",
-      pastille: "red",
-      kg: 0.8,
-    },
-    {
-      name: "jaune",
-      img: "./img/lowerBody/pantalonjaune.svg",
+      name: "jean",
+      img: "./img/lowerBody/jean-blue.svg",
       pastille: "blue",
       kg: 0.8,
+      width: 30,
+      height: 30,
     },
     {
-      name: "vert",
-      img: "./img/lowerBody/pantalonrouge.svg",
-      pastille: "vert",
+      name: "jean",
+      img: "./img/lowerBody/jean-red.svg",
+      pastille: "red",
       kg: 0.8,
+      width: 30,
+      height: 30,
     },
     {
-      name: "vert",
-      img: "./img/lowerBody/pantalonvert.svg",
-      pastille: "vert",
+      name: "jean",
+      img: "./img/lowerBody/jean-orange.svg",
+      pastille: "red",
       kg: 0.8,
+      width: 30,
+      height: 30,
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/jean-white.svg",
+      pastille: "red",
+      kg: 0.8,
+      width: 30,
+      height: 30,
+    },
+   
+  ],
+  shoes: [
+    {
+      name: "Chaussere",
+      img: "./img/shoes/shoes-red.svg",
+      pastille: "orange",
+      kg: 0.56,
+      width: 30,
+      height: 30
+    },
+    {
+      name: "Chaussere",
+      img: "./img/shoes/shoes-blue.svg",
+      pastille: "rouge",
+      kg: 0.56,
+      width: 30,
+      height: 30
+    },
+    {
+      name: "Chaussere",
+      img: "./img/shoes/shoes-green.svg",
+      pastille: "rouge",
+      kg: 0.56,
+      width: 30,
+      height: 30
+    },
+    {
+      name: "Chaussere",
+      img: "./img/shoes/shoes-orange.svg",
+      pastille: "rouge",
+      kg: 0.56,
+      width: 30,
+      height: 30
     },
   ],
-  shoes:[
-    {name:"Chaussere", img:"./img/shoes/chaussure.svg", pastille:"orange", kg:0.560},
-    {name:"Chaussere", img:"./img/shoes/chaussureBleu.svg", pastille:"vert", kg:0.560},
-    {name:"Chaussere", img:"./img/shoes/chaussureRouge.svg", pastille:"rouge", kg:0.560},
-  ]
 };
 // Initialisation de Matter
 const engine = Engine.create();
@@ -147,9 +221,8 @@ const render = Matter.Render.create({
   canvas: canvas,
   engine: engine,
   options: {
-    width: canvas.width,
+    width: width,
     height: 600,
-    pixelRatio: window.devicePixelRatio,
     background: "transparent",
     wireframes: false
   }
@@ -160,27 +233,26 @@ Runner.run(Runner.create(), engine);
 
 // Sol et structure
 // const ground = Matter.Bodies.rectangle(0, 590, 4000, 30, { isStatic: true });
-let sacBase = Matter.Bodies.rectangle(width / 2, 490, width * 0.8, 26, {
+let sacBase = Matter.Bodies.rectangle(width / 2, 490, balanceText.getBoundingClientRect().width, 26, {
   isStatic: true,
-  render: { visible: true },
+  render: { visible: false },
 });
-let balanceGround = Matter.Bodies.rectangle(width / 1.5, 440, 300, 25, {
+let balanceGround = Matter.Bodies.rectangle(width / 1.5, 440, 300, 26, {
   isStatic: true,
-  render: { fillStyle: "#82BC43" },
+  render: { fillStyle: "#0059F7" },
 });
 let balance = Matter.Bodies.rectangle(width / 1.5, 465, 90, 25, {
   isStatic: true,
-  render: { fillStyle: "#FBBB28" },
+  render: { fillStyle: "#0059F7" },
 });
 function updateCanvasSize() {
-  const width = container.offsetWidth;
-  console.log(width);
-  
-  canvas.width = width * window.devicePixelRatio;
-  // canvas.height = height * window.devicePixelRatio;
-  canvas.style.width = width + "px";
 
-  render.canvas.width = canvas.width;
+  const width = container.offsetWidth;
+  // canvas.width = width * window.devicePixelRatio;
+  // // canvas.height = height * window.devicePixelRatio;
+  canvas.width = width;
+
+  // render.canvas.width = canvas.width;
   // render.options.width = canvas.width;
 }
 
@@ -196,11 +268,14 @@ const mouseConstraint = MouseConstraint.create(engine, {
 World.add(world, mouseConstraint);
 
 render.mouse = mouse;
-engine.gravity.y = 1;
+engine.gravity.y = 4;
 
 World.add(world, [sacBase, balanceGround, balance]);
 
-
+render.canvas.addEventListener('wheel', function (e) {
+  e.stopPropagation(); // Empêche Matter.js d’intercepter
+  // NE PAS mettre e.preventDefault(); ici
+}, { passive: true }); // passive = on autorise le scroll
 // Capteur de balance
 const balanceSensor = Matter.Bodies.rectangle(width / 1.5, 388, 300, 80, {
   isStatic: true,
@@ -213,9 +288,13 @@ function repositionElements() {
   const isSmall = width <= 730;
   const centerX = width / 2;
   const balanceX = isSmall ? centerX : width / 1.5;
+  const rect = balanceText.getBoundingClientRect();
+
+
 
   Matter.Body.setPosition(sacBase, { x: centerX, y: 490 });
-  Matter.Body.setVertices(sacBase, Matter.Vertices.fromPath(`0 0 ${width * 0.8} 0 ${width * 0.8} 26 0 26`));
+ 
+  Matter.Body.setVertices(sacBase, Matter.Vertices.fromPath(`0 0 ${rect.width} 0 ${rect.width} 20 0 20`));
 
   Matter.Body.setPosition(balanceGround, { x: balanceX, y: 440 });
   Matter.Body.setPosition(balance, { x: balanceX, y: 465 });
@@ -231,7 +310,7 @@ function handleResize() {
 window.addEventListener("resize", handleResize);
 
 // Appel initial
-// handleResize();
+handleResize();
 // 🔁 Fonction pour transformer un path SVG en vertices
 function parsePathToVertices(path, sampleLength = 2) {
   const svgNS = "http://www.w3.org/2000/svg";
@@ -458,7 +537,7 @@ render.canvas.addEventListener("mouseup", async (event) => {
     const blueItems = Object.values(listCloth)
       .flat()
       .filter((item) => item.pastille === "vert");
-    console.log(blueItems);
+ 
     
     const item = blueItems[Math.floor(Math.random() * blueItems.length)];
     await createImage(x, y, item.img, item.kg, "vert");
@@ -488,13 +567,13 @@ const sectionBalance = document.querySelector(".balance");
 
 const selectedCloth = [
   {
-    img: "listCloth.hat[0].img" ,
+    img: listCloth.hat[0].img ,
     pastille: listCloth.hat[0].pastille,
     kg: listCloth.hat[0].kg,
   },
 
   {
-    img: "listCloth.tshirt[0].img",
+    img: listCloth.tshirt[0].img,
     kg: listCloth.tshirt[0].kg,
     pastille: listCloth.tshirt[0].pastille
   },
@@ -510,7 +589,7 @@ const selectedCloth = [
   },
 ];
 
-const validerTenue = document.getElementById("validerTenue");
+// const validerTenue = document.getElementById("validerTenue");
 const hatImage = document.getElementById("hatImage");
 const upperBodyImage = document.getElementById("upperBodyImage");
 const lowerBodyImage = document.getElementById("upperBodyImage");
@@ -521,15 +600,15 @@ const upperBodyText = document.getElementById("upperBodyText");
 const lowerBodyText = document.getElementById("lowerBodyText");
 const shoesText = document.getElementById("shoesText");
 
-const nextHat = document.getElementById("nextHat");
-const nextTshirt = document.getElementById("nextTshirt");
-const nextLower = document.getElementById("nextLower");
-const nextShoes = document.getElementById("nextShoes");
+// const nextHat = document.getElementById("nextHat");
+// const nextTshirt = document.getElementById("nextTshirt");
+// const nextLower = document.getElementById("nextLower");
+// const nextShoes = document.getElementById("nextShoes");
 
-const prevHat = document.getElementById("prevHat");
-const prevTshirt = document.getElementById("prevTshirt");
-const prevLower = document.getElementById("prevLower");
-const prevShoes = document.getElementById("prevShoes");
+// const prevHat = document.getElementById("prevHat");
+// const prevTshirt = document.getElementById("prevTshirt");
+// const prevLower = document.getElementById("prevLower");
+// const prevShoes = document.getElementById("prevShoes");
 // Liste des chemins vers les images des chapeaux
 let currentIndex = 0;
 
@@ -537,9 +616,10 @@ let hasValidatedOnScroll = false;
 
 const observer = new IntersectionObserver(
   (entries) => {
+    
     entries.forEach((entry) => {
       if (entry.isIntersecting && !hasValidatedOnScroll) {
-        validerTenue.click();
+        validerTenue()
         hasValidatedOnScroll = true;
         observer.unobserve(entry.target); // Arrête d'observer après déclenchement
       }
@@ -553,28 +633,27 @@ observer.observe(document.querySelector(".balance"));
 // Modifiez votre fonction de validation pour éviter les déclenchements multiples
 let isValidationInProgress = false;
 
-validerTenue.addEventListener("click", async () => {
+async function validerTenue   () {
+    const centerX = width /1.5;
+
   if (isValidationInProgress) return;
   isValidationInProgress = true;
 
   try {
     for (const item of selectedCloth) {
-      console.log(item,"dgffg");
       
-      await createImage(520, 20, item.img, item.kg, item.pastille);
+      await createImage(centerX, 20, item.img, item.kg, item.pastille);
       await new Promise((resolve) => setTimeout(resolve, 200));
     }
   } finally {
     isValidationInProgress = false;
   }
-});
+};
 const clothingParts = {
   hat: {
     list: listCloth.hat,
     imageEl: document.getElementById("hatImage"),
     textEl: document.getElementById("hatTexte"),
-    nextBtn: document.getElementById("nextHat"),
-    prevBtn: document.getElementById("prevHat"),
     index: 0,
     selectedIndex: 0,
     clothIndex: 0 // index dans selectedCloth
@@ -593,8 +672,6 @@ const clothingParts = {
     list: listCloth.pantalon,
     imageEl: document.getElementById("lowerBodyImage"),
     textEl: document.getElementById("lowerBodyText"),
-    nextBtn: document.getElementById("nextLower"),
-    prevBtn: document.getElementById("prevLower"),
     index: 0,
     selectedIndex: 0,
     clothIndex: 2
@@ -603,8 +680,6 @@ const clothingParts = {
     list: listCloth.shoes, // à remplir plus tard si besoin
     imageEl: document.getElementById("shoesImage"),
     textEl: document.getElementById("shoesText"),
-    nextBtn: document.getElementById("nextShoes"),
-    prevBtn: document.getElementById("prevShoes"),
     index: 0,
     selectedIndex: 0,
     clothIndex: 3
@@ -619,7 +694,6 @@ function setupClothingNavigation(partName) {
     const item = part.list[part.index];
     if (!item) return;
     part.imageEl.src = item.img;
-    part.textEl.textContent = `pastille : ${item.pastille}`;
     selectedCloth[part.clothIndex] = {
       img: item.img,
       kg: parseFloat(item.kg || 0),
@@ -627,16 +701,7 @@ function setupClothingNavigation(partName) {
     };
   };
 
-  part.nextBtn.addEventListener("click", () => {
     part.index = (part.index + 1) % part.list.length;
-    updateUI();
-  });
-
-  part.prevBtn.addEventListener("click", () => {
-    part.index = (part.index - 1 + part.list.length) % part.list.length;
-    updateUI();
-  });
-
   updateUI(); // Initialisation
 }
 
@@ -662,5 +727,140 @@ function supprimerTousLesVetements() {
 }
 
 // Ajouter l'événement au bouton
-document.getElementById('supprimerVetements').addEventListener('click', supprimerTousLesVetements);
+// document.getElementById('supprimerVetements').addEventListener('click', supprimerTousLesVetements);
 
+
+
+// Ordre de scroll : hat -> tshirt -> pantalon -> shoes
+const clothingOrder = ["hat", "tshirt", "pantalon", "shoes"];
+let scrollStep = 0; // index dans l'ordre
+let isScrolling = false;
+
+// Fonction pour changer l'élément actif
+function scrollNextClothing() {
+
+  const partName = clothingOrder[scrollStep];
+  const part = clothingParts[partName];
+
+  // Simule un clic sur "next"
+  Object.keys(clothingParts).forEach(setupClothingNavigation);
+
+  // Prépare l'étape suivante
+  scrollStep = (scrollStep + 1) % clothingOrder.length;
+}
+
+// Blocage du scroll pendant l’animation
+
+// Gestion du scroll dans la section uniquement
+
+document.querySelector('.section1').addEventListener('wheel', (e) => {
+  const section = document.querySelector('.section1');
+  const rect = section.getBoundingClientRect();
+  const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+  if (!isInView || isScrolling || e.deltaY <= 0) return;
+
+  isScrolling = true; // bloquer
+  scrollNextClothing(); // changer de vêtement
+
+  // remettre à false après délai
+  setTimeout(() => {
+    isScrolling = false;
+  }, 300); // cooldown 1 seconde
+}, { passive: true });
+
+
+// const cursor = document.getElementById("custom-cursor");
+
+// document.addEventListener("mousemove", (e) => {
+//   cursor.style.top = `${e.clientY}px`;
+//   cursor.style.left = `${e.clientX}px`;
+// });
+
+const pastilleData = [
+ 
+  {
+    color: "red",
+    title: "Rouge",
+    price: "20",
+  },
+   {
+    color: "green",
+    title: "Vert",
+    price: "30",
+  },
+   {
+    color: "blue",
+    title: "Bleu",
+    price: "40",
+  },
+  {
+    color: "orange",
+    title: "Orange",
+    price: "60",
+  },
+ 
+];
+
+// Sélectionne le container
+const pastilleExplicationGrid = document.querySelector(".pastille-explication-grid");
+console.log(pastilleExplicationGrid);
+
+
+// Crée les éléments dynamiquement
+pastilleData.forEach(({ color, title, price, hasButton }) => {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("pastille-explication");
+
+  const img = document.createElement("img");
+  img.src = `./img/pastille/pastille-${color}.svg`;
+  img.alt = `pastille-${color}`;
+
+  const bg = document.createElement("div");
+  bg.classList.add("pastille-bg");
+
+  const h4 = document.createElement("h4");
+  h4.textContent = title;
+
+ 
+    // const button = document.createElement("button");
+    // button.classList.add("exemple");
+    // button.textContent = "Exemple";
+  
+
+  const colorDiv = document.createElement("div");
+  colorDiv.classList.add("colorDiv")
+  colorDiv.style.backgroundColor=`var(--pastille-${color})`; // la classe dynamique
+
+  const p = document.createElement("p");
+  p.textContent =`${price}€ par kilo`;
+p.classList.add("p-pastille")
+  // Ajout des éléments dans la structure
+  bg.appendChild(h4);
+      // bg.appendChild(button);
+
+  bg.appendChild(colorDiv);
+  bg.appendChild(p);
+
+  wrapper.appendChild(img);
+  wrapper.appendChild(bg);
+  pastilleExplicationGrid.appendChild(wrapper);
+});
+
+document.querySelector(".blue-exemple").addEventListener("click", async () => {
+  // Supprimer les vêtements existants
+  supprimerTousLesVetements()
+  // Ajouter 3 vêtements bleus
+  const itemCloth = Object.values(listCloth)
+    .flat()
+    .filter((item) => item.pastille === "blue");
+
+  for (let i = 0; i < 3; i++) {
+    const item = itemCloth[Math.floor(Math.random() * itemCloth.length)];
+    const x = 100 + i * 100; // espacement horizontal
+    const y = 100; // hauteur fixe
+    await createImage(500, 0, item.img, item.kg, "blue");
+  }
+
+  updateUI(); // mettre à jour le poids/prix
+});

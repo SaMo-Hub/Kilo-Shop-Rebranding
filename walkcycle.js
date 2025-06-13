@@ -16,7 +16,7 @@ window.addEventListener('scroll', () => {
     // Pourcentage de scroll **dans** la section
     const sectionScroll = Math.min(Math.max(0, (window.innerHeight - mascotteRect.top) / (window.innerHeight + sectionRect.height)), 1);
 
-    mascotte.style.transform = `translateX(${sectionScroll * containerWidth}px)`;
+    mascotte.style.transform = `translateX(${(sectionScroll * (containerWidth)*2)}px)`;
 
     // Animation des frames
     const frame = Math.floor(scrollTop / 20) % 4 + 1;

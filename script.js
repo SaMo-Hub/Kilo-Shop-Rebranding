@@ -18,7 +18,6 @@ const container = document.querySelector(".relative");
 
 const balanceText = document.querySelector(".balanceText");
 
-
 let width = container.offsetWidth;
 const height = container.offsetHeight;
 
@@ -26,19 +25,18 @@ const height = container.offsetHeight;
 
 // Scale canvas display
 
-
 const pastilleButtons = document.querySelectorAll(".button-pastille");
 
 const buttons = document.querySelectorAll(".button-pastille");
 
-buttons.forEach(button => {
+buttons.forEach((button) => {
   const color = button.getAttribute("data-color");
 
-      button.style.color = color;
+  button.style.color = color;
 
   button.addEventListener("click", () => {
     // Tout remettre à blanc
-    buttons.forEach(btn => {
+    buttons.forEach((btn) => {
       btn.classList.remove("selected");
     });
 
@@ -48,169 +46,470 @@ buttons.forEach(button => {
   });
 });
 
-
 window.decomp = decomp;
 const listCloth = {
   hat: [
     {
       name: "casquette",
-      img: "./img/hat/casquette.svg",
+      img: "./img/hat/bob/canvasbob-red.svg",
+      htmlimg: "./img/hat/bob/bob-red.svg",
       pastille: "red",
       kg: 0.18,
-      width: 20,
-      height: 20,
+      size: 100,
+            part: "hat",
+
+      vetement: "bob",
     },
     {
       name: "casquette",
-      img: "./img/hat/casquetterouge.svg",
+      img: "./img/hat/bob/canvasbob-red.svg",
+      htmlimg: "./img/hat/bob/bob-red.svg",
+      pastille: "red",
+      kg: 0.18,
+      size: 100,
+            part: "hat",
+
+      vetement: "bob",
+    },
+    {
+      name: "casquette",
+      img: "./img/hat/bob/canvasbob-blue.svg",
+      htmlimg: "./img/hat/bob/bob-blue.svg",
       pastille: "blue",
       kg: 0.18,
-      width: 30,
-      height: 30,
+      size: 100,
+            part: "hat",
+
+      vetement: "bob",
     },
     {
       name: "casquette",
-      img: "./img/hat/casquettebleu.svg",
-      pastille: "red",
+      img: "./img/hat/bob/canvasbob-orange.svg",
+      htmlimg: "./img/hat/bob/bob-orange.svg",
+      pastille: "orange",
       kg: 0.18,
-      width: 30,
-      height: 30,
+      size: 100,
+            part: "hat",
+
+      vetement: "bob",
     },
     {
       name: "casquette",
-      img: "./img/hat/casquettejaune.svg",
-      pastille: "red",
+      img: "./img/hat/bob/canvasbob-green.svg",
+      htmlimg: "./img/hat/bob/bob-green.svg",
+      pastille: "vert",
       kg: 0.18,
-      width: 30,
-      height: 30,
+      size: 100,
+            part: "hat",
+  
+      vetement: "bob",
     },
     {
       name: "casquette",
-      img: "./img/hat/casquetterose.svg",
-      pastille: "red",
+      img: "./img/hat/chapeau/canvaschapeau-green.svg",
+      htmlimg: "./img/hat/chapeau/chapeau-green.svg",
+      pastille: "vert",
       kg: 0.18,
-      width: 30,
-      height: 30,
+      size: 120,
+            part: "hat",
+  
+      vetement: "chapeau",
     },
     {
       name: "casquette",
-      img: "./img/hat/casquetteviolet.svg",
-      pastille: "red",
+      img: "./img/hat/chapeau/canvaschapeau-orange.svg",
+      htmlimg: "./img/hat/chapeau/chapeau-orange.svg",
+      pastille: "orange",
       kg: 0.18,
-      width: 30,
-      height: 30,
+      size: 120,
+            part: "hat",
+  
+      vetement: "chapeau",
     },
     {
-      name: "Chapeau",
-      img: "./img/hat/casquettevert.svg",
+      name: "casquette",
+      img: "./img/hat/chapeau/canvaschapeau-blue.svg",
+      htmlimg: "./img/hat/chapeau/chapeau-blue.svg",
+      pastille: "blue",
+      kg: 0.18,
+      size: 120,
+            part: "hat",
+  
+      vetement: "chapeau",
+    },
+    {
+      name: "casquette",
+      img: "./img/hat/chapeau/canvaschapeau-red.svg",
+      htmlimg: "./img/hat/chapeau/chapeau-red.svg",
       pastille: "red",
       kg: 0.18,
-      width: 30,
-      height: 30,
+      size: 120,
+            part: "hat",
+  
+      vetement: "chapeau",
     },
+
   ],
   tshirt: [
     {
-      name: "Tshirt Rouge",
-      img: "./img/upperBody/tshirt-white.svg",
-      pastille: "red",
+      name: "tshirt",
+      img: "./img/upperBody/canvastshirt-orange.svg",
+      htmlimg: "./img/upperBody/tshirt-orange.svg",
+      pastille: "orange",
       kg: 0.15,
-      width: 30,
-      height: 30,
+      size: 200,
+      part: "upperbody",
+
+      vetement: "tshirt",
+    },
+    {
+      name: "tshirt",
+      img: "./img/upperBody/veste/canvasveste-orange.svg",
+      htmlimg: "./img/upperBody/veste/veste-orange.svg",
+      pastille: "orange",
+      kg: 0.15,
+      size: 280,
+      part: "upperbody",
+
+      vetement: "veste",
     },
     {
       name: "jaune",
-      img: "./img/upperBody/tshirt-orange.svg",
-      pastille: "blue",
-      kg: 0.15,
-      width: 30,
-      height: 30,
-    },
-    {
-      name: "vert",
-      img: "./img/upperBody/tshirt-blue.svg",
+      img: "./img/upperBody/veste/canvasveste-red.svg",
+      htmlimg: "./img/upperBody/veste/veste-red.svg",
       pastille: "red",
       kg: 0.15,
-      width: 30,
-      height: 30,
+      size: 280,
+      part: "upperbody",
+
+      vetement: "veste",
     },
     {
-      name: "vert",
-      img: "./img/upperBody/tshirt-red.svg",
+      name: "jaune",
+      img: "./img/upperBody/veste/canvasveste-blue.svg",
+      htmlimg: "./img/upperBody/veste/veste-blue.svg",
+      pastille: "blue",
+      kg: 0.15,
+      size: 280,
+      part: "upperbody",
+
+      vetement: "veste",
+    },
+    {
+      name: "jaune",
+      img: "./img/upperBody/veste/canvasveste-green.svg",
+      htmlimg: "./img/upperBody/veste/veste-green.svg",
       pastille: "vert",
       kg: 0.15,
-      width: 30,
-      height: 30,
+      size: 280,
+      part: "upperbody",
+
+      vetement: "veste",
     },
-   
+    {
+      name: "tshirt",
+      img: "./img/upperBody/pull/canvaspull-orange.svg",
+      htmlimg: "./img/upperBody/pull/pull-orange.svg",
+      pastille: "orange",
+      kg: 0.15,
+      size: 280,
+      part: "upperbody",
+
+      vetement: "pull",
+    },
+    {
+      name: "jaune",
+      img: "./img/upperBody/pull/canvaspull-red.svg",
+      htmlimg: "./img/upperBody/pull/pull-red.svg",
+      pastille: "red",
+      kg: 0.15,
+      size: 280,
+      part: "upperbody",
+
+      vetement: "pull",
+    },
+    {
+      name: "jaune",
+      img: "./img/upperBody/pull/canvaspull-blue.svg",
+      htmlimg: "./img/upperBody/pull/pull-blue.svg",
+      pastille: "blue",
+      kg: 0.15,
+      size: 280,
+      part: "upperbody",
+
+      vetement: "pull",
+    },
+    {
+      name: "jaune",
+      img: "./img/upperBody/pull/canvaspull-green.svg",
+      htmlimg: "./img/upperBody/pull/pull-green.svg",
+      pastille: "vert",
+      kg: 0.15,
+      size: 280,
+      part: "upperbody",
+
+      vetement: "pull",
+    },
+    {
+      name: "jaune",
+      img: "./img/upperBody/canvastshirt-green.svg",
+      htmlimg: "./img/upperBody/tshirt-green.svg",
+      pastille: "vert",
+      kg: 0.15,
+      size: 200,
+      part: "upperbody",
+
+      vetement: "tshirt",
+    },
+    {
+      name: "vert",
+      img: "./img/upperBody/canvastshirt-blue.svg",
+      htmlimg: "./img/upperBody/tshirt-blue.svg",
+      pastille: "blue",
+      kg: 0.15,
+      size: 200,
+      part: "upperbody",
+
+      vetement: "tshirt",
+    },
+    {
+      name: "vert",
+      img: "./img/upperBody/canvastshirt-red.svg",
+      htmlimg: "./img/upperBody/tshirt-red.svg",
+      pastille: "red",
+      kg: 0.15,
+      part: "upperbody",
+
+      size: 200,
+      vetement: "tshirt",
+    },
   ],
   pantalon: [
+     {
+      name: "jean",
+      img: "./img/lowerBody/short/canvasshort-green.svg",
+      htmlimg: "./img/lowerBody/short/short-green.svg",
+      pastille: "vert",
+      kg: 0.8,
+      size: 140,
+      part: "lowerbody",
+
+      vetement: "short",
+    },
     {
       name: "jean",
-      img: "./img/lowerBody/jean-blue.svg",
+      img: "./img/lowerBody/short/canvasshort-red.svg",
+      htmlimg: "./img/lowerBody/short/short-red.svg",
+      pastille: "red",
+      kg: 0.8,
+      size: 140,
+      part: "lowerbody",
+
+      vetement: "short",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/short/canvasshort-orange.svg",
+      htmlimg: "./img/lowerBody/short/short-orange.svg",
+      pastille: "orange",
+      kg: 0.8,
+      size: 140,
+      part: "lowerbody",
+
+      vetement: "short",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/short/canvasshort-blue.svg",
+      htmlimg: "./img/lowerBody/short/short-blue.svg",
       pastille: "blue",
       kg: 0.8,
-      width: 30,
-      height: 30,
+      size: 140,
+      part: "lowerbody",
+
+      vetement: "short",
     },
     {
       name: "jean",
-      img: "./img/lowerBody/jean-red.svg",
-      pastille: "red",
+      img: "./img/lowerBody/canvasjean-blue.svg",
+      htmlimg: "./img/lowerBody/jean-blue.svg",
+
+      pastille: "blue",
       kg: 0.8,
-      width: 30,
-      height: 30,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jean",
     },
     {
       name: "jean",
-      img: "./img/lowerBody/jean-orange.svg",
-      pastille: "red",
+      img: "./img/lowerBody/canvasjean-green.svg",
+      htmlimg: "./img/lowerBody/jean-green.svg",
+      pastille: "vert",
       kg: 0.8,
-      width: 30,
-      height: 30,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jean",
     },
     {
       name: "jean",
-      img: "./img/lowerBody/jean-white.svg",
+      img: "./img/lowerBody/canvasjean-red.svg",
+      htmlimg: "./img/lowerBody/jean-red.svg",
       pastille: "red",
       kg: 0.8,
-      width: 30,
-      height: 30,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jean",
     },
+    {
+      name: "jean",
+      img: "./img/lowerBody/canvasjean-orange.svg",
+      htmlimg: "./img/lowerBody/jean-orange.svg",
+      pastille: "orange",
+      kg: 0.8,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jean",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/canvasjean-blue.svg",
+      htmlimg: "./img/lowerBody/jean-blue.svg",
+      part: "lowerbody",
+
+      pastille: "blue",
+      kg: 0.8,
+      size: 180,
+
+      vetement: "jean",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/canvasjean-green.svg",
+      htmlimg: "./img/lowerBody/jean-green.svg",
+      pastille: "vert",
+      kg: 0.8,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jean",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/canvasjean-red.svg",
+      htmlimg: "./img/lowerBody/jean-red.svg",
+      pastille: "red",
+      kg: 0.8,
+      size: 10,
+      part: "lowerbody",
+
+      vetement: "jean",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/canvasjean-orange.svg",
+      htmlimg: "./img/lowerBody/jean-orange.svg",
+      pastille: "orange",
+      kg: 0.8,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jean",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/jupe/canvasjupe-blue.svg",
+      htmlimg: "./img/lowerBody/jupe/jupe-blue.svg",
+
+      pastille: "blue",
+      kg: 0.8,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jupe",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/jupe/canvasjupe-green.svg",
+      htmlimg: "./img/lowerBody/jupe/jupe-green.svg",
+      pastille: "vert",
+      kg: 0.8,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jupe",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/jupe/canvasjupe-red.svg",
+      htmlimg: "./img/lowerBody/jupe/jupe-red.svg",
+      pastille: "red",
+      kg: 0.8,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jupe",
+    },
+    {
+      name: "jean",
+      img: "./img/lowerBody/jupe/canvasjupe-orange.svg",
+      htmlimg: "./img/lowerBody/jupe/jupe-orange.svg",
+      pastille: "orange",
+      kg: 0.8,
+      size: 180,
+      part: "lowerbody",
+
+      vetement: "jupe",
+    },
+   
    
   ],
   shoes: [
     {
       name: "Chaussere",
-      img: "./img/shoes/shoes-red.svg",
+      img: "./img/shoes/canvasshoes-red.svg",
+      htmlimg: "./img/shoes/shoes-red.svg",
+      pastille: "red",
+      kg: 0.56,
+      size: 150,
+            part: "shoes",
+
+      vetement: "shoes",
+    },
+    {
+      name: "Chaussere",
+      img: "./img/shoes/canvasshoes-blue.svg",
+      htmlimg: "./img/shoes/shoes-blue.svg",
+      pastille: "blue",
+      kg: 0.56,
+      size: 100,
+            part: "shoes",
+
+      vetement: "shoes",
+    },
+    {
+      name: "Chaussere",
+      img: "./img/shoes/canvasshoes-green.svg",
+      htmlimg: "./img/shoes/shoes-green.svg",
+      pastille: "vert",
+      kg: 0.56,
+      width: 30,
+      size: 100,
+      vetement :'shoes'
+    },
+    {
+      name: "Chaussere",
+      img: "./img/shoes/canvasshoes-orange.svg",
+      htmlimg: "./img/shoes/shoes-orange.svg",
       pastille: "orange",
       kg: 0.56,
-      width: 30,
-      height: 30
-    },
-    {
-      name: "Chaussere",
-      img: "./img/shoes/shoes-blue.svg",
-      pastille: "rouge",
-      kg: 0.56,
-      width: 30,
-      height: 30
-    },
-    {
-      name: "Chaussere",
-      img: "./img/shoes/shoes-green.svg",
-      pastille: "rouge",
-      kg: 0.56,
-      width: 30,
-      height: 30
-    },
-    {
-      name: "Chaussere",
-      img: "./img/shoes/shoes-orange.svg",
-      pastille: "rouge",
-      kg: 0.56,
-      width: 30,
-      height: 30
+      size: 100,
+            part: "shoes",
+
+      vetement: "shoes",
     },
   ],
 };
@@ -224,8 +523,8 @@ const render = Matter.Render.create({
     width: width,
     height: 600,
     background: "transparent",
-    wireframes: false
-  }
+    wireframes: false,
+  },
 });
 
 Render.run(render);
@@ -233,20 +532,25 @@ Runner.run(Runner.create(), engine);
 
 // Sol et structure
 // const ground = Matter.Bodies.rectangle(0, 590, 4000, 30, { isStatic: true });
-let sacBase = Matter.Bodies.rectangle(width / 2, 490, balanceText.getBoundingClientRect().width, 26, {
+let sacBase = Matter.Bodies.rectangle(
+  width / 3,
+  490,
+  balanceText.getBoundingClientRect().width,
+  26,
+  {
+    isStatic: true,
+    render: { visible: false },
+  }
+);
+let balanceGround = Matter.Bodies.rectangle(width / 1.5, 440, 280, 26, {
   isStatic: true,
-  render: { visible: false },
-});
-let balanceGround = Matter.Bodies.rectangle(width / 1.5, 440, 300, 25, {
-  isStatic: true,
-  render: { fillStyle: "#2F2D62" },
+  render: { fillStyle: "#0059F7" },
 });
 let balance = Matter.Bodies.rectangle(width / 1.5, 465, 90, 25, {
   isStatic: true,
-  render: { fillStyle: "#8B8AA8" },
+  render: { fillStyle: "#0059F7" },
 });
 function updateCanvasSize() {
-
   const width = container.offsetWidth;
   // canvas.width = width * window.devicePixelRatio;
   // // canvas.height = height * window.devicePixelRatio;
@@ -272,12 +576,16 @@ engine.gravity.y = 4;
 
 World.add(world, [sacBase, balanceGround, balance]);
 
-render.canvas.addEventListener('wheel', function (e) {
-  e.stopPropagation(); // Empêche Matter.js d’intercepter
-  // NE PAS mettre e.preventDefault(); ici
-}, { passive: true }); // passive = on autorise le scroll
+render.canvas.addEventListener(
+  "wheel",
+  function (e) {
+    e.stopPropagation(); // Empêche Matter.js d’intercepter
+    // NE PAS mettre e.preventDefault(); ici
+  },
+  { passive: true }
+); // passive = on autorise le scroll
 // Capteur de balance
-const balanceSensor = Matter.Bodies.rectangle(width / 1.5, 388, 300, 80, {
+const balanceSensor = Matter.Bodies.rectangle(width / 1.5, 388, 280, 80, {
   isStatic: true,
   isSensor: true,
   render: { visible: true, fillStyle: "#0000001c" },
@@ -290,11 +598,12 @@ function repositionElements() {
   const balanceX = isSmall ? centerX : width / 1.5;
   const rect = balanceText.getBoundingClientRect();
 
-
-
   Matter.Body.setPosition(sacBase, { x: centerX, y: 490 });
- 
-  Matter.Body.setVertices(sacBase, Matter.Vertices.fromPath(`0 0 ${rect.width} 0 ${rect.width} 20 0 20`));
+
+  Matter.Body.setVertices(
+    sacBase,
+    Matter.Vertices.fromPath(`0 0 ${rect.width} 0 ${rect.width} 25 0 25`)
+  );
 
   Matter.Body.setPosition(balanceGround, { x: balanceX, y: 440 });
   Matter.Body.setPosition(balance, { x: balanceX, y: 465 });
@@ -332,66 +641,61 @@ function parsePathToVertices(path, sampleLength = 2) {
 
 // Path simplifié du t-shirt (sans les courbes complexes)
 
-function createImage(x, y, imagePath, kg, pastille, options = {}) {
-  
-  const { scale = 0.25, pathData } = options;
-  return fetch(imagePath)
-    .then((res) => res.text())
-    .then((svgText) => {
-      const pathMatch =
-        pathData || svgText.match(/<path[^>]*d="([^"]+)"/i)?.[1];
-      if (!pathMatch) throw new Error("Pas de path trouvé dans le SVG !");
+function createImage(
+  x,
+  y,
+  targetWidth,
+  targetHeight,
+  imagePath,
+  kg,
+  pastille,
+  options = {}
+) {
+  // Charger l'image pour obtenir ses dimensions réelles
+  const img = new Image();
+  img.src = imagePath;
 
-      const pathEl = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "path"
-      );
+  // Attendre que l'image soit chargée
+  return new Promise((resolve) => {
+    img.onload = () => {
+      // Calculer le ratio d'aspect original
+      const originalAspectRatio = img.width / img.height;
+      const targetAspectRatio = targetWidth / targetHeight;
 
-      pathEl.setAttribute("d", pathMatch);
-      document.body.appendChild(pathEl);
+      let finalWidth, finalHeight;
 
-      const totalLength = pathEl.getTotalLength();
-      const rawVertices = [];
+      // Ajuster les dimensions pour conserver les proportions
+      if (originalAspectRatio > targetAspectRatio) {
+        // L'image est plus large que la cible - ajuster la hauteur
+        finalWidth = targetWidth;
+        finalHeight = targetWidth / originalAspectRatio;
+      } else {
+        // L'image est plus haute que la cible - ajuster la largeur
+        finalHeight = targetHeight;
 
-      for (let i = 0; i <= totalLength; i += 1) {
-        const pt = pathEl.getPointAtLength(i);
-        rawVertices.push({ x: pt.x * scale, y: pt.y * scale });
+        finalWidth = targetHeight * originalAspectRatio;
       }
 
-      document.body.removeChild(pathEl);
-
-      // Créer un ID unique pour cet objet
-      const uniqueId =
-        "obj_" + Date.now() + Math.random().toString(36).substr(2, 9);
-
-      const body = Bodies.fromVertices(
-        x,
-        y,
-        [rawVertices],
-        {
-          render: {
+      // Créer le corps physique avec les dimensions ajustées
+      const body = Bodies.rectangle(x, y, finalWidth, finalHeight, {
+        render: {
+          sprite: {
             texture: imagePath,
+            xScale: finalWidth / img.width,
+            yScale: finalHeight / img.height,
           },
-
-          kg,
-          pastille,
-          objectId: uniqueId,
-          isMainObject: true,
+          lineWidth: 6,
         },
-        true
-      );
+        kg,
+        pastille,
+        objectId: "obj_" + Date.now() + Math.random().toString(36).substr(2, 9),
+        isMainObject: true,
+      });
 
-      body.render.sprite = {
-        xScale: scale,
-        yScale: scale,
-      };
       World.add(world, body);
-
-      return body;
-    })
-    .catch((err) => {
-      console.error("Erreur lors de la création de l'image :", err);
-    });
+      resolve(body);
+    };
+  });
 }
 
 // 🎯 Gestion des collisions
@@ -453,32 +757,37 @@ const prix = document.querySelector("#prix");
 
 function updateUI() {
   const objetsUniques = Array.from(objetsDansBalance.values());
-  
-const pastilles = ["blue", "red", "orange", "vert"];
-const prixParKg = { blue: 40, red: 20, orange: 60, vert: 30 };
 
-const poidsParCouleur = Object.fromEntries(
-  pastilles.map(couleur => {
-    const poids = objetsUniques
-      .filter((item) => item.pastille === couleur)
-      .reduce((sum, item) => sum + (item.kg || 0), 0);
-    return [couleur, poids];
-  })
-);
+  const pastilles = ["blue", "red", "orange", "vert"];
+  const prixParKg = { blue: 40, red: 20, orange: 60, vert: 30 };
 
-const totalPoids = pastilles.reduce((sum, couleur) => sum + poidsParCouleur[couleur], 0);
-const totalPrix = pastilles.reduce((sum, couleur) => sum + poidsParCouleur[couleur] * prixParKg[couleur], 0);
+  const poidsParCouleur = Object.fromEntries(
+    pastilles.map((couleur) => {
+      const poids = objetsUniques
+        .filter((item) => item.pastille === couleur)
+        .reduce((sum, item) => sum + (item.kg || 0), 0);
+      return [couleur, poids];
+    })
+  );
 
-poid.textContent = totalPoids.toFixed(2);
-prix.textContent = totalPrix.toFixed(2);
+  const totalPoids = pastilles.reduce(
+    (sum, couleur) => sum + poidsParCouleur[couleur],
+    0
+  );
+  const totalPrix = pastilles.reduce(
+    (sum, couleur) => sum + poidsParCouleur[couleur] * prixParKg[couleur],
+    0
+  );
 
+  poid.textContent = totalPoids.toFixed(2);
+  prix.textContent = totalPrix.toFixed(2);
 
-if (totalPoids >= 10) {
-  alert("Poids maximum atteint ! Redirection...");
-  setTimeout(() => {
-    window.location.href = "./error404.html";
-  }, 1000);
-}
+  if (totalPoids >= 10) {
+    alert("Poids maximum atteint ! Redirection...");
+    setTimeout(() => {
+      window.location.href = "./error404.html";
+    }, 1000);
+  }
   // nombreBlue.textContent = `Nombre d'objets : ${objetsBleus.length}`;
   // poidBlue.textContent = `Poids total : ${objetsBleus.reduce((sum, obj) => sum + (obj.kg || 0), 0)} kg`;
 
@@ -504,44 +813,36 @@ render.canvas.addEventListener("mouseup", async (event) => {
   if (isDragging || isLoading) return; // ⛔️ si drag ou en cours, on ignore
 
   isLoading = true; // 🔒 on bloque les nouveaux clics
-
+  let vetement;
+  let width;
   const rect = render.canvas.getBoundingClientRect();
   const x = event.clientX - rect.left;
   const y = event.clientY - rect.top;
 
-  if (btnSelect === "red") {
+
     const redItems = Object.values(listCloth)
       .flat()
-      .filter((item) => item.pastille === "red");
+      .filter((item) => item.pastille === btnSelect);
 
     const item = redItems[Math.floor(Math.random() * redItems.length)];
-    await createImage(x, y, item.img, item.kg, "red"); // ✅ attendre la fin
-  } 
-   if (btnSelect === "blue") {
-    const blueItems = Object.values(listCloth)
-      .flat()
-      .filter((item) => item.pastille === "blue");
-    
-    const item = blueItems[Math.floor(Math.random() * blueItems.length)];
-    await createImage(x, y, item.img, item.kg, "blue");
-  }
-   if (btnSelect === "orange") {
-    const blueItems = Object.values(listCloth)
-      .flat()
-      .filter((item) => item.pastille === "orange");
-    
-    const item = blueItems[Math.floor(Math.random() * blueItems.length)];
-    await createImage(x, y, item.img, item.kg, "orange");
-  }
-   if (btnSelect === "vert") {
-    const blueItems = Object.values(listCloth)
-      .flat()
-      .filter((item) => item.pastille === "vert");
- 
-    
-    const item = blueItems[Math.floor(Math.random() * blueItems.length)];
-    await createImage(x, y, item.img, item.kg, "vert");
-  }
+    if (item.vetement == "jean") {
+      (vetement = 255), (width = 145);
+    }
+    if (item.vetement == "tshirt") (vetement = 220), (width = 120);
+    if (item.vetement == "hat") (vetement = 120), (width = 60);
+    if (item.vetement == "shoes") (vetement = 120), (width = 60);
+    await createImage(
+      x,
+      y,
+      item.size,
+      item.size,
+      item.img,
+      item.kg,
+      item.pastille,
+      vetement
+    );
+  
+  
 
   isLoading = false; // 🔓 prêt pour un nouveau clic
 });
@@ -549,43 +850,69 @@ render.canvas.addEventListener("mouseup", async (event) => {
 setInterval(updateUI, 100);
 
 // 🎨 Boutons rouge / bleu
-document.querySelector("#red").addEventListener("click", () => (btnSelect = "red"));
+document
+  .querySelector("#red")
+  .addEventListener("click", () => (btnSelect = "red"));
 document
   .querySelector("#blue")
   .addEventListener("click", () => (btnSelect = "blue"));
 document
-  .querySelector("#blue")
-  .addEventListener("click", () => (btnSelect = "blue"));
+  .querySelector("#orange")
+  .addEventListener("click", () => (btnSelect = "orange"));
 document
   .querySelector("#vert")
   .addEventListener("click", () => (btnSelect = "vert"));
 
 const sectionBalance = document.querySelector(".balance");
 
-
-
-
 const selectedCloth = [
   {
-    img: listCloth.hat[0].img ,
-    pastille: listCloth.hat[0].pastille,
-    kg: listCloth.hat[0].kg,
+    img: listCloth.pantalon[0].img,
+    htmlimg: listCloth.pantalon[0].htmlimg,
+    kg: listCloth.pantalon[0].kg,
+    width: listCloth.pantalon[0].width,
+    height: listCloth.pantalon[0].height,
+    size: listCloth.pantalon[0].size,
+    pastille: listCloth.pantalon[0].pastille,
+    vetement: "jean",
+    part: "lowerbody",
   },
 
   {
     img: listCloth.tshirt[0].img,
+    htmlimg: listCloth.tshirt[0].htmlimg,
     kg: listCloth.tshirt[0].kg,
-    pastille: listCloth.tshirt[0].pastille
+    pastille: listCloth.tshirt[0].pastille,
+    vetement: "tshirt",
+    part: "upperbody",
+
+    size: listCloth.tshirt[0].size,
+    width: listCloth.tshirt[0].width,
+    height: listCloth.tshirt[0].height,
   },
   {
+    img: listCloth.hat[0].img,
+    htmlimg: listCloth.hat[0].htmlimg,
+    pastille: listCloth.hat[0].pastille,
+    kg: listCloth.hat[0].kg,
+    vetement: "hat",
+    part: "hat",
+
+    size: listCloth.hat[0].size,
+    width: listCloth.hat[0].width,
+    height: listCloth.hat[0].height,
+  },
+  {
+    part: "shoes",
+
     img: listCloth.pantalon[0].img,
-    kg: listCloth.pantalon[0].kg,
-    pastille: listCloth.pantalon[0].pastille
-  },
-  {
-    img: listCloth.shoes[0].img,
+    htmlimg: listCloth.pantalon[0].htmlimg,
+    pastille: listCloth.shoes[0].pastille,
     kg: listCloth.shoes[0].kg,
-    pastille: listCloth.shoes[0].pastille
+    size: listCloth.shoes[0].size,
+    vetement: "shoes",
+    width: listCloth.shoes[0].width,
+    height: listCloth.shoes[0].height,
   },
 ];
 
@@ -600,26 +927,15 @@ const upperBodyText = document.getElementById("upperBodyText");
 const lowerBodyText = document.getElementById("lowerBodyText");
 const shoesText = document.getElementById("shoesText");
 
-// const nextHat = document.getElementById("nextHat");
-// const nextTshirt = document.getElementById("nextTshirt");
-// const nextLower = document.getElementById("nextLower");
-// const nextShoes = document.getElementById("nextShoes");
-
-// const prevHat = document.getElementById("prevHat");
-// const prevTshirt = document.getElementById("prevTshirt");
-// const prevLower = document.getElementById("prevLower");
-// const prevShoes = document.getElementById("prevShoes");
-// Liste des chemins vers les images des chapeaux
 let currentIndex = 0;
 
 let hasValidatedOnScroll = false;
 
 const observer = new IntersectionObserver(
   (entries) => {
-    
     entries.forEach((entry) => {
       if (entry.isIntersecting && !hasValidatedOnScroll) {
-        validerTenue()
+        validerTenue();
         hasValidatedOnScroll = true;
         observer.unobserve(entry.target); // Arrête d'observer après déclenchement
       }
@@ -633,22 +949,51 @@ observer.observe(document.querySelector(".balance"));
 // Modifiez votre fonction de validation pour éviter les déclenchements multiples
 let isValidationInProgress = false;
 
-async function validerTenue   () {
-    const centerX = width / 2;
+async function validerTenue() {
+  const isSmall = width <= 730;
+  const centerX = width / 2;
+  const balanceX = isSmall ? centerX : width / 1.5;
+  const creationDelay = 200; // ms entre chaque création
 
   if (isValidationInProgress) return;
   isValidationInProgress = true;
 
   try {
-    for (const item of selectedCloth) {
-      
-      await createImage(centerX, 20, item.img, item.kg, item.pastille);
-      await new Promise((resolve) => setTimeout(resolve, 200));
+    // Définir l'ordre et les paramètres pour chaque type de vêtement
+    const clothingOrder = [
+      // { type: 'shoes', size: 145, vetement: 255 },
+      { type: "shoes" },
+      { type: "lowerbody" },
+      { type: "upperbody" },
+      { type: "hat" },
+    ];
+    console.log(selectedCloth);
+
+    for (const clothing of clothingOrder) {
+      const item = selectedCloth.find((i) => i.part === clothing.type);
+
+      if (item) {
+        await createImage(
+          balanceX,
+          20,
+
+          item.size,
+          item.size,
+          item.img,
+          item.kg,
+          item.pastille,
+          item.vetement
+        );
+
+        await new Promise((resolve) => setTimeout(resolve, creationDelay));
+      }
     }
+  } catch (error) {
+    console.error("Erreur lors de la création de la tenue:", error);
   } finally {
     isValidationInProgress = false;
   }
-};
+}
 const clothingParts = {
   hat: {
     list: listCloth.hat,
@@ -656,7 +1001,7 @@ const clothingParts = {
     textEl: document.getElementById("hatTexte"),
     index: 0,
     selectedIndex: 0,
-    clothIndex: 0 // index dans selectedCloth
+    clothIndex: 0, // index dans selectedCloth
   },
   tshirt: {
     list: listCloth.tshirt,
@@ -666,7 +1011,7 @@ const clothingParts = {
     prevBtn: document.getElementById("prevTshirt"),
     index: 0,
     selectedIndex: 0,
-    clothIndex: 1
+    clothIndex: 1,
   },
   pantalon: {
     list: listCloth.pantalon,
@@ -674,7 +1019,7 @@ const clothingParts = {
     textEl: document.getElementById("lowerBodyText"),
     index: 0,
     selectedIndex: 0,
-    clothIndex: 2
+    clothIndex: 2,
   },
   shoes: {
     list: listCloth.shoes, // à remplir plus tard si besoin
@@ -682,46 +1027,99 @@ const clothingParts = {
     textEl: document.getElementById("shoesText"),
     index: 0,
     selectedIndex: 0,
-    clothIndex: 3
-  }
+    clothIndex: 3,
+  },
 };
-
-
+let upperBody
 function setupClothingNavigation(partName) {
   const part = clothingParts[partName];
+console.log(upperBody);
 
   const updateUI = () => {
     const item = part.list[part.index];
     if (!item) return;
-    part.imageEl.src = item.img;
+    part.imageEl.className = "";
+
+    // Mettre à jour l'image dans l'UI
+    part.imageEl.src = item.htmlimg;
+
+    if (item.vetement) {
+            if (item.part === 'upperbody'){
+              upperBody=item.vetement
+            }
+      if (item.part === 'lowerbody'){
+        console.log(upperBody);
+        part.imageEl.classList.toggle(`${upperBody}img`);
+        
+      }
+      part.imageEl.classList.add(item.vetement);
+      // console.log("Classe ajoutée :", item.vetement);
+    }
+    // Mettre à jour l'objet sélectionné
     selectedCloth[part.clothIndex] = {
-      img: item.img,
-      kg: parseFloat(item.kg || 0),
-      pastille:item.pastille
+      img: item.img, // Image pour Matter.js
+      htmlimg: item.htmlimg, // Image pour l'affichage HTML
+      kg: item.kg,
+      pastille: item.pastille,
+      vetement: item.vetement,
+      part: item.part,
+      size: item.size || 100, // Valeur par défaut si size n'existe pas
+      width: item.width || item.size || 100,
+      height: item.height || item.size || 100,
     };
   };
 
-    part.index = (part.index + 1) % part.list.length;
-  updateUI(); // Initialisation
-}
+  // Initialisation
+  updateUI();
 
+  // Retourner la fonction de navigation
+  return () => {
+    part.index = (part.index + 1) % part.list.length;
+    updateUI();
+  };
+}
 Object.keys(clothingParts).forEach(setupClothingNavigation);
+const navigateHat = setupClothingNavigation("hat");
+const navigateTshirt = setupClothingNavigation("tshirt");
+const navigatePantalon = setupClothingNavigation("pantalon");
+const navigateShoes = setupClothingNavigation("shoes");
+function scrollNextClothing() {
+  const partName = clothingOrder[scrollStep];
+
+  switch (partName) {
+    case "hat":
+      navigateHat();
+      break;
+    case "tshirt":
+      navigateTshirt();
+      break;
+    case "pantalon":
+      navigatePantalon();
+      break;
+    case "shoes":
+      navigateShoes();
+      break;
+  }
+
+  // Prépare l'étape suivante
+  scrollStep = (scrollStep + 1) % clothingOrder.length;
+}
 
 // Fonction pour supprimer tous les vêtements
 // Fonction corrigée pour supprimer tous les vêtements
 function supprimerTousLesVetements() {
   // Récupérer tous les corps dans le monde avec la bonne méthode
   const allBodies = world.bodies; // Utilisez world.bodies au lieu de World.allBodies()
-  
+
   // Filtrer pour ne garder que les vêtements (objets avec isMainObject)
-  const vetements = allBodies.filter(body => body.isMainObject);
-  
+  const vetements = allBodies.filter((body) => body.isMainObject);
+
   // Supprimer chaque vêtement du monde
   World.remove(world, vetements);
-  
+
   // Vider la map des objets dans la balance
   objetsDansBalance.clear();
-  
+
   // Mettre à jour l'UI
   updateUI();
 }
@@ -729,46 +1127,36 @@ function supprimerTousLesVetements() {
 // Ajouter l'événement au bouton
 // document.getElementById('supprimerVetements').addEventListener('click', supprimerTousLesVetements);
 
-
-
 // Ordre de scroll : hat -> tshirt -> pantalon -> shoes
 const clothingOrder = ["hat", "tshirt", "pantalon", "shoes"];
 let scrollStep = 0; // index dans l'ordre
 let isScrolling = false;
 
 // Fonction pour changer l'élément actif
-function scrollNextClothing() {
-
-  const partName = clothingOrder[scrollStep];
-  const part = clothingParts[partName];
-
-  // Simule un clic sur "next"
-  Object.keys(clothingParts).forEach(setupClothingNavigation);
-
-  // Prépare l'étape suivante
-  scrollStep = (scrollStep + 1) % clothingOrder.length;
-}
 
 // Blocage du scroll pendant l’animation
 
 // Gestion du scroll dans la section uniquement
 
-document.querySelector('.section1').addEventListener('wheel', (e) => {
-  const section = document.querySelector('.section1');
-  const rect = section.getBoundingClientRect();
-  const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+document.querySelector(".section1").addEventListener(
+  "wheel",
+  (e) => {
+    const section = document.querySelector(".section1");
+    const rect = section.getBoundingClientRect();
+    const isInView = rect.top < window.innerHeight && rect.bottom > 0;
 
-  if (!isInView || isScrolling || e.deltaY <= 0) return;
+    if (!isInView || isScrolling || e.deltaY <= 0) return;
 
-  isScrolling = true; // bloquer
-  scrollNextClothing(); // changer de vêtement
+    isScrolling = true; // bloquer
+    scrollNextClothing(); // changer de vêtement
 
-  // remettre à false après délai
-  setTimeout(() => {
-    isScrolling = false;
-  }, 300); // cooldown 1 seconde
-}, { passive: true });
-
+    // remettre à false après délai
+    setTimeout(() => {
+      isScrolling = false;
+    }, 50); // cooldown 1 seconde
+  },
+  { passive: true }
+);
 
 // const cursor = document.getElementById("custom-cursor");
 
@@ -778,18 +1166,17 @@ document.querySelector('.section1').addEventListener('wheel', (e) => {
 // });
 
 const pastilleData = [
- 
   {
     color: "red",
     title: "Rouge",
     price: "20",
   },
-   {
+  {
     color: "green",
     title: "Vert",
     price: "30",
   },
-   {
+  {
     color: "blue",
     title: "Bleu",
     price: "40",
@@ -799,13 +1186,12 @@ const pastilleData = [
     title: "Orange",
     price: "60",
   },
- 
 ];
 
 // Sélectionne le container
-const pastilleExplicationGrid = document.querySelector(".pastille-explication-grid");
-console.log(pastilleExplicationGrid);
-
+const pastilleExplicationGrid = document.querySelector(
+  ".pastille-explication-grid"
+);
 
 // Crée les éléments dynamiquement
 pastilleData.forEach(({ color, title, price, hasButton }) => {
@@ -815,29 +1201,32 @@ pastilleData.forEach(({ color, title, price, hasButton }) => {
   const img = document.createElement("img");
   img.src = `./img/pastille/pastille-${color}.svg`;
   img.alt = `pastille-${color}`;
+console.log(color);
 
   const bg = document.createElement("div");
   bg.classList.add("pastille-bg");
 
   const h4 = document.createElement("h4");
   h4.textContent = title;
+  h4.setAttribute("data-i18n", `pastille_${color}_title`);  // <-- ici on ajoute l'attribut
 
- 
-    // const button = document.createElement("button");
-    // button.classList.add("exemple");
-    // button.textContent = "Exemple";
-  
+
+  // const button = document.createElement("button");
+  // button.classList.add("exemple");
+  // button.textContent = "Exemple";
 
   const colorDiv = document.createElement("div");
-  colorDiv.classList.add("colorDiv")
-  colorDiv.style.backgroundColor=`var(--pastille-${color})`; // la classe dynamique
+  colorDiv.classList.add("colorDiv");
+  colorDiv.style.backgroundColor = `var(--pastille-${color})`; // la classe dynamique
 
   const p = document.createElement("p");
-  p.textContent =`${price}€ par kilo`;
+  p.textContent = `${price}€ par kilo`;
+  p.classList.add("p-pastille");
+    p.setAttribute("data-i18n", `pastille_${color}_text`);  // <-- ici on ajoute l'attribut
 
   // Ajout des éléments dans la structure
   bg.appendChild(h4);
-      // bg.appendChild(button);
+  // bg.appendChild(button);
 
   bg.appendChild(colorDiv);
   bg.appendChild(p);
@@ -849,7 +1238,7 @@ pastilleData.forEach(({ color, title, price, hasButton }) => {
 
 document.querySelector(".blue-exemple").addEventListener("click", async () => {
   // Supprimer les vêtements existants
-  supprimerTousLesVetements()
+  supprimerTousLesVetements();
   // Ajouter 3 vêtements bleus
   const itemCloth = Object.values(listCloth)
     .flat()
