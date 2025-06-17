@@ -8,6 +8,11 @@
   "francais": "French",
   "anglais": "English",
   "pays": "Country",
+
+  "france": "France",
+  "allemagne": "Germany",
+  "belgique": "Belgium",
+
   "mon_compte": "My account",
   "un_kilo_cest_koi": "WHAT IS A KILO",
   "description_kilo": "A kilo of feathers weighs the same as a kilo of lead (even if a feather-down jacket is more practical than a lead one). So yes, a silk dress doesn’t weigh much. But its raw material is worth more than a cotton dress... So at Kilo Shop, we made it simple: each item has a color label that corresponds to a price/kg based on the material. Basically, 1 kilo at Kilo Shop means 3 to 6 unique items in your basket.",

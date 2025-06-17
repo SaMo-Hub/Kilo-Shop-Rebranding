@@ -54,101 +54,81 @@ const listCloth = {
       img: "./img/hat/bob/canvasbob-red.svg",
       htmlimg: "./img/hat/bob/bob-red.svg",
       pastille: "red",
-      kg: 0.18,
+      kg: 0.15, // 150g
       size: 100,
-            part: "hat",
-
-      vetement: "bob",
-    },
-    {
-      name: "casquette",
-      img: "./img/hat/bob/canvasbob-red.svg",
-      htmlimg: "./img/hat/bob/bob-red.svg",
-      pastille: "red",
-      kg: 0.18,
-      size: 100,
-            part: "hat",
-
-      vetement: "bob",
+      part: "hat",
+      vetement: "bob"
     },
     {
       name: "casquette",
       img: "./img/hat/bob/canvasbob-blue.svg",
       htmlimg: "./img/hat/bob/bob-blue.svg",
       pastille: "blue",
-      kg: 0.18,
+      kg: 0.15,
       size: 100,
-            part: "hat",
-
-      vetement: "bob",
+      part: "hat",
+      vetement: "bob"
     },
     {
       name: "casquette",
       img: "./img/hat/bob/canvasbob-orange.svg",
       htmlimg: "./img/hat/bob/bob-orange.svg",
       pastille: "orange",
-      kg: 0.18,
+      kg: 0.15,
       size: 100,
-            part: "hat",
-
-      vetement: "bob",
+      part: "hat",
+      vetement: "bob"
     },
     {
       name: "casquette",
       img: "./img/hat/bob/canvasbob-green.svg",
       htmlimg: "./img/hat/bob/bob-green.svg",
       pastille: "vert",
-      kg: 0.18,
+      kg: 0.15,
       size: 100,
-            part: "hat",
-  
-      vetement: "bob",
+      part: "hat",
+      vetement: "bob"
     },
     {
-      name: "casquette",
+      name: "chapeau",
       img: "./img/hat/chapeau/canvaschapeau-green.svg",
       htmlimg: "./img/hat/chapeau/chapeau-green.svg",
       pastille: "vert",
-      kg: 0.18,
+      kg: 0.25, // 250g
       size: 120,
-            part: "hat",
-  
-      vetement: "chapeau",
+      part: "hat",
+      vetement: "chapeau"
     },
     {
-      name: "casquette",
+      name: "chapeau",
       img: "./img/hat/chapeau/canvaschapeau-orange.svg",
       htmlimg: "./img/hat/chapeau/chapeau-orange.svg",
       pastille: "orange",
-      kg: 0.18,
+      kg: 0.25,
       size: 120,
-            part: "hat",
-  
-      vetement: "chapeau",
+      part: "hat",
+      vetement: "chapeau"
     },
     {
-      name: "casquette",
+      name: "chapeau",
       img: "./img/hat/chapeau/canvaschapeau-blue.svg",
       htmlimg: "./img/hat/chapeau/chapeau-blue.svg",
       pastille: "blue",
-      kg: 0.18,
+      kg: 0.25,
       size: 120,
-            part: "hat",
-  
-      vetement: "chapeau",
+      part: "hat",
+      vetement: "chapeau"
     },
     {
-      name: "casquette",
+      name: "chapeau",
       img: "./img/hat/chapeau/canvaschapeau-red.svg",
       htmlimg: "./img/hat/chapeau/chapeau-red.svg",
       pastille: "red",
-      kg: 0.18,
+      kg: 0.25,
       size: 120,
-            part: "hat",
-  
-      vetement: "chapeau",
-    },
-
+      part: "hat",
+      vetement: "chapeau"
+    }
   ],
   tshirt: [
     {
@@ -156,190 +136,176 @@ const listCloth = {
       img: "./img/upperBody/canvastshirt-orange.svg",
       htmlimg: "./img/upperBody/tshirt-orange.svg",
       pastille: "orange",
-      kg: 0.15,
+      kg: 0.18, // 180g
       size: 200,
       part: "upperbody",
-
-      vetement: "tshirt",
+      vetement: "tshirt"
     },
     {
       name: "tshirt",
-      img: "./img/upperBody/veste/canvasveste-orange.svg",
-      htmlimg: "./img/upperBody/veste/veste-orange.svg",
-      pastille: "orange",
-      kg: 0.15,
-      size: 280,
-      part: "upperbody",
-
-      vetement: "veste",
-    },
-    {
-      name: "jaune",
-      img: "./img/upperBody/veste/canvasveste-red.svg",
-      htmlimg: "./img/upperBody/veste/veste-red.svg",
-      pastille: "red",
-      kg: 0.15,
-      size: 280,
-      part: "upperbody",
-
-      vetement: "veste",
-    },
-    {
-      name: "jaune",
-      img: "./img/upperBody/veste/canvasveste-blue.svg",
-      htmlimg: "./img/upperBody/veste/veste-blue.svg",
-      pastille: "blue",
-      kg: 0.15,
-      size: 280,
-      part: "upperbody",
-
-      vetement: "veste",
-    },
-    {
-      name: "jaune",
-      img: "./img/upperBody/veste/canvasveste-green.svg",
-      htmlimg: "./img/upperBody/veste/veste-green.svg",
-      pastille: "vert",
-      kg: 0.15,
-      size: 280,
-      part: "upperbody",
-
-      vetement: "veste",
-    },
-    {
-      name: "tshirt",
-      img: "./img/upperBody/pull/canvaspull-orange.svg",
-      htmlimg: "./img/upperBody/pull/pull-orange.svg",
-      pastille: "orange",
-      kg: 0.15,
-      size: 280,
-      part: "upperbody",
-
-      vetement: "pull",
-    },
-    {
-      name: "jaune",
-      img: "./img/upperBody/pull/canvaspull-red.svg",
-      htmlimg: "./img/upperBody/pull/pull-red.svg",
-      pastille: "red",
-      kg: 0.15,
-      size: 280,
-      part: "upperbody",
-
-      vetement: "pull",
-    },
-    {
-      name: "jaune",
-      img: "./img/upperBody/pull/canvaspull-blue.svg",
-      htmlimg: "./img/upperBody/pull/pull-blue.svg",
-      pastille: "blue",
-      kg: 0.15,
-      size: 280,
-      part: "upperbody",
-
-      vetement: "pull",
-    },
-    {
-      name: "jaune",
-      img: "./img/upperBody/pull/canvaspull-green.svg",
-      htmlimg: "./img/upperBody/pull/pull-green.svg",
-      pastille: "vert",
-      kg: 0.15,
-      size: 280,
-      part: "upperbody",
-
-      vetement: "pull",
-    },
-    {
-      name: "jaune",
       img: "./img/upperBody/canvastshirt-green.svg",
       htmlimg: "./img/upperBody/tshirt-green.svg",
       pastille: "vert",
-      kg: 0.15,
+      kg: 0.18,
       size: 200,
       part: "upperbody",
-
-      vetement: "tshirt",
+      vetement: "tshirt"
     },
     {
-      name: "vert",
+      name: "tshirt",
       img: "./img/upperBody/canvastshirt-blue.svg",
       htmlimg: "./img/upperBody/tshirt-blue.svg",
       pastille: "blue",
-      kg: 0.15,
+      kg: 0.18,
       size: 200,
       part: "upperbody",
-
-      vetement: "tshirt",
+      vetement: "tshirt"
     },
     {
-      name: "vert",
+      name: "tshirt",
       img: "./img/upperBody/canvastshirt-red.svg",
       htmlimg: "./img/upperBody/tshirt-red.svg",
       pastille: "red",
-      kg: 0.15,
-      part: "upperbody",
-
+      kg: 0.18,
       size: 200,
-      vetement: "tshirt",
+      part: "upperbody",
+      vetement: "tshirt"
+    }
+  ],
+  pull: [
+    {
+      name: "pull",
+      img: "./img/upperBody/pull/canvaspull-orange.svg",
+      htmlimg: "./img/upperBody/pull/pull-orange.svg",
+      pastille: "orange",
+      kg: 0.45, // 450g
+      size: 280,
+      part: "upperbody",
+      vetement: "pull"
     },
+    {
+      name: "pull",
+      img: "./img/upperBody/pull/canvaspull-red.svg",
+      htmlimg: "./img/upperBody/pull/pull-red.svg",
+      pastille: "red",
+      kg: 0.45,
+      size: 280,
+      part: "upperbody",
+      vetement: "pull"
+    },
+    {
+      name: "pull",
+      img: "./img/upperBody/pull/canvaspull-blue.svg",
+      htmlimg: "./img/upperBody/pull/pull-blue.svg",
+      pastille: "blue",
+      kg: 0.45,
+      size: 280,
+      part: "upperbody",
+      vetement: "pull"
+    },
+    {
+      name: "pull",
+      img: "./img/upperBody/pull/canvaspull-green.svg",
+      htmlimg: "./img/upperBody/pull/pull-green.svg",
+      pastille: "vert",
+      kg: 0.45,
+      size: 280,
+      part: "upperbody",
+      vetement: "pull"
+    }
+  ],
+  veste: [
+    {
+      name: "veste",
+      img: "./img/upperBody/veste/canvasveste-orange.svg",
+      htmlimg: "./img/upperBody/veste/veste-orange.svg",
+      pastille: "orange",
+      kg: 0.65, // 650g
+      size: 280,
+      part: "upperbody",
+      vetement: "veste"
+    },
+    {
+      name: "veste",
+      img: "./img/upperBody/veste/canvasveste-red.svg",
+      htmlimg: "./img/upperBody/veste/veste-red.svg",
+      pastille: "red",
+      kg: 0.65,
+      size: 280,
+      part: "upperbody",
+      vetement: "veste"
+    },
+    {
+      name: "veste",
+      img: "./img/upperBody/veste/canvasveste-blue.svg",
+      htmlimg: "./img/upperBody/veste/veste-blue.svg",
+      pastille: "blue",
+      kg: 0.65,
+      size: 280,
+      part: "upperbody",
+      vetement: "veste"
+    },
+    {
+      name: "veste",
+      img: "./img/upperBody/veste/canvasveste-green.svg",
+      htmlimg: "./img/upperBody/veste/veste-green.svg",
+      pastille: "vert",
+      kg: 0.65,
+      size: 280,
+      part: "upperbody",
+      vetement: "veste"
+    }
   ],
   pantalon: [
-     {
-      name: "jean",
+    {
+      name: "short",
       img: "./img/lowerBody/short/canvasshort-green.svg",
       htmlimg: "./img/lowerBody/short/short-green.svg",
       pastille: "vert",
-      kg: 0.8,
+      kg: 0.25, // 250g
       size: 140,
       part: "lowerbody",
-
-      vetement: "short",
+      vetement: "short"
     },
     {
-      name: "jean",
+      name: "short",
       img: "./img/lowerBody/short/canvasshort-red.svg",
       htmlimg: "./img/lowerBody/short/short-red.svg",
       pastille: "red",
-      kg: 0.8,
+      kg: 0.25,
       size: 140,
       part: "lowerbody",
-
-      vetement: "short",
+      vetement: "short"
     },
     {
-      name: "jean",
+      name: "short",
       img: "./img/lowerBody/short/canvasshort-orange.svg",
       htmlimg: "./img/lowerBody/short/short-orange.svg",
       pastille: "orange",
-      kg: 0.8,
+      kg: 0.25,
       size: 140,
       part: "lowerbody",
-
-      vetement: "short",
+      vetement: "short"
     },
     {
-      name: "jean",
+      name: "short",
       img: "./img/lowerBody/short/canvasshort-blue.svg",
       htmlimg: "./img/lowerBody/short/short-blue.svg",
       pastille: "blue",
-      kg: 0.8,
+      kg: 0.25,
       size: 140,
       part: "lowerbody",
-
-      vetement: "short",
+      vetement: "short"
     },
     {
       name: "jean",
       img: "./img/lowerBody/canvasjean-blue.svg",
       htmlimg: "./img/lowerBody/jean-blue.svg",
-
       pastille: "blue",
-      kg: 0.8,
+      kg: 0.8, // 800g
       size: 180,
       part: "lowerbody",
-
-      vetement: "jean",
+      vetement: "jean"
     },
     {
       name: "jean",
@@ -349,8 +315,7 @@ const listCloth = {
       kg: 0.8,
       size: 180,
       part: "lowerbody",
-
-      vetement: "jean",
+      vetement: "jean"
     },
     {
       name: "jean",
@@ -360,8 +325,7 @@ const listCloth = {
       kg: 0.8,
       size: 180,
       part: "lowerbody",
-
-      vetement: "jean",
+      vetement: "jean"
     },
     {
       name: "jean",
@@ -371,147 +335,91 @@ const listCloth = {
       kg: 0.8,
       size: 180,
       part: "lowerbody",
-
-      vetement: "jean",
+      vetement: "jean"
     },
     {
-      name: "jean",
-      img: "./img/lowerBody/canvasjean-blue.svg",
-      htmlimg: "./img/lowerBody/jean-blue.svg",
-      part: "lowerbody",
-
-      pastille: "blue",
-      kg: 0.8,
-      size: 180,
-
-      vetement: "jean",
-    },
-    {
-      name: "jean",
-      img: "./img/lowerBody/canvasjean-green.svg",
-      htmlimg: "./img/lowerBody/jean-green.svg",
-      pastille: "vert",
-      kg: 0.8,
-      size: 180,
-      part: "lowerbody",
-
-      vetement: "jean",
-    },
-    {
-      name: "jean",
-      img: "./img/lowerBody/canvasjean-red.svg",
-      htmlimg: "./img/lowerBody/jean-red.svg",
-      pastille: "red",
-      kg: 0.8,
-      size: 10,
-      part: "lowerbody",
-
-      vetement: "jean",
-    },
-    {
-      name: "jean",
-      img: "./img/lowerBody/canvasjean-orange.svg",
-      htmlimg: "./img/lowerBody/jean-orange.svg",
-      pastille: "orange",
-      kg: 0.8,
-      size: 180,
-      part: "lowerbody",
-
-      vetement: "jean",
-    },
-    {
-      name: "jean",
+      name: "jupe",
       img: "./img/lowerBody/jupe/canvasjupe-blue.svg",
       htmlimg: "./img/lowerBody/jupe/jupe-blue.svg",
-
       pastille: "blue",
-      kg: 0.8,
+      kg: 0.4, // 400g
       size: 180,
       part: "lowerbody",
-
-      vetement: "jupe",
+      vetement: "jupe"
     },
     {
-      name: "jean",
+      name: "jupe",
       img: "./img/lowerBody/jupe/canvasjupe-green.svg",
       htmlimg: "./img/lowerBody/jupe/jupe-green.svg",
       pastille: "vert",
-      kg: 0.8,
+      kg: 0.4,
       size: 180,
       part: "lowerbody",
-
-      vetement: "jupe",
+      vetement: "jupe"
     },
     {
-      name: "jean",
+      name: "jupe",
       img: "./img/lowerBody/jupe/canvasjupe-red.svg",
       htmlimg: "./img/lowerBody/jupe/jupe-red.svg",
       pastille: "red",
-      kg: 0.8,
+      kg: 0.4,
       size: 180,
       part: "lowerbody",
-
-      vetement: "jupe",
+      vetement: "jupe"
     },
     {
-      name: "jean",
+      name: "jupe",
       img: "./img/lowerBody/jupe/canvasjupe-orange.svg",
       htmlimg: "./img/lowerBody/jupe/jupe-orange.svg",
       pastille: "orange",
-      kg: 0.8,
+      kg: 0.4,
       size: 180,
       part: "lowerbody",
-
-      vetement: "jupe",
-    },
-   
-   
+      vetement: "jupe"
+    }
   ],
   shoes: [
     {
-      name: "Chaussere",
+      name: "chaussures",
       img: "./img/shoes/canvasshoes-red.svg",
       htmlimg: "./img/shoes/shoes-red.svg",
       pastille: "red",
-      kg: 0.56,
+      kg: 0.6, // 600g la paire
       size: 150,
-            part: "shoes",
-
-      vetement: "shoes",
+      part: "shoes",
+      vetement: "shoes"
     },
     {
-      name: "Chaussere",
+      name: "chaussures",
       img: "./img/shoes/canvasshoes-blue.svg",
       htmlimg: "./img/shoes/shoes-blue.svg",
       pastille: "blue",
-      kg: 0.56,
-      size: 100,
-            part: "shoes",
-
-      vetement: "shoes",
+      kg: 0.6,
+      size: 150,
+      part: "shoes",
+      vetement: "shoes"
     },
     {
-      name: "Chaussere",
+      name: "chaussures",
       img: "./img/shoes/canvasshoes-green.svg",
       htmlimg: "./img/shoes/shoes-green.svg",
       pastille: "vert",
-      kg: 0.56,
-      width: 30,
-      size: 100,
-      vetement :'shoes'
+      kg: 0.6,
+      size: 150,
+      part: "shoes",
+      vetement: "shoes"
     },
     {
-      name: "Chaussere",
+      name: "chaussures",
       img: "./img/shoes/canvasshoes-orange.svg",
       htmlimg: "./img/shoes/shoes-orange.svg",
       pastille: "orange",
-      kg: 0.56,
-      size: 100,
-            part: "shoes",
-
-      vetement: "shoes",
-    },
-  ],
+      kg: 0.6,
+      size: 150,
+      part: "shoes",
+      vetement: "shoes"
+    }
+  ]
 };
 // Initialisation de Matter
 const engine = Engine.create();
@@ -782,12 +690,12 @@ function updateUI() {
   poid.textContent = totalPoids.toFixed(2);
   prix.textContent = totalPrix.toFixed(2);
 
-  if (totalPoids >= 10) {
-    alert("Poids maximum atteint ! Redirection...");
-    setTimeout(() => {
-      window.location.href = "./error404.html";
-    }, 1000);
-  }
+  // if (totalPoids >= 10) {
+  //   alert("Poids maximum atteint ! Redirection...");
+  //   setTimeout(() => {
+  //     window.location.href = "./error404.html";
+  //   }, 1000);
+  // }
   // nombreBlue.textContent = `Nombre d'objets : ${objetsBleus.length}`;
   // poidBlue.textContent = `Poids total : ${objetsBleus.reduce((sum, obj) => sum + (obj.kg || 0), 0)} kg`;
 

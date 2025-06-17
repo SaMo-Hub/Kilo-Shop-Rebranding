@@ -1,29 +1,44 @@
-const mascotte = document.getElementById('mascotte');
-const emportezSection = document.querySelector('.section.emportez');
+const mascotte = document.getElementById("mascotte");
+const emportezSection = document.querySelector(".section.emportez");
 
-window.addEventListener('scroll', () => {
+let lastExecution = 0;
+const throttleDelay = 120; // ms
+
+window.addEventListener("scroll", () => {
+  const now = Date.now();
+  if (now - lastExecution < throttleDelay) return;
+  lastExecution = now;
+
   const sectionRect = emportezSection.getBoundingClientRect();
   const mascotteRect = mascotte.getBoundingClientRect();
 
-  // Vérifie si la section emportez est dans le viewport
-  const isVisible = mascotteRect.top < window.innerHeight && mascotteRect.bottom > 0;
-   
-    
+  const isVisible =
+    mascotteRect.top < window.innerHeight && mascotteRect.bottom > 0;
+
   if (isVisible) {
     const scrollTop = window.scrollY;
     const containerWidth = window.innerWidth - mascotte.offsetWidth;
 
-    // Pourcentage de scroll **dans** la section
-    const sectionScroll = Math.min(Math.max(0, (window.innerHeight - mascotteRect.top) / (window.innerHeight + sectionRect.height)), 1);
+    const sectionScroll = Math.min(
+      Math.max(
+        0,
+        (window.innerHeight - mascotteRect.top) /
+          (window.innerHeight + sectionRect.height)
+      ),
+      1
+    );
+    console.log(sectionScroll);
 
-    mascotte.style.transform = `translateX(${(sectionScroll * (containerWidth)*2)}px)`;
+    const startOffset = -300; // commence plus à gauche (négatif)
+    const endOffset = containerWidth * 1.5; // ajuste si besoin pour l'arrivée
+    const translateX = startOffset + sectionScroll * (endOffset - startOffset);
 
-    // Animation des frames
-    const frame = Math.floor(scrollTop / 20) % 4 + 1;
+    mascotte.style.transform = `translateX(${translateX*1}px)`;
+
+    const frame = (Math.floor(scrollTop / 20) % 4) + 1;
     mascotte.src = `./walk-cycle/frame-${frame}.svg`;
   } else {
-    // Facultatif : reset si la section n’est plus visible
     mascotte.style.transform = `translateX(0)`;
-    mascotte.src = './walk-cycle/frame-1.svg';
+    mascotte.src = "./walk-cycle/frame-1.svg";
   }
 });

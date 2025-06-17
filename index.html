@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+  <!-- Changé de "en" à "fr" puisque votre contenu est en français -->
   <head>
-    <title>Kilo shop</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title class="hidden">Kilo shop</title> Le titre doit rester dans le head -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -14,13 +15,24 @@
     <nav class="navbarSelect">
       <div class="navbar">
         <div class="logo-flex">
-          <img class="navLogo" src="./iconlogo.svg" alt="" />
+          <a href="https://www.kilo-shop.com/">
+            <img class="navLogo" src="./iconlogo.svg" alt="" />
+          </a>
           <ul>
-            <li class="item" data-i18n="concept">Concept</li>
-            <li class="item" data-i18n="je_depose">Je depose</li>
-            <li class="item" data-i18n="notre_mission">Notre mission</li>
-            <li class="item" data-i18n="shops">Shops</li>
-            <li class="item" data-i18n="looks">Looks</li>
+            <a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="concept">Concept</li>
+            </a>
+            <a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="je_depose">Je depose</li>
+            </a>
+            <a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="notre_mission">Notre mission</li> </a
+            ><a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="shops">Shops</li>
+            </a>
+            <a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="looks">Looks</li>
+            </a>
           </ul>
         </div>
         <ul>
@@ -36,14 +48,34 @@
               </div>
             </div>
           </li>
-          <li class="item" data-i18n="pays">
-            Pays
-            <img src="" alt="" />
+          <li class="div-pays">
+            <button class="item toggle-pays">
+              <p data-i18n="pays">pays</p>
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <div class="pays-list">
+              <p class="item" data-i18n="france">France</p>
+              <div class="item">
+                <p data-i18n="belgique">Belgique</p>
+              </div>
+              <div class="item">
+                <p data-i18n="allemagne">allemagne</p>
+              </div>
+            </div>
           </li>
-          <li class="item" data-i18n="mon_compte">
-            Mon compte
-            <img src="" alt="" />
-          </li>
+
+          <a href="https://www.kilo-shop.com/carte-cadeau/">
+            <li class="item" data-i18n="carte_cadeau">
+              Carte Cadeau
+              <img src="" alt="" />
+            </li>
+          </a>
+          <a href="https://www.kilo-shop.com/my-account/">
+            <li class="item" data-i18n="mon_compte">
+              Mon compte
+              <img src="" alt="" />
+            </li>
+          </a>
         </ul>
         <div class="menu-toggle" onclick="toggleMenu()">
           <div class="bar bar1"></div>
@@ -52,11 +84,26 @@
       </div>
       <div class="overlay">
         <ul>
-          <li data-i18n="concept">Concept</li>
-          <li data-i18n="je_depose">Je depose</li>
-          <li data-i18n="notre_mission">Notre mission</li>
-          <li data-i18n="shops">Shop</li>
-          <li data-i18n="looks">Looks</li>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="concept">Concept</li>
+          </a>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="je_depose">Je depose</li>
+          </a>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="notre_mission">Notre mission</li> </a
+          ><a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="shops">Shops</li>
+          </a>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="looks">Looks</li>
+          </a>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="carte_cadeau">Carte Cadeau</li>
+          </a>
+          <a href="https://www.kilo-shop.com/my-account/">
+            <li class="item" data-i18n="mon_compte">Mon compte</li>
+          </a>
         </ul>
       </div>
     </nav>
@@ -65,7 +112,6 @@
       <div class="header-p">
         <div class="flex">
           <h2 data-i18n="un_kilo_cest_koi">UN KILO <br />C'EST KOI</h2>
-          <span class="interogation"> ? </span>
         </div>
         <p data-i18n="description_kilo">
           Un kilo de plume, c’est pareil qu’un kilo de plomb (même si une
@@ -81,11 +127,29 @@
       </div>
 
       <div class="mascottequitientunpanneau">
-        <img class="header-img" src="./img/mascottequitientunpanneau.svg" alt="" />
+        <div class="header-img">
+          <div class="eye">
+            <div class="left-eye">
+              <img class="pupille" src="./eye/pupille.svg" alt="" />
+              <img class="eyesStroke" src="./eye/stroke.svg" alt="" />
+            </div>
+            <div class="left-eye">
+              <img class="pupille" src="./eye/pupille.svg" alt="" />
+              <img class="eyesStroke" src="./eye/stroke.svg" alt="" />
+            </div>
+          </div>
+          <img
+            class="mascottequitientunpanneau"
+            src="./img/mascottequitientunpanneau.svg"
+            alt=""
+          />
+        </div>
         <div class="panneau">
           <img class="paneau-img" src="./img/panneau.svg" alt="" />
           <div class="coneptText">
-            <p data-i18n="comment_le_concept_fonctionne">COMMENT LE CONCEPT FONCTIONNE</p>
+            <p data-i18n="comment_le_concept_fonctionne">
+              COMMENT LE CONCEPT FONCTIONNE
+            </p>
             <img src="./fleche.svg" alt="" />
           </div>
         </div>
@@ -96,11 +160,31 @@
       <h2 class="h2-Choisisez" data-i18n="choisissez">Choisissez</h2>
       <div class="changeHat">
         <div class="tenue outfit-selection">
-          <img id="hatImage" class="chapeau" src="./img/hat/bob/canvasbob-red.svg" alt="" />
+          <img
+            id="hatImage"
+            class="chapeau"
+            src="./img/hat/bob/canvasbob-red.svg"
+            alt=""
+          />
           <img class="mascot" id="mascot" src="./img/mascotte.svg" alt="" />
-          <img id="upperBodyImage" class="pull" src="./img/upperBody/pull/pull-blue.svg" alt="" />
-          <img id="lowerBodyImage" class="short" src="./img/lowerBody/short/short-blue.svg" alt="" />
-          <img id="shoesImage" class="shoes" src="./img/shoes/shoes-red.svg" alt="" />
+          <img
+            id="upperBodyImage"
+            class="pull"
+            src="./img/upperBody/pull/pull-blue.svg"
+            alt=""
+          />
+          <img
+            id="lowerBodyImage"
+            class="short"
+            src="./img/lowerBody/short/short-blue.svg"
+            alt=""
+          />
+          <img
+            id="shoesImage"
+            class="shoes"
+            src="./img/shoes/shoes-red.svg"
+            alt=""
+          />
         </div>
       </div>
     </section>
@@ -110,23 +194,51 @@
         <div class="pesez-pastille">
           <h2 data-i18n="pesez">Pesez</h2>
           <div class="list-pastille">
-            <button id="red" class="button-pastille selected" data-color="var(--pastille-red)">
-              <div class="rond" style="background-color: var(--pastille-red)"></div>
+            <button
+              id="red"
+              class="button-pastille selected"
+              data-color="var(--pastille-red)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-red)"
+              ></div>
               <p data-i18n="pastille_rouge">Pastille Rouge</p>
             </button>
 
-            <button id="blue" class="button-pastille" data-color="var(--pastille-blue)">
-              <div class="rond" style="background-color: var(--pastille-blue)"></div>
+            <button
+              id="blue"
+              class="button-pastille"
+              data-color="var(--pastille-blue)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-blue)"
+              ></div>
               <p data-i18n="pastille_bleu">Pastille Bleu</p>
             </button>
 
-            <button id="orange" class="button-pastille" data-color="var(--pastille-orange)">
-              <div class="rond" style="background-color: var(--pastille-orange)"></div>
+            <button
+              id="orange"
+              class="button-pastille"
+              data-color="var(--pastille-orange)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-orange)"
+              ></div>
               <p data-i18n="pastille_orange">Pastille Orange</p>
             </button>
 
-            <button id="vert" class="button-pastille" data-color="var(--pastille-green)">
-              <div class="rond" style="background-color: var(--pastille-green)"></div>
+            <button
+              id="vert"
+              class="button-pastille"
+              data-color="var(--pastille-green)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-green)"
+              ></div>
               <p data-i18n="pastille_verte">Pastille Verte</p>
             </button>
           </div>
@@ -163,28 +275,75 @@
     <section class="section emportez">
       <h2 data-i18n="emportez">Emportez</h2>
       <div class="walk-cycleContainer">
-        <img id="mascotte" class="walk-cycle" src="./walk-cycle/frame-1.svg" alt="" />
+        <img
+          id="mascotte"
+          class="walk-cycle"
+          src="./walk-cycle/frame-1.svg"
+          alt=""
+        />
       </div>
     </section>
 
     <footer class="section">
-      <img class="kiloshopLogoTypographique" src="./kiloshopLogoTypographique.svg" alt="" />
+      <img
+        class="kiloshopLogoTypographique"
+        src="./kiloshopLogoTypographique.svg"
+        alt=""
+      />
       <div class="footer-flex">
         <div>
-          <p data-i18n="devenir_franchise">Devenir franchisé</p>
-          <p data-i18n="contact_faq">Contact & FAQ</p>
-          <p data-i18n="recrutement">Recrutement</p>
-          <p data-i18n="carte_cadeau">Carte cadeau</p>
+          <a
+            href="https://www.kilo-shop.com/contact-faq/"
+            data-i18n="contact_faq"
+            >Contact & FAQ</a
+          >
+          <a
+            href="https://www.kilo-shop.com/recrutement/"
+            data-i18n="recrutement"
+            >Recrutement</a
+          >
+          <a
+            href="https://www.kilo-shop.com/carte-cadeau/"
+            data-i18n="carte_cadeau"
+            >Carte cadeau</a
+          >
+          <a
+            href="https://franchise.kilo-shop.com/"
+            data-i18n="devenir_franchise"
+            >Devenir franchisé</a
+          >
         </div>
         <div>
-          <p data-i18n="mention_legale">Mention legale</p>
-          <p data-i18n="politique_protection_donnees">Politique de protection de données</p>
-          <p data-i18n="conditions_generales">Condition générale de vente</p>
+          <a
+            href="https://www.kilo-shop.com/mentions-legales/"
+            data-i18n="mention_legale"
+            >Mention legale</a
+          >
+          <a
+            href="https://www.kilo-shop.com/politique-de-confidentialite/"
+            data-i18n="politique_protection_donnees"
+            >Politique de protection de données</a
+          >
+          <a
+            href="https://www.kilo-shop.com/conditions-generales-de-vente/"
+            data-i18n="conditions_generales"
+            >Condition générale de vente</a
+          >
         </div>
         <div>
-          <p data-i18n="facebook">Facebook</p>
-          <p data-i18n="linkedin">Linkedin</p>
-          <p data-i18n="instagram">Instagram</p>
+          <a href="https://fr-fr.facebook.com/kiloshop/" data-i18n="facebook"
+            >Facebook</a
+          >
+          <a
+            href="https://fr.linkedin.com/company/kilo-shop"
+            data-i18n="linkedin"
+            >Linkedin</a
+          >
+          <a
+            href="https://www.instagram.com/kiloshopfrance/?hl=fr"
+            data-i18n="instagram"
+            >Instagram</a
+          >
         </div>
       </div>
       <p data-i18n="copyright">@Kilo shop 2025 - Tous droits réservés</p>
@@ -192,6 +351,7 @@
 
     <!-- Scripts -->
     <script src="changeLanguage.js"></script>
+    <script src="eyesAnimation.js"></script>
     <script type="module" defer src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
     <script src="walkcycle.js"></script>
@@ -199,26 +359,6 @@
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pathseg@1.2.1/pathseg.js"></script>
-
-    <script>
-      function toggleMenu() {
-        const toggle = document.querySelector(".menu-toggle");
-        const overlay = document.querySelector(".overlay");
-        const navbar = document.querySelector(".navbarSelect");
-        toggle.classList.toggle("menu-open");
-        overlay.classList.toggle("open");
-        navbar.classList.toggle("open");
-      }
-
-      document.querySelector('.toggle-langue').addEventListener('click', function (e) {
-        e.stopPropagation();
-        document.querySelector('.langue-list').classList.toggle('active');
-        document.querySelector('.toggle-langue').classList.toggle('open');
-      });
-
-      document.addEventListener('click', function () {
-        document.querySelector('.langue-list').classList.remove('active');
-      });
-    </script>
+    <script></script>
   </body>
 </html>
