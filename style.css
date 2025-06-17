@@ -813,7 +813,7 @@ footer a {
   /* width: 100%; */
   position: absolute; 
   top: 50px;
-
+z-index: 10;
 }
 .langue-list.active{
   display: block;
@@ -1366,13 +1366,13 @@ header p {
     margin-top: 30px;
 
   position: relative;
-  margin-bottom: -34px;
+  margin-bottom: -32px;
 }
 .chapeau{
       margin-top: 30px;
 
   position: relative;
-  margin-bottom: -32px;
+  margin-bottom: -30px;
 }
 .short.tshirtimg {
   /* margin-top: -5px; */
