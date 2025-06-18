@@ -943,7 +943,7 @@ function setupClothingNavigation(partName) {
   const part = clothingParts[partName];
 console.log(upperBody);
 
-  const updateUI = () => {
+const updateUI = () => {
     const item = part.list[part.index];
     if (!item) return;
     part.imageEl.className = "";
@@ -1039,32 +1039,47 @@ function supprimerTousLesVetements() {
 const clothingOrder = ["hat", "tshirt", "pantalon", "shoes"];
 let scrollStep = 0; // index dans l'ordre
 let isScrolling = false;
+let touchStartY = 0;
 
-// Fonction pour changer l'élément actif
+// Événement tactile pour mobile
+document.querySelector(".section1").addEventListener("touchstart", (e) => {
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
 
-// Blocage du scroll pendant l’animation
+document.querySelector(".section1").addEventListener("touchend", (e) => {
+  const touchEndY = e.changedTouches[0].clientY;
+  const deltaY = touchStartY - touchEndY;
 
-// Gestion du scroll dans la section uniquement
+  const section = document.querySelector(".section1");
+  const rect = section.getBoundingClientRect();
+  const isInView = rect.top < window.innerHeight && rect.bottom > 0;
 
-document.querySelector(".section1").addEventListener(
-  "wheel",
-  (e) => {
-    const section = document.querySelector(".section1");
-    const rect = section.getBoundingClientRect();
-    const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+  if (!isInView || isScrolling || deltaY <= 30) return; // Doit swiper vers le haut (> 30px)
 
-    if (!isInView || isScrolling || e.deltaY <= 0) return;
+  isScrolling = true;
+  scrollNextClothing();
 
-    isScrolling = true; // bloquer
-    scrollNextClothing(); // changer de vêtement
+  setTimeout(() => {
+    isScrolling = false;
+  }, 300); // un peu plus long pour éviter les swipes involontaires
+}, { passive: true });
 
-    // remettre à false après délai
-    setTimeout(() => {
-      isScrolling = false;
-    }, 50); // cooldown 1 seconde
-  },
-  { passive: true }
-);
+// L’événement wheel reste utile pour desktop
+document.querySelector(".section1").addEventListener("wheel", (e) => {
+  const section = document.querySelector(".section1");
+  const rect = section.getBoundingClientRect();
+  const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+  if (!isInView || isScrolling || e.deltaY <= 0) return;
+
+  isScrolling = true;
+  scrollNextClothing();
+
+  setTimeout(() => {
+    isScrolling = false;
+  }, 50);
+}, { passive: true });
+
 
 // const cursor = document.getElementById("custom-cursor");
 
