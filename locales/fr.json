@@ -9,7 +9,10 @@
   "francais": "Français",
   "anglais": "Anglais",
   "pays": "Pays",
-
+  "voici_le_bareme":"Voici le barême des tarifs. Chaque couleurs correspond a un prix au kilo",
+"vous_avez_trouvée":"Vous avez trouvée le bonheur ? Apres avoir payer plus qu’a rentrez chez vous et essayez votre nouveau look",
+"vous_avez_choisis":"              Vous avez choisis ? Plus qu’a pesez vos vêtements et prendre connaissance du prix au kilo",
+"allez_dans":"Allez dans l’une de nos boutiques, choisissez vos vétements.",
     "france": "France",
   "allemagne": "allemagne",
   "belgique": "belgique",
