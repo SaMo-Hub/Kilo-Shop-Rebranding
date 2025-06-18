@@ -109,8 +109,9 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: stretch; /* Changé de 'end' à 'stretch' */
-   padding: 60px 60px;
+  align-items: end; /* Changé de 'end' à 'stretch' */
+   padding: 0px 60px;
+   padding-top: 60px;
 
   gap: 40px;
   color: var(--primary-color);
@@ -121,7 +122,7 @@ header {
 .header-p {
   display: flex;
   flex-direction: column;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
 
 }
 .flex{

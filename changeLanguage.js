@@ -9,7 +9,9 @@ const countryToLang = {
   belgië:'nl',
   duitsland:'de',
   belgien:'nl',
-deutschland:'de'
+deutschland:'de',
+belgium:'nl',
+germany:'de'
 };
 
 const langToDisplayName = {
@@ -30,29 +32,19 @@ async function loadLang(lang) {
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
-      if (key === "langue") return; // ← ajoute cette ligne
+  
       if (translations[key]) {
         el.textContent = translations[key];
       }
     });
 
     // Met à jour aussi le texte affiché dans le bouton langue
-    updateLangButton(lang);
   } catch (e) {
     console.error(`Erreur lors du chargement de la langue ${lang}:`, e);
   }
 }
 
-function updateLangButton(lang) {
-  const langButtonText = document.querySelector(
-    '.toggle-langue p[data-i18n="langue"]'
-  );
-  if (langButtonText) {
-    // Affiche la langue dans le menu langue (exemple : "Francais", "Anglais", "Allemand")
-    langButtonText.textContent =
-      langToDisplayName[lang] || langToDisplayName[defaultLang];
-  }
-}
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Récupère pays et langue stockés
