@@ -1,50 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <!-- Changé de "en" à "fr" puisque votre contenu est en français -->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
-  <link rel="icon" href="/iconlogo.svg" type="image/x-icon" />
-
-      <title class="hidden"> Kilo Shop - Mode vintage au kilo | Seconde main colorée et responsable</title>
-  <meta name="description" content="Chez Kilo Shop, achetez des vêtements vintage au kilo. Choisissez, pesez, payez : un concept simple et responsable. Découvrez notre univers unique !" />
-  <meta name="keywords" content="Kilo Shop, vêtements au kilo, friperie, mode vintage, seconde main, recyclage textile, shopping responsable, pastilles de prix" />
-  <meta name="author" content="Kilo Shop" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/iconlogo.svg" type="image/x-icon">
+    
+    <title class="hidden">Kilo Shop - Mode vintage au kilo | Seconde main colorée et responsable</title>
+    <meta name="description" content="Chez Kilo Shop, achetez des vêtements vintage au kilo. Choisissez, pesez, payez : un concept simple et responsable. Découvrez notre univers unique !">
+    <meta name="keywords" content="Kilo Shop, vêtements au kilo, friperie, mode vintage, seconde main, recyclage textile, shopping responsable, pastilles de prix">
+    <meta name="author" content="Kilo Shop">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <nav class="navbarSelect">
       <div class="navbar">
         <div class="logo-flex">
           <a href="https://www.kilo-shop.com/">
-            <img class="navLogo" src="./iconlogo.svg" alt="" />
+            <img class="navLogo" src="./iconlogo.svg" alt="">
           </a>
           <ul>
-            <a href="https://www.kilo-shop.com/concept/">
-              <li class="item" data-i18n="concept">Concept</li>
-            </a>
-            <a href="https://www.kilo-shop.com/concept/">
-              <li class="item" data-i18n="je_depose">Je depose</li>
-            </a>
-            <a href="https://www.kilo-shop.com/concept/">
-              <li class="item" data-i18n="notre_mission">Notre mission</li> </a
-            ><a href="https://www.kilo-shop.com/concept/">
-              <li class="item" data-i18n="shops">Shops</li>
-            </a>
-            <a href="https://www.kilo-shop.com/concept/">
-              <li class="item" data-i18n="looks">Looks</li>
-            </a>
+            <li class="item" data-i18n="concept"><a href="https://www.kilo-shop.com/concept/">Concept</a></li>
+            <li class="item" data-i18n="je_depose"><a href="https://www.kilo-shop.com/concept/">Je depose</a></li>
+            <li class="item" data-i18n="notre_mission"><a href="https://www.kilo-shop.com/concept/">Notre mission</a></li>
+            <li class="item" data-i18n="shops"><a href="https://www.kilo-shop.com/concept/">Shops</a></li>
+            <li class="item" data-i18n="looks"><a href="https://www.kilo-shop.com/concept/">Looks</a></li>
           </ul>
         </div>
         <ul>
           <li class="div-langue">
             <button class="item toggle-langue">
-              <p data-i18n="langue">Langue</p>
+              <span data-i18n="langue">Langue</span>
               <i class="fa fa-chevron-down"></i>
             </button>
             <div class="langue-list">
@@ -56,7 +42,7 @@
           </li>
           <li class="div-pays">
             <button class="item toggle-pays">
-              <p data-i18n="pays">pays</p>
+              <span data-i18n="pays">pays</span>
               <i class="fa fa-chevron-down"></i>
             </button>
             <div class="pays-list">
@@ -69,19 +55,14 @@
               </div>
             </div>
           </li>
-
-          <a href="https://www.kilo-shop.com/carte-cadeau/">
-            <li class="item" data-i18n="carte_cadeau">
-              Carte Cadeau
-              <img src="" alt="" />
-            </li>
-          </a>
-          <a href="https://www.kilo-shop.com/my-account/">
-            <li class="item" data-i18n="mon_compte">
-              Mon compte
-              <img src="" alt="" />
-            </li>
-          </a>
+          <li class="item" data-i18n="carte_cadeau">
+            <a href="https://www.kilo-shop.com/carte-cadeau/">Carte Cadeau</a>
+            <img src="" alt="">
+          </li>
+          <li class="item" data-i18n="mon_compte">
+            <a href="https://www.kilo-shop.com/my-account/">Mon compte</a>
+            <img src="" alt="">
+          </li>
         </ul>
         <div class="menu-toggle" onclick="toggleMenu()">
           <div class="bar bar1"></div>
@@ -90,26 +71,13 @@
       </div>
       <div class="overlay">
         <ul>
-          <a href="https://www.kilo-shop.com/concept/">
-            <li class="item" data-i18n="concept">Concept</li>
-          </a>
-          <a href="https://www.kilo-shop.com/concept/">
-            <li class="item" data-i18n="je_depose">Je depose</li>
-          </a>
-          <a href="https://www.kilo-shop.com/concept/">
-            <li class="item" data-i18n="notre_mission">Notre mission</li> </a
-          ><a href="https://www.kilo-shop.com/concept/">
-            <li class="item" data-i18n="shops">Shops</li>
-          </a>
-          <a href="https://www.kilo-shop.com/concept/">
-            <li class="item" data-i18n="looks">Looks</li>
-          </a>
-          <a href="https://www.kilo-shop.com/concept/">
-            <li class="item" data-i18n="carte_cadeau">Carte Cadeau</li>
-          </a>
-          <a href="https://www.kilo-shop.com/my-account/">
-            <li class="item" data-i18n="mon_compte">Mon compte</li>
-          </a>
+          <li class="item" data-i18n="concept"><a href="https://www.kilo-shop.com/concept/">Concept</a></li>
+          <li class="item" data-i18n="je_depose"><a href="https://www.kilo-shop.com/concept/">Je depose</a></li>
+          <li class="item" data-i18n="notre_mission"><a href="https://www.kilo-shop.com/concept/">Notre mission</a></li>
+          <li class="item" data-i18n="shops"><a href="https://www.kilo-shop.com/concept/">Shops</a></li>
+          <li class="item" data-i18n="looks"><a href="https://www.kilo-shop.com/concept/">Looks</a></li>
+          <li class="item" data-i18n="carte_cadeau"><a href="https://www.kilo-shop.com/concept/">Carte Cadeau</a></li>
+          <li class="item" data-i18n="mon_compte"><a href="https://www.kilo-shop.com/my-account/">Mon compte</a></li>
         </ul>
       </div>
     </nav>
@@ -117,17 +85,17 @@
     <header>
       <div class="header-p">
         <div class="flex">
-          <h2 data-i18n="un_kilo_cest_koi">UN KILO <br />C'EST KOI</h2>
+          <h2 data-i18n="un_kilo_cest_koi">UN KILO <br>C'EST KOI</h2>
         </div>
         <p data-i18n="description_kilo">
-          Un kilo de plume, c’est pareil qu’un kilo de plomb (même si une
-          doudoune en plume, c’est plus pratique qu’une doudoune en plomb).<br /><br />
+          Un kilo de plume, c'est pareil qu'un kilo de plomb (même si une
+          doudoune en plume, c'est plus pratique qu'une doudoune en plomb).<br><br>
           Alors ok, une robe en soie, ça ne pèse pas lourd. Sauf que sa matière
-          première vaut plus que celle d’une robe en coton…<br /><br />
+          première vaut plus que celle d'une robe en coton...<br><br>
           Donc, chez Kilo Shop, on a fait simple : à chaque vêtement ou
           accessoire, son bip de couleur qui correspond à un prix/kg selon les
-          matières.<br /><br />
-          En gros, 1 kilo by Kilo Shop, c’est 3 à 6 pièces uniques dans votre
+          matières.<br><br>
+          En gros, 1 kilo by Kilo Shop, c'est 3 à 6 pièces uniques dans votre
           panier.
         </p>
       </div>
@@ -136,27 +104,27 @@
         <div class="header-img">
           <div class="eye">
             <div class="left-eye">
-              <img class="pupille" src="./img/eye/pupille.svg" alt="" />
-              <img class="eyesStroke" src="./img/eye/stroke.svg" alt="" />
+              <img class="pupille" src="./img/eye/pupille.svg" alt="">
+              <img class="eyesStroke" src="./img/eye/stroke.svg" alt="">
             </div>
             <div class="left-eye">
-              <img class="pupille" src="./img/eye/pupille.svg" alt="" />
-              <img class="eyesStroke" src="./img/eye/stroke.svg" alt="" />
+              <img class="pupille" src="./img/eye/pupille.svg" alt="">
+              <img class="eyesStroke" src="./img/eye/stroke.svg" alt="">
             </div>
           </div>
           <img
             class="mascottequitientunpanneau"
             src="./img/mascottequitientunpanneau.svg"
             alt=""
-          />
+          >
         </div>
         <div class="panneau">
-          <img class="paneau-img" src="./img/panneau.svg" alt="" />
+          <img class="paneau-img" src="./img/panneau.svg" alt="">
           <div class="coneptText">
             <p data-i18n="comment_le_concept_fonctionne">
               COMMENT LE CONCEPT FONCTIONNE
             </p>
-            <img src="./fleche.svg" alt="" />
+            <img src="./fleche.svg" alt="">
           </div>
         </div>
       </div>
@@ -166,7 +134,7 @@
       <div>
         <h2 class="h2-Choisisez" data-i18n="choisissez">Choisissez</h2>
         <p data-i18n="allez_dans" class="subtitle secondary">
-          Allez dans l’une de nos boutiques, choisissez vos vétements.
+          Allez dans l'une de nos boutiques, choisissez vos vétements.
         </p>
       </div>
       <div class="changeHat">
@@ -176,26 +144,26 @@
             class="chapeau"
             src="./img/hat/bob/canvasbob-red.svg"
             alt=""
-          />
-          <img class="mascot" id="mascot" src="./img/mascotte.svg" alt="" />
+          >
+          <img class="mascot" id="mascot" src="./img/mascotte.svg" alt="">
           <img
             id="upperBodyImage"
             class="pull"
             src="./img/upperBody/pull/pull-blue.svg"
             alt=""
-          />
+          >
           <img
             id="lowerBodyImage"
             class="short"
             src="./img/lowerBody/short/short-blue.svg"
             alt=""
-          />
+          >
           <img
             id="shoesImage"
             class="shoes"
             src="./img/shoes/shoes-red.svg"
             alt=""
-          />
+          >
         </div>
       </div>
     </section>
@@ -206,7 +174,7 @@
           <div>
             <h2 data-i18n="pesez">Pesez</h2>
             <p data-i18n="vous_avez_choisis" class="subtitle-pesez">
-              Vous avez choisis ? Plus qu’a pesez vos vêtements et prendre connaissance du prix au kilo</p>
+              Vous avez choisis ? Plus qu'a pesez vos vêtements et prendre connaissance du prix au kilo</p>
           </div>
           <div class="list-pastille">
             <button
@@ -214,11 +182,11 @@
               class="button-pastille selected"
               data-color="var(--pastille-red)"
             >
-              <div
+              <span
                 class="rond"
                 style="background-color: var(--pastille-red)"
-              ></div>
-              <p data-i18n="pastille_rouge">Pastille Rouge</p>
+              ></span>
+              <span data-i18n="pastille_rouge">Pastille Rouge</span>
             </button>
 
             <button
@@ -226,11 +194,11 @@
               class="button-pastille"
               data-color="var(--pastille-blue)"
             >
-              <div
+              <span
                 class="rond"
                 style="background-color: var(--pastille-blue)"
-              ></div>
-              <p data-i18n="pastille_bleu">Pastille Bleu</p>
+              ></span>
+              <span data-i18n="pastille_bleu">Pastille Bleu</span>
             </button>
 
             <button
@@ -238,11 +206,11 @@
               class="button-pastille"
               data-color="var(--pastille-orange)"
             >
-              <div
+              <span
                 class="rond"
                 style="background-color: var(--pastille-orange)"
-              ></div>
-              <p data-i18n="pastille_orange">Pastille Orange</p>
+              ></span>
+              <span data-i18n="pastille_orange">Pastille Orange</span>
             </button>
 
             <button
@@ -250,11 +218,11 @@
               class="button-pastille"
               data-color="var(--pastille-green)"
             >
-              <div
+              <span
                 class="rond"
                 style="background-color: var(--pastille-green)"
-              ></div>
-              <p data-i18n="pastille_verte">Pastille Verte</p>
+              ></span>
+              <span data-i18n="pastille_verte">Pastille Verte</span>
             </button>
           </div>
         </div>
@@ -263,9 +231,9 @@
       <div class="relative">
         <canvas id="world"></canvas>
         <div class="balanceimg">
-          <img class="haut" src="./img/hautBlance.svg" alt="" />
+          <img class="haut" src="./img/hautBlance.svg" alt="">
           <div id="needle"></div>
-          <img class="bas" src="./img/basBlalance.svg" alt="" />
+          <img class="bas" src="./img/basBlalance.svg" alt="">
         </div>
         <div class="balanceText">
           <div class="euro">
@@ -283,7 +251,7 @@
     <section class="section2 section pastille-section">
      <div>
        <h2 data-i18n="pastille">Pastille</h2>
-       <p data-i18n="voici_le_bareme"class="subtitle secondary">
+       <p data-i18n="voici_le_bareme" class="subtitle secondary">
         Voici le barême des tarifs. Chaque couleurs correspond a un prix au kilo
        </p>
       </div>
@@ -295,9 +263,9 @@
     <section class="section emportez">
       <div>
         <h2 data-i18n="emportez">Emportez</h2>
-<p data-i18n="vous_avez_trouvée" class="subtitle">
-  Vous avez trouvée le bonheur ? Apres avoir payer plus qu’a rentrez chez vous et essayez votre nouveau look
-</p>
+        <p data-i18n="vous_avez_trouvée" class="subtitle">
+          Vous avez trouvée le bonheur ? Apres avoir payer plus qu'a rentrez chez vous et essayez votre nouveau look
+        </p>
       </div>
       <div class="walk-cycleContainer">
         <img
@@ -305,7 +273,7 @@
           class="walk-cycle"
           src="./walk-cycle/frame-1.svg"
           alt=""
-        />
+        >
       </div>
     </section>
 
@@ -314,7 +282,7 @@
         class="kiloshopLogoTypographique"
         src="./kiloshopLogoTypographique.svg"
         alt=""
-      />
+      >
       <div class="footer-flex">
         <div>
           <a
@@ -376,17 +344,15 @@
 
     <!-- Scripts -->
     <script src="lenis-script.js"></script>
-     <script src="https://unpkg.com/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
-
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
     <script src="changeLanguage.js"></script>
     <script src="eyesAnimation.js"></script>
-    <script type="module" defer src="script.js"></script>
+    <script defer src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
     <script src="walkcycle.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pathseg@1.2.1/pathseg.js"></script>
-    <script></script>
   </body>
 </html>

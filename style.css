@@ -1261,6 +1261,10 @@ header p {
 
   position: relative;
   margin-bottom: -60px;
+  
+}.short.tshirtimg {
+  /* margin-top: -5px; */
+  margin-bottom: 58px;
 }
 }
 

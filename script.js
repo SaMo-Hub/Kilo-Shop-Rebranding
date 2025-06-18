@@ -55,7 +55,7 @@ const listCloth = {
       htmlimg: "./img/hat/bob/bob-red.svg",
       pastille: "red",
       kg: 0.15, // 150g
-      size: 100,
+      size: 80,
       part: "hat",
       vetement: "bob"
     },
@@ -65,7 +65,7 @@ const listCloth = {
       htmlimg: "./img/hat/bob/bob-blue.svg",
       pastille: "blue",
       kg: 0.15,
-      size: 100,
+      size: 80,
       part: "hat",
       vetement: "bob"
     },
@@ -75,7 +75,7 @@ const listCloth = {
       htmlimg: "./img/hat/bob/bob-orange.svg",
       pastille: "orange",
       kg: 0.15,
-      size: 100,
+      size: 80,
       part: "hat",
       vetement: "bob"
     },
@@ -85,7 +85,7 @@ const listCloth = {
       htmlimg: "./img/hat/bob/bob-green.svg",
       pastille: "vert",
       kg: 0.15,
-      size: 100,
+      size: 80,
       part: "hat",
       vetement: "bob"
     },
@@ -95,7 +95,7 @@ const listCloth = {
       htmlimg: "./img/hat/chapeau/chapeau-green.svg",
       pastille: "vert",
       kg: 0.25, // 250g
-      size: 120,
+      size: 100,
       part: "hat",
       vetement: "chapeau"
     },
@@ -105,7 +105,7 @@ const listCloth = {
       htmlimg: "./img/hat/chapeau/chapeau-orange.svg",
       pastille: "orange",
       kg: 0.25,
-      size: 120,
+      size: 100,
       part: "hat",
       vetement: "chapeau"
     },
@@ -115,7 +115,7 @@ const listCloth = {
       htmlimg: "./img/hat/chapeau/chapeau-blue.svg",
       pastille: "blue",
       kg: 0.25,
-      size: 120,
+      size: 100,
       part: "hat",
       vetement: "chapeau"
     },
@@ -125,7 +125,7 @@ const listCloth = {
       htmlimg: "./img/hat/chapeau/chapeau-red.svg",
       pastille: "red",
       kg: 0.25,
-      size: 120,
+      size: 100,
       part: "hat",
       vetement: "chapeau"
     }
@@ -137,7 +137,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/tshirt-orange.svg",
       pastille: "orange",
       kg: 0.18, // 180g
-      size: 200,
+      size: 180,
       part: "upperbody",
       vetement: "tshirt"
     },
@@ -147,7 +147,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/tshirt-green.svg",
       pastille: "vert",
       kg: 0.18,
-      size: 200,
+      size: 180,
       part: "upperbody",
       vetement: "tshirt"
     },
@@ -157,7 +157,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/tshirt-blue.svg",
       pastille: "blue",
       kg: 0.18,
-      size: 200,
+      size: 180,
       part: "upperbody",
       vetement: "tshirt"
     },
@@ -167,7 +167,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/tshirt-red.svg",
       pastille: "red",
       kg: 0.18,
-      size: 200,
+      size: 180,
       part: "upperbody",
       vetement: "tshirt"
     }
@@ -179,7 +179,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/pull/pull-orange.svg",
       pastille: "orange",
       kg: 0.45, // 450g
-      size: 280,
+      size: 260,
       part: "upperbody",
       vetement: "pull"
     },
@@ -189,7 +189,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/pull/pull-red.svg",
       pastille: "red",
       kg: 0.45,
-      size: 280,
+      size: 260,
       part: "upperbody",
       vetement: "pull"
     },
@@ -199,7 +199,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/pull/pull-blue.svg",
       pastille: "blue",
       kg: 0.45,
-      size: 280,
+      size: 260,
       part: "upperbody",
       vetement: "pull"
     },
@@ -209,7 +209,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/pull/pull-green.svg",
       pastille: "vert",
       kg: 0.45,
-      size: 280,
+      size: 260,
       part: "upperbody",
       vetement: "pull"
     }
@@ -221,7 +221,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/veste/veste-orange.svg",
       pastille: "orange",
       kg: 0.65, // 650g
-      size: 280,
+      size: 260,
       part: "upperbody",
       vetement: "veste"
     },
@@ -231,7 +231,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/veste/veste-red.svg",
       pastille: "red",
       kg: 0.65,
-      size: 280,
+      size: 260,
       part: "upperbody",
       vetement: "veste"
     },
@@ -241,7 +241,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/veste/veste-blue.svg",
       pastille: "blue",
       kg: 0.65,
-      size: 280,
+      size: 260,
       part: "upperbody",
       vetement: "veste"
     },
@@ -251,7 +251,7 @@ const listCloth = {
       htmlimg: "./img/upperBody/veste/veste-green.svg",
       pastille: "vert",
       kg: 0.65,
-      size: 280,
+      size: 260,
       part: "upperbody",
       vetement: "veste"
     }
@@ -263,7 +263,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/short/short-green.svg",
       pastille: "vert",
       kg: 0.25, // 250g
-      size: 140,
+      size: 120,
       part: "lowerbody",
       vetement: "short"
     },
@@ -273,7 +273,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/short/short-red.svg",
       pastille: "red",
       kg: 0.25,
-      size: 140,
+      size: 120,
       part: "lowerbody",
       vetement: "short"
     },
@@ -283,7 +283,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/short/short-orange.svg",
       pastille: "orange",
       kg: 0.25,
-      size: 140,
+      size: 120,
       part: "lowerbody",
       vetement: "short"
     },
@@ -293,7 +293,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/short/short-blue.svg",
       pastille: "blue",
       kg: 0.25,
-      size: 140,
+      size: 120,
       part: "lowerbody",
       vetement: "short"
     },
@@ -303,7 +303,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/jean-blue.svg",
       pastille: "blue",
       kg: 0.8, // 800g
-      size: 180,
+      size: 160,
       part: "lowerbody",
       vetement: "jean"
     },
@@ -313,7 +313,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/jean-green.svg",
       pastille: "vert",
       kg: 0.8,
-      size: 180,
+      size: 160,
       part: "lowerbody",
       vetement: "jean"
     },
@@ -323,7 +323,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/jean-red.svg",
       pastille: "red",
       kg: 0.8,
-      size: 180,
+      size: 160,
       part: "lowerbody",
       vetement: "jean"
     },
@@ -333,7 +333,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/jean-orange.svg",
       pastille: "orange",
       kg: 0.8,
-      size: 180,
+      size: 160,
       part: "lowerbody",
       vetement: "jean"
     },
@@ -343,7 +343,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/jupe/jupe-blue.svg",
       pastille: "blue",
       kg: 0.4, // 400g
-      size: 180,
+      size: 160,
       part: "lowerbody",
       vetement: "jupe"
     },
@@ -353,7 +353,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/jupe/jupe-green.svg",
       pastille: "vert",
       kg: 0.4,
-      size: 180,
+      size: 160,
       part: "lowerbody",
       vetement: "jupe"
     },
@@ -363,7 +363,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/jupe/jupe-red.svg",
       pastille: "red",
       kg: 0.4,
-      size: 180,
+      size: 160,
       part: "lowerbody",
       vetement: "jupe"
     },
@@ -373,7 +373,7 @@ const listCloth = {
       htmlimg: "./img/lowerBody/jupe/jupe-orange.svg",
       pastille: "orange",
       kg: 0.4,
-      size: 180,
+      size: 160,
       part: "lowerbody",
       vetement: "jupe"
     }
@@ -385,7 +385,7 @@ const listCloth = {
       htmlimg: "./img/shoes/shoes-red.svg",
       pastille: "red",
       kg: 0.6, // 600g la paire
-      size: 150,
+      size: 130,
       part: "shoes",
       vetement: "shoes"
     },
@@ -395,7 +395,7 @@ const listCloth = {
       htmlimg: "./img/shoes/shoes-blue.svg",
       pastille: "blue",
       kg: 0.6,
-      size: 150,
+      size: 130,
       part: "shoes",
       vetement: "shoes"
     },
@@ -405,7 +405,7 @@ const listCloth = {
       htmlimg: "./img/shoes/shoes-green.svg",
       pastille: "vert",
       kg: 0.6,
-      size: 150,
+      size: 130,
       part: "shoes",
       vetement: "shoes"
     },
@@ -415,7 +415,7 @@ const listCloth = {
       htmlimg: "./img/shoes/shoes-orange.svg",
       pastille: "orange",
       kg: 0.6,
-      size: 150,
+      size: 130,
       part: "shoes",
       vetement: "shoes"
     }
@@ -493,10 +493,10 @@ render.canvas.addEventListener(
   { passive: true }
 ); // passive = on autorise le scroll
 // Capteur de balance
-const balanceSensor = Matter.Bodies.rectangle(width / 1.5, 388, 280, 80, {
+const balanceSensor = Matter.Bodies.rectangle(width / 1.5, 388, 280, 900, {
   isStatic: true,
   isSensor: true,
-  render: { visible: true, fillStyle: "#0000001c" },
+  render: { visible: false, fillStyle: "#0000001c" },
 });
 World.add(world, balanceSensor);
 function repositionElements() {
@@ -515,7 +515,7 @@ function repositionElements() {
 
   Matter.Body.setPosition(balanceGround, { x: balanceX, y: 440 });
   Matter.Body.setPosition(balance, { x: balanceX, y: 465 });
-  Matter.Body.setPosition(balanceSensor, { x: balanceX, y: 388 });
+  Matter.Body.setPosition(balanceSensor, { x: balanceX, y: -20 });
 }
 
 // Lier les deux ensemble
