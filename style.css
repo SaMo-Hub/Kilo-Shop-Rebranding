@@ -109,7 +109,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: end; /* Changé de 'end' à 'stretch' */
+  /* align-items: end; Changé de 'end' à 'stretch' */
    padding: 0px 60px;
    padding-top: 60px;
 
