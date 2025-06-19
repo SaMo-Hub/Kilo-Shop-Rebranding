@@ -1,234 +1,389 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/iconlogo.svg" type="image/x-icon">
+  <!-- Changé de "en" à "fr" puisque votre contenu est en français -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title class="hidden">Kilo shop</title> -->
+  <link rel="icon" href="/iconlogo.svg" type="image/x-icon" />
 
-  <title>Kilo Shop - Mode vintage au kilo | Seconde main colorée et responsable</title>
-  <meta name="description" content="Chez Kilo Shop, achetez des vêtements vintage au kilo. Choisissez, pesez, payez : un concept simple et responsable. Découvrez notre univers unique !">
-  <meta name="keywords" content="Kilo Shop, vêtements au kilo, friperie, mode vintage, seconde main, recyclage textile, shopping responsable, pastilles de prix">
-  <meta name="author" content="Kilo Shop">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-  <nav class="navbarSelect">
-    <div class="navbar">
-      <div class="logo-flex">
-        <a href="https://www.kilo-shop.com/">
-          <img class="navLogo" src="./iconlogo.svg" alt="Logo Kilo Shop">
-        </a>
+      <title>Kilo Shop – Mode vintage au kilo | Seconde main colorée et responsable</title>
+  <meta name="description" content="Chez Kilo Shop, achetez des vêtements vintage au kilo. Choisissez, pesez, payez : un concept simple et responsable. Découvrez notre univers unique !" />
+  <meta name="keywords" content="Kilo Shop, vêtements au kilo, friperie, mode vintage, seconde main, recyclage textile, shopping responsable, pastilles de prix" />
+  <meta name="author" content="Kilo Shop" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbarSelect">
+      <div class="navbar">
+        <div class="logo-flex">
+          <a href="https://www.kilo-shop.com/">
+            <img class="navLogo" src="./iconlogo.svg" alt="" />
+          </a>
+          <ul>
+            <a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="concept">Concept</li>
+            </a>
+            <a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="je_depose">Je depose</li>
+            </a>
+            <a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="notre_mission">Notre mission</li> </a
+            ><a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="shops">Shops</li>
+            </a>
+            <a href="https://www.kilo-shop.com/concept/">
+              <li class="item" data-i18n="looks">Looks</li>
+            </a>
+          </ul>
+        </div>
         <ul>
-          <li class="item"><a href="https://www.kilo-shop.com/concept/">Concept</a></li>
-          <li class="item"><a href="https://www.kilo-shop.com/concept/">Je dépose</a></li>
-          <li class="item"><a href="https://www.kilo-shop.com/concept/">Notre mission</a></li>
-          <li class="item"><a href="https://www.kilo-shop.com/concept/">Shops</a></li>
-          <li class="item"><a href="https://www.kilo-shop.com/concept/">Looks</a></li>
+          <li class="div-langue">
+            <button class="item toggle-langue">
+              <p data-i18n="langue">Langue</p>
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <div class="langue-list">
+              <p class="item" data-i18n="francais">Francais</p>
+              <div class="item">
+                <p data-i18n="anglais">Anglais</p>
+              </div>
+            </div>
+          </li>
+          <li class="div-pays">
+            <button class="item toggle-pays">
+              <p data-i18n="pays">pays</p>
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <div class="pays-list">
+              <p class="item" data-i18n="france">France</p>
+              <div class="item">
+                <p data-i18n="belgique">Belgique</p>
+              </div>
+              <div class="item">
+                <p data-i18n="allemagne">allemagne</p>
+              </div>
+            </div>
+          </li>
+
+          <a href="https://www.kilo-shop.com/carte-cadeau/">
+            <li class="item" data-i18n="carte_cadeau">
+              Carte Cadeau
+              <img src="" alt="" />
+            </li>
+          </a>
+          <a href="https://www.kilo-shop.com/my-account/">
+            <li class="item" data-i18n="mon_compte">
+              Mon compte
+              <img src="" alt="" />
+            </li>
+          </a>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">
+          <div class="bar bar1"></div>
+          <div class="bar bar2"></div>
+        </div>
+      </div>
+      <div class="overlay">
+        <ul>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="concept">Concept</li>
+          </a>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="je_depose">Je depose</li>
+          </a>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="notre_mission">Notre mission</li> </a
+          ><a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="shops">Shops</li>
+          </a>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="looks">Looks</li>
+          </a>
+          <a href="https://www.kilo-shop.com/concept/">
+            <li class="item" data-i18n="carte_cadeau">Carte Cadeau</li>
+          </a>
+          <a href="https://www.kilo-shop.com/my-account/">
+            <li class="item" data-i18n="mon_compte">Mon compte</li>
+          </a>
         </ul>
       </div>
-      <ul>
-        <li class="div-langue">
-          <button class="item toggle-langue">
-            <span>Langue</span><i class="fa fa-chevron-down"></i>
-          </button>
-          <div class="langue-list">
-            <p class="item">Français</p>
-            <div class="item"><p>Anglais</p></div>
-          </div>
-        </li>
-        <li class="div-pays">
-          <button class="item toggle-pays">
-            <span>Pays</span><i class="fa fa-chevron-down"></i>
-          </button>
-          <div class="pays-list">
-            <p class="item">France</p>
-            <div class="item"><p>Belgique</p></div>
-            <div class="item"><p>Allemagne</p></div>
-          </div>
-        </li>
-        <li class="item">
-          <a href="https://www.kilo-shop.com/carte-cadeau/">Carte Cadeau</a>
-          <img src="./img/cartecadeau.svg" alt="Icône carte cadeau">
-        </li>
-        <li class="item">
-          <a href="https://www.kilo-shop.com/my-account/">Mon compte</a>
-          <img src="./img/account.svg" alt="Icône mon compte">
-        </li>
-      </ul>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-      </div>
-    </div>
-    <div class="overlay">
-      <ul>
-        <li class="item"><a href="https://www.kilo-shop.com/concept/">Concept</a></li>
-        <li class="item"><a href="https://www.kilo-shop.com/concept/">Je dépose</a></li>
-        <li class="item"><a href="https://www.kilo-shop.com/concept/">Notre mission</a></li>
-        <li class="item"><a href="https://www.kilo-shop.com/concept/">Shops</a></li>
-        <li class="item"><a href="https://www.kilo-shop.com/concept/">Looks</a></li>
-        <li class="item"><a href="https://www.kilo-shop.com/concept/">Carte Cadeau</a></li>
-        <li class="item"><a href="https://www.kilo-shop.com/my-account/">Mon compte</a></li>
-      </ul>
-    </div>
-  </nav>
+    </nav>
 
-  <header>
-    <div class="header-p">
-      <div class="flex">
-        <h2>UN KILO <br>C'EST KOI</h2>
+    <header>
+      <div class="header-p">
+        <div class="flex">
+          <h2 data-i18n="un_kilo_cest_koi">UN KILO <br />C'EST KOI</h2>
+        </div>
+        <p data-i18n="description_kilo">
+          Un kilo de plume, c’est pareil qu’un kilo de plomb (même si une
+          doudoune en plume, c’est plus pratique qu’une doudoune en plomb).<br /><br />
+          Alors ok, une robe en soie, ça ne pèse pas lourd. Sauf que sa matière
+          première vaut plus que celle d’une robe en coton…<br /><br />
+          Donc, chez Kilo Shop, on a fait simple : à chaque vêtement ou
+          accessoire, son bip de couleur qui correspond à un prix/kg selon les
+          matières.<br /><br />
+          En gros, 1 kilo by Kilo Shop, c’est 3 à 6 pièces uniques dans votre
+          panier.
+        </p>
       </div>
-      <p>
-        Un kilo de plume, c'est pareil qu'un kilo de plomb (même si une doudoune en plume, c'est plus pratique qu'une doudoune en plomb).<br><br>
-        Alors ok, une robe en soie, ça ne pèse pas lourd. Sauf que sa matière première vaut plus que celle d'une robe en coton...<br><br>
-        Donc, chez Kilo Shop, on a fait simple : à chaque vêtement ou accessoire, son bip de couleur qui correspond à un prix/kg selon les matières.<br><br>
-        En gros, 1 kilo by Kilo Shop, c'est 3 à 6 pièces uniques dans votre panier.
-      </p>
-    </div>
 
-    <div class="mascottequitientunpanneau">
-      <div class="header-img">
-        <div class="eye">
-          <div class="left-eye">
-            <img class="pupille" src="./img/eye/pupille.svg" alt="Pupille gauche">
-            <img class="eyesStroke" src="./img/eye/stroke.svg" alt="Contour œil gauche">
+      <div class="mascottequitientunpanneau">
+        <div class="header-img">
+          <div class="eye">
+            <div class="left-eye">
+                 <img class="pupille" src="./img/eye/pupille.svg" alt="" />
+              <img class="eyesStroke" src="./img/eye/stroke.svg" alt="" />
+            </div>
+            <div class="left-eye">
+              <img class="pupille" src="./img/eye/pupille.svg" alt="" />
+              <img class="eyesStroke" src="./img/eye/stroke.svg" alt="" />
+            </div>
           </div>
-          <div class="left-eye">
-            <img class="pupille" src="./img/eye/pupille.svg" alt="Pupille droite">
-            <img class="eyesStroke" src="./img/eye/stroke.svg" alt="Contour œil droit">
+          <img
+            class="mascottequitientunpanneau"
+            src="./img/mascottequitientunpanneau.svg"
+            alt=""
+          />
+        </div>
+        <div class="panneau">
+          <img class="paneau-img" src="./img/panneau.svg" alt="" />
+          <div class="coneptText">
+            <p data-i18n="comment_le_concept_fonctionne">
+              COMMENT LE CONCEPT FONCTIONNE
+            </p>
+            <img src="./fleche.svg" alt="" />
           </div>
         </div>
-        <img class="mascottequitientunpanneau" src="./img/mascottequitientunpanneau.svg" alt="Mascotte tenant un panneau explicatif">
       </div>
-      <div class="panneau">
-        <img class="paneau-img" src="./img/panneau.svg" alt="Panneau concept">
-        <div class="coneptText">
-          <p>COMMENT LE CONCEPT FONCTIONNE</p>
-          <img src="./fleche.svg" alt="Flèche vers le bas">
+    </header>
+
+    <section class="section section1">
+      <div>
+        <h2 class="h2-Choisisez" data-i18n="choisissez">Choisissez</h2>
+        <p data-i18n="allez_dans" class="subtitle secondary">
+          Allez dans l’une de nos boutiques, choisissez vos vétements.
+        </p>
+      </div>
+      <div class="changeHat">
+        <div class="tenue outfit-selection">
+          <img
+            id="hatImage"
+            class="chapeau"
+            src="./img/hat/bob/canvasbob-red.svg"
+            alt=""
+          />
+          <img class="mascot" id="mascot" src="./img/mascotte.svg" alt="" />
+          <img
+            id="upperBodyImage"
+            class="pull"
+            src="./img/upperBody/pull/pull-blue.svg"
+            alt=""
+          />
+          <img
+            id="lowerBodyImage"
+            class="short"
+            src="./img/lowerBody/short/short-blue.svg"
+            alt=""
+          />
+          <img
+            id="shoesImage"
+            class="shoes"
+            src="./img/shoes/shoes-red.svg"
+            alt=""
+          />
         </div>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <section class="section section1">
-    <div>
-      <h2>Choisissez</h2>
-      <p class="subtitle secondary">
-        Allez dans l'une de nos boutiques, choisissez vos vêtements.
-      </p>
-    </div>
-    <div class="changeHat">
-      <div class="tenue outfit-selection">
-        <img id="hatImage" class="chapeau" src="./img/hat/bob/canvasbob-red.svg" alt="Bob rouge">
-        <img class="mascot" id="mascot" src="./img/mascotte.svg" alt="Mascotte Kilo Shop">
-        <img id="upperBodyImage" class="pull" src="./img/upperBody/pull/pull-blue.svg" alt="Pull bleu">
-        <img id="lowerBodyImage" class="short" src="./img/lowerBody/short/short-blue.svg" alt="Short bleu">
-        <img id="shoesImage" class="shoes" src="./img/shoes/shoes-red.svg" alt="Chaussures rouges">
+    <section>
+      <div class="section balance pesez">
+        <div class="pesez-pastille">
+          <div>
+            <h2 data-i18n="pesez">Pesez</h2>
+            <p data-i18n="vous_avez_choisis" class="subtitle-pesez">
+              Vous avez choisis ? Plus qu’a pesez vos vêtements et prendre connaissance du prix au kilo</p>
+          </div>
+          <div class="list-pastille">
+            <button
+              id="red"
+              class="button-pastille selected"
+              data-color="var(--pastille-red)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-red)"
+              ></div>
+              <p data-i18n="pastille_rouge">Pastille Rouge</p>
+            </button>
+
+            <button
+              id="blue"
+              class="button-pastille"
+              data-color="var(--pastille-blue)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-blue)"
+              ></div>
+              <p data-i18n="pastille_bleu">Pastille Bleu</p>
+            </button>
+
+            <button
+              id="orange"
+              class="button-pastille"
+              data-color="var(--pastille-orange)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-orange)"
+              ></div>
+              <p data-i18n="pastille_orange">Pastille Orange</p>
+            </button>
+
+            <button
+              id="vert"
+              class="button-pastille"
+              data-color="var(--pastille-green)"
+            >
+              <div
+                class="rond"
+                style="background-color: var(--pastille-green)"
+              ></div>
+              <p data-i18n="pastille_verte">Pastille Verte</p>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <section>
-    <div class="section balance pesez">
-      <div class="pesez-pastille">
+      <div class="relative">
+        <canvas id="world"></canvas>
+        <div class="balanceimg">
+          <img class="haut" src="./img/hautBlance.svg" alt="" />
+          <div id="needle"></div>
+          <img class="bas" src="./img/basBlalance.svg" alt="" />
+        </div>
+        <div class="balanceText">
+          <div class="euro">
+            <p id="prix" class="balanceNumber" data-i18n="prix">100.00</p>
+            <p class="balanceMetric" data-i18n="euro">€</p>
+          </div>
+          <div class="kg">
+            <p id="poid" class="balanceNumber" data-i18n="poid">100.00</p>
+            <p class="balanceMetric" data-i18n="kg">kg</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section2 section pastille-section">
+     <div>
+       <h2 data-i18n="pastille">Pastille</h2>
+       <p data-i18n="voici_le_bareme"class="subtitle secondary">
+        Voici le barême des tarifs. Chaque couleurs correspond a un prix au kilo
+       </p>
+      </div>
+      <div class="pastille-explication-grid">
+        <!-- pastilles à générer dynamiquement -->
+      </div>
+    </section>
+
+    <section class="section emportez">
+      <div>
+        <h2 data-i18n="emportez">Emportez</h2>
+<p data-i18n="vous_avez_trouvée" class="subtitle">
+  Vous avez trouvée le bonheur ? Apres avoir payer plus qu’a rentrez chez vous et essayez votre nouveau look
+</p>
+      </div>
+      <div class="walk-cycleContainer">
+        <img
+          id="mascotte"
+          class="walk-cycle"
+          src="./walk-cycle/frame-1.svg"
+          alt=""
+        />
+      </div>
+    </section>
+
+    <footer class="section">
+      <img
+        class="kiloshopLogoTypographique"
+        src="./kiloshopLogoTypographique.svg"
+        alt=""
+      />
+      <div class="footer-flex">
         <div>
-          <h2>Pesez</h2>
-          <p class="subtitle-pesez">Vous avez choisi ? Plus qu'à peser vos vêtements et prendre connaissance du prix au kilo</p>
+          <a
+            href="https://www.kilo-shop.com/contact-faq/"
+            data-i18n="contact_faq"
+            >Contact & FAQ</a
+          >
+          <a
+            href="https://www.kilo-shop.com/recrutement/"
+            data-i18n="recrutement"
+            >Recrutement</a
+          >
+          <a
+            href="https://www.kilo-shop.com/carte-cadeau/"
+            data-i18n="carte_cadeau"
+            >Carte cadeau</a
+          >
+          <a
+            href="https://franchise.kilo-shop.com/"
+            data-i18n="devenir_franchise"
+            >Devenir franchisé</a
+          >
         </div>
-        <div class="list-pastille">
-          <button id="red" class="button-pastille selected" data-color="var(--pastille-red)">
-            <span class="rond" style="background-color: var(--pastille-red)"></span>
-            <span>Pastille Rouge</span>
-          </button>
-          <button id="blue" class="button-pastille" data-color="var(--pastille-blue)">
-            <span class="rond" style="background-color: var(--pastille-blue)"></span>
-            <span>Pastille Bleue</span>
-          </button>
-          <button id="orange" class="button-pastille" data-color="var(--pastille-orange)">
-            <span class="rond" style="background-color: var(--pastille-orange)"></span>
-            <span>Pastille Orange</span>
-          </button>
-          <button id="vert" class="button-pastille" data-color="var(--pastille-green)">
-            <span class="rond" style="background-color: var(--pastille-green)"></span>
-            <span>Pastille Verte</span>
-          </button>
+        <div>
+          <a
+            href="https://www.kilo-shop.com/mentions-legales/"
+            data-i18n="mention_legale"
+            >Mention legale</a
+          >
+          <a
+            href="https://www.kilo-shop.com/politique-de-confidentialite/"
+            data-i18n="politique_protection_donnees"
+            >Politique de protection de données</a
+          >
+          <a
+            href="https://www.kilo-shop.com/conditions-generales-de-vente/"
+            data-i18n="conditions_generales"
+            >Condition générale de vente</a
+          >
+        </div>
+        <div>
+          <a href="https://fr-fr.facebook.com/kiloshop/" data-i18n="facebook"
+            >Facebook</a
+          >
+          <a
+            href="https://fr.linkedin.com/company/kilo-shop"
+            data-i18n="linkedin"
+            >Linkedin</a
+          >
+          <a
+            href="https://www.instagram.com/kiloshopfrance/?hl=fr"
+            data-i18n="instagram"
+            >Instagram</a
+          >
         </div>
       </div>
-    </div>
+      <p data-i18n="copyright">@Kilo shop 2025 - Tous droits réservés</p>
+    </footer>
 
-    <div class="relative">
-      <canvas id="world"></canvas>
-      <div class="balanceimg">
-        <img class="haut" src="./img/hautBlance.svg" alt="Plateau supérieur de la balance">
-        <div id="needle"></div>
-        <img class="bas" src="./img/basBlalance.svg" alt="Plateau inférieur de la balance">
-      </div>
-      <div class="balanceText">
-        <div class="euro">
-          <p id="prix" class="balanceNumber">100.00</p>
-          <p class="balanceMetric">€</p>
-        </div>
-        <div class="kg">
-          <p id="poid" class="balanceNumber">100.00</p>
-          <p class="balanceMetric">kg</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section2 section pastille-section">
-    <div>
-      <h2>Pastille</h2>
-      <p class="subtitle secondary">Voici le barème des tarifs. Chaque couleur correspond à un prix au kilo</p>
-    </div>
-    <div class="pastille-explication-grid">
-      <!-- pastilles générées dynamiquement -->
-    </div>
-  </section>
-
-  <section class="section emportez">
-    <div>
-      <h2>Emportez</h2>
-      <p class="subtitle">Vous avez trouvé le bonheur ? Après avoir payé, rentrez chez vous et essayez votre nouveau look</p>
-    </div>
-    <div class="walk-cycleContainer">
-      <img id="mascotte" class="walk-cycle" src="./walk-cycle/frame-1.svg" alt="Animation mascotte marchant">
-    </div>
-  </section>
-
-  <footer class="section">
-    <img class="kiloshopLogoTypographique" src="./kiloshopLogoTypographique.svg" alt="Logo typographique Kilo Shop">
-    <div class="footer-flex">
-      <div>
-        <a href="https://www.kilo-shop.com/contact-faq/">Contact & FAQ</a>
-        <a href="https://www.kilo-shop.com/recrutement/">Recrutement</a>
-        <a href="https://www.kilo-shop.com/carte-cadeau/">Carte cadeau</a>
-        <a href="https://franchise.kilo-shop.com/">Devenir franchisé</a>
-      </div>
-      <div>
-        <a href="https://www.kilo-shop.com/mentions-legales/">Mentions légales</a>
-        <a href="https://www.kilo-shop.com/politique-de-confidentialite/">Politique de protection des données</a>
-        <a href="https://www.kilo-shop.com/conditions-generales-de-vente/">Conditions générales de vente</a>
-      </div>
-      <div>
-        <a href="https://fr-fr.facebook.com/kiloshop/">Facebook</a>
-        <a href="https://fr.linkedin.com/company/kilo-shop">LinkedIn</a>
-        <a href="https://www.instagram.com/kiloshopfrance/?hl=fr">Instagram</a>
-      </div>
-    </div>
-    <p>@Kilo Shop 2025 - Tous droits réservés</p>
-  </footer>
-
-  <!-- Scripts -->
-  <!-- <script src="lenis-script.js"></script> -->
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
-  <script src="changeLanguage.js"></script>
-  <script src="eyesAnimation.js"></script>
-  <script defer src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-  <script src="walkcycle.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-</body>
+    <!-- Scripts -->
+    <script src="changeLanguage.js"></script>
+    <script src="eyesAnimation.js"></script>
+    <script type="module" defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="walkcycle.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pathseg@1.2.1/pathseg.js"></script>
+    <script></script>
+  </body>
 </html>
